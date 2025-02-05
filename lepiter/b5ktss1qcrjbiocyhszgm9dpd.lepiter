@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-02-05T13:38:26.010402+01:00"
+						"dateAndTimeString" : "2025-02-05T13:38:28.534515+01:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "The [gt-experiments\nrepo](https://github.com/onierstrasz/gt-experiments) is intended as a holding place for experimental code that may eventually be used for [Gtoolkit](https://github.com/feenkcom/gtoolkit) demos or utilities."
+				"string" : "The [gt-experiments repo](https://github.com/onierstrasz/gt-experiments) is intended as a holding place for experimental code that may eventually be used for [Gtoolkit](https://github.com/feenkcom/gtoolkit) demos or utilities."
 			},
 			{
 				"__type" : "textSnippet",
