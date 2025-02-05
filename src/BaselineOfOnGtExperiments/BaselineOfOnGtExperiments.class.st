@@ -1,11 +1,11 @@
 Class {
-	#name : #BaselineOfOnGtExperiments,
+	#name : #BaselineOfONGtExperiments,
 	#superclass : #BaselineOf,
 	#category : #BaselineOfOnGtExperiments
 }
 
 { #category : #loading }
-BaselineOfOnGtExperiments class >> loadLepiter [
+BaselineOfONGtExperiments class >> loadLepiter [
 	IceRepository registry  
 		detect: [ :aRepository |
 			aRepository name = 'on-gt-experiments' ]
@@ -20,9 +20,9 @@ BaselineOfOnGtExperiments class >> loadLepiter [
 ]
 
 { #category : #baseline }
-BaselineOfOnGtExperiments >> baseline: spec [
+BaselineOfONGtExperiments >> baseline: spec [
 	<baseline>
 		^ spec for: #common do: [
-			spec package: 'OnGtExperiments'
+			spec package: 'ONGtExperiments'
 		]
 ]

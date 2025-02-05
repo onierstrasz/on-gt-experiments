@@ -4,7 +4,7 @@
 ```st
 Metacello new
 	repository: 'github://onierstrasz/on-gt-experiments:main/src';
-	baseline: 'OnGtExperiments';
+	baseline: 'ONGtExperiments';
 	load.
-#BaselineOfOnGtExperiments asClass loadLepiter
+#BaselineOfONGtExperiments asClass loadLepiter
 ```
