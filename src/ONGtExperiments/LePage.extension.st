@@ -2,7 +2,7 @@ Extension { #name : #LePage }
 
 { #category : #'*ONGtExperiments' }
 LePage >> gtActionNotesFor: anAction [
-	<lePageAction>
+	"<lePageAction>"
 	| icon tooltip |
 	self isNamedPage ifFalse: [ ^ anAction empty ].
 	(self hasTagNamed: 'Notes') ifTrue: [ ^ anAction empty ].
