@@ -16,12 +16,10 @@ YouTubeSnippetSlideSlowdown >> slidePriorities [
 { #category : #accessing }
 YouTubeSnippetSlideSlowdown >> youTubeSnippetIssue: aSlide [
 	<gtSlide>
-	<text:
-'This slide demos the slow loading issue.'>
-
+	<text: 'This slide demos the slow loading issue.'>
 	^ aSlide lepiterPage
 		setPriority;
-		startPage: (self db pageNamed: 'YouTube snippet issue')
+		startPage: (self database pageNamed: 'YouTube snippet issue')
 ]
 
 { #category : #accessing }
