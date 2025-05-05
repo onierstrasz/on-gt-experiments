@@ -12,6 +12,7 @@ Class {
 { #category : #accessing }
 UsefulExamplesFromIMAD >> allPragmas [
 	<gtExample>
+	<return: #Set>
 	^ (CompiledMethod allInstances
 		flatCollect: [ :m | m pragmas collect: #selector ]) asSet
 ]
@@ -19,6 +20,7 @@ UsefulExamplesFromIMAD >> allPragmas [
 { #category : #accessing }
 UsefulExamplesFromIMAD >> attachGtDocToModel [
 	<gtExample>
+	<return: #VariableNotDeclared>
 	| dict doc |
 	dict := Dictionary new.
 	dict at: #name put: 'Homer'.
@@ -26,8 +28,7 @@ UsefulExamplesFromIMAD >> attachGtDocToModel [
 	doc text: (dict at: #name).
 	doc
 		when: GtDocumentUpdateRequestedAnnouncement
-		do: [ dict at: #name put: doc text asString ].
-	"GtInspector openOn: doc."
+		do: [ dict at: #name put: doc text asString ].	"GtInspector openOn: doc."
 	doc text: 'Madge'.
 	doc mayRequestDocumentUpdate.
 	self assert: (dict at: #name) equals: 'Madge'.
@@ -37,25 +38,26 @@ UsefulExamplesFromIMAD >> attachGtDocToModel [
 { #category : #accessing }
 UsefulExamplesFromIMAD >> autofitElementToContainer [
 	<gtExample>
-	
-^ BlElement new 
-	layout: BlLinearLayout new;
-	background: Color paleBlue;
-	constraintsDo: [:c | 
-		c horizontal matchParent.
-		c vertical matchParent ];	
-	addChild: (BlElement new 
-		background: Color paleRed;
+	<return: #BlElement>
+	^ BlElement new
 		layout: BlLinearLayout new;
-		constraintsDo: [:c | 
-			c horizontal fitContent.
-			c vertical fitContent ];
-		addChild: (BlTextElement new text: 'something' asRopedText))
+		background: Color paleBlue;
+		constraintsDo: [ :c | 
+			c horizontal matchParent.
+			c vertical matchParent ];
+		addChild: (BlElement new
+				background: Color paleRed;
+				layout: BlLinearLayout new;
+				constraintsDo: [ :c | 
+					c horizontal fitContent.
+					c vertical fitContent ];
+				addChild: (BlTextElement new text: 'something' asRopedText))
 ]
 
 { #category : #accessing }
 UsefulExamplesFromIMAD >> boxWithToolTip [
 	<gtExample>
+	<return: #BlElement>
 	| box tooltip |
 	box := BlElement new
 			geometry: (BlRectangle cornerRadius: 10);
@@ -75,6 +77,7 @@ UsefulExamplesFromIMAD >> boxWithToolTip [
 { #category : #accessing }
 UsefulExamplesFromIMAD >> boxWithWrappedToolTip [
 	<gtExample>
+	<return: #BlElement>
 	| box tooltipLook |
 	box := BlElement new
 			geometry: (BlRectangle cornerRadius: 10);
@@ -88,19 +91,18 @@ UsefulExamplesFromIMAD >> boxWithWrappedToolTip [
 
 { #category : #accessing }
 UsefulExamplesFromIMAD >> brokenBezier [
-
 	"Adapted from BlBezierElementExamples"
-	<gtExample>	
+
+	<gtExample>
+	<return: #BlElement>
 	| redCurve attachFrom attachTo viaAttach fromLine toLine |
-	
 	redCurve := BlBezierElementExamples new redCurve.
-	
+
 	attachFrom := BlGeometryElementExamples new attachPoint.
 	attachFrom relocate: 10 @ 160.
 
 	viaAttach := BlGeometryElementExamples new attachPoint.
-	viaAttach relocate: 160 @ 160.
-	"viaAttach relocate: 160 @ 10."
+	viaAttach relocate: 160 @ 160.	"viaAttach relocate: 160 @ 10."
 
 	attachTo := BlGeometryElementExamples new attachPoint.
 	attachTo relocate: 310 @ 160.
@@ -108,7 +110,7 @@ UsefulExamplesFromIMAD >> brokenBezier [
 	fromLine := BlBezierElementExamples new greyLine.
 	fromLine fromAnchor: (BlElementCenterAnchor element: attachFrom).
 	fromLine toAnchor: (BlElementCenterAnchor element: viaAttach).
-	
+
 	toLine := BlBezierElementExamples new greyLine.
 	toLine fromAnchor: (BlElementCenterAnchor element: viaAttach).
 	toLine toAnchor: (BlElementCenterAnchor element: attachTo).
@@ -118,7 +120,12 @@ UsefulExamplesFromIMAD >> brokenBezier [
 	redCurve toAnchor: (BlElementCenterAnchor element: attachTo).
 
 	^ BlBezierElementExamples new container
-		addChildren: { redCurve . attachFrom . viaAttach. attachTo . fromLine . toLine }
+		addChildren: {redCurve.
+				attachFrom.
+				viaAttach.
+				attachTo.
+				fromLine.
+				toLine}
 ]
 
 { #category : #accessing }
@@ -126,10 +133,11 @@ UsefulExamplesFromIMAD >> brokenParabolla [
 	"Curvature 0 makes the curve disappear"
 
 	<gtExample>
+	<return: #BlElement>
 	| aPrabolla attachFrom attachTo |
 	aPrabolla := BlParabollaArcElementExamples new redArcWithToHead
-		curvature: 0;
-		yourself.
+			curvature: 0;
+			yourself.
 	attachFrom := BlSigmoidElementExamples new attachPoint.
 	attachFrom relocate: 100 @ 100.
 	attachTo := BlSigmoidElementExamples new attachPoint.
@@ -137,10 +145,9 @@ UsefulExamplesFromIMAD >> brokenParabolla [
 	aPrabolla fromAnchor: (BlElementCenterAnchor element: attachFrom).
 	aPrabolla toAnchor: (BlElementCenterAnchor element: attachTo).
 	^ BlSigmoidElementExamples new container
-		addChildren:
-			{aPrabolla.
-			attachFrom.
-			attachTo}
+		addChildren: {aPrabolla.
+				attachFrom.
+				attachTo}
 ]
 
 { #category : #accessing }
@@ -149,11 +156,12 @@ UsefulExamplesFromIMAD >> brokenSigmoid [
 	Adapted from BlSigmoidElementExamples>>#sigmoidBendingMiddlePoint"
 
 	<gtExample>
+	<return: #BlElement>
 	| aSigmoid attachFrom attachTo |
 	aSigmoid := BlSigmoidElementExamples new newSigmoid.
 	aSigmoid bendingPoint: 0.5.
 	aSigmoid sharpness: 1.0.
-	
+
 	attachFrom := BlSigmoidElementExamples new attachPoint.
 	attachFrom relocate: 100 @ 100.
 
@@ -164,12 +172,15 @@ UsefulExamplesFromIMAD >> brokenSigmoid [
 	aSigmoid toAnchor: (BlElementCenterAnchor element: attachTo).
 
 	^ BlSigmoidElementExamples new container
-		addChildren: { aSigmoid . attachFrom . attachTo }
+		addChildren: {aSigmoid.
+				attachFrom.
+				attachTo}
 ]
 
 { #category : #accessing }
 UsefulExamplesFromIMAD >> buildDifferentKindsOfTabs [
 	<gtExample>
+	<return: #VariableNotDeclared>
 	| tabs |
 	"Sources:
 	BrExamplesShowroom>>#glamorousTabs
@@ -209,6 +220,7 @@ UsefulExamplesFromIMAD >> buttonWithActions [
 	"Example by TG"
 
 	<gtExample>
+	<return: #BrButton>
 	^ BrButton new
 		layout: BlLinearLayout horizontal;
 		constraintsDo: [ :c | 
@@ -239,6 +251,7 @@ UsefulExamplesFromIMAD >> buttonWithActions [
 { #category : #accessing }
 UsefulExamplesFromIMAD >> buttonWithColoredBackgroundAndForeground [
 	<gtExample>
+	<return: #BrButton>
 	| look |
 	look := BrGlamorousButtonLabelAptitude new
 			selectedColor: Color white;
@@ -260,6 +273,7 @@ UsefulExamplesFromIMAD >> buttonWithColoredBackgroundAndForeground [
 { #category : #accessing }
 UsefulExamplesFromIMAD >> buttonWithThreeStates [
 	<gtExample>
+	<return: #BrButton>
 	| tooltip state offLook onLook negatedLook tooltipLook |
 	tooltip := 'Switch on'.
 	tooltipLook := BrGlamorousWithTooltipAptitude2
@@ -303,18 +317,18 @@ UsefulExamplesFromIMAD >> cardTagger [
 	"Shows how a tagger looks with many tags"
 
 	<gtExample>
+	<return: #VariableNotDeclared>
 	| deck card tagger |
 	deck := CardDeck new.
 	card := Card new.
 	deck addCard: card.
-	(' '
-		split: (Boolean comment copyWithRegex: '[^\w ]' matchesReplacedWith: ''))
+	(' ' split: (Boolean comment copyWithRegex: '[^\w ]' matchesReplacedWith: ''))
 		do: [ :word | card addTag: word ].
 	tagger := BlElement new
-		layout: BlLinearLayout vertical;
-		constraintsDo: [ :c | 
-			c horizontal matchParent.
-			c vertical matchParent ].
+			layout: BlLinearLayout vertical;
+			constraintsDo: [ :c | 
+				c horizontal matchParent.
+				c vertical matchParent ].
 	tagger addChild: card buildTagHeader.
 	card announcer
 		when: TagsUpdated
@@ -326,13 +340,13 @@ UsefulExamplesFromIMAD >> cardTagger [
 { #category : #accessing }
 UsefulExamplesFromIMAD >> createPlayGroundWithSnippets [
 	<gtExample>
+	<return: #VariableNotDeclared>
 	| snippets playbook |
-	snippets := {'3+4' . '42'}.
+	snippets := {'3+4'.
+			'42'}.
 	playbook := GtPlayBook newWithCodeSnippetContent: snippets first.
 	snippets allButFirst
-		do:
-			[ :el | playbook pages first addSnippet: (GtCoderSnippet new sourceCode: el) ].
-	"GtPlayground openOn: playbook."
+		do: [ :el | playbook pages first addSnippet: (GtCoderSnippet new sourceCode: el) ].	"GtPlayground openOn: playbook."
 	^ playbook
 ]
 
@@ -341,17 +355,15 @@ UsefulExamplesFromIMAD >> dropdownOnRightClick [
 	"See: BrDropdownExamples>>#coloredDropdown"
 
 	<gtExample>
+	<return: #BrButton>
 	^ BrButton new
 		label: '';
-		aptitude:
-			BrGlamorousButtonWithLabelAptitude
-				+
-					(BrGlamorousWithContextMenuAptitude
+		aptitude: BrGlamorousButtonWithLabelAptitude
+				+ (BrGlamorousWithContextMenuAptitude
 						content: [ BrGlamorousSimpleContextMenuContent new
-								items:
-									{('Change to blue' -> [ :e | e background: Color blue ]).
-									('Change to red' -> [ :e | e background: Color red ]).
-									('Change to green' -> [ :e | e background: Color green ])};
+								items: {'Change to blue' -> [ :e | e background: Color blue ].
+										'Change to red' -> [ :e | e background: Color red ].
+										'Change to green' -> [ :e | e background: Color green ]};
 								yourself ]);
 		yourself
 ]
@@ -359,6 +371,7 @@ UsefulExamplesFromIMAD >> dropdownOnRightClick [
 { #category : #accessing }
 UsefulExamplesFromIMAD >> dropdownWithChangingContent [
 	<gtExample>
+	<return: #GtPhlowDropdownAction>
 	| anAction aButton |
 	anAction := GtPhlowAction noAction dropdown
 			icon: BrGlamorousIcons menu;
@@ -387,6 +400,7 @@ UsefulExamplesFromIMAD >> elementHandlingClickEvents [
 	"I show how to react to different kinds of click events."
 
 	<gtExample>
+	<return: #BlElement>
 	| clickElt |
 	clickElt := BlElement new
 			constraintsDo: [ :c | 
@@ -447,30 +461,34 @@ UsefulExamplesFromIMAD >> elementHandlingClickEvents [
 { #category : #accessing }
 UsefulExamplesFromIMAD >> examplesExplorerForPackage [
 	<gtExample>
+	<return: #MessageNotUnderstood>
 	| baseline repo |
 	baseline := BaselineOfIMAD.
 	repo := 'github.com/onierstrasz/ASA-GtExperiments/src'.
- 	^ (( GtRlSystemExamplesExplorer forProject:
- 	(GtRlDependenciesModelBuilder new
- 		buildProjectFromBaselineClass: baseline
- 		withRepositoryDescription: repo)) repositoryExplorers ) at: 1
+	^ (GtRlSystemExamplesExplorer
+		forProject: (GtRlDependenciesModelBuilder new
+				buildProjectFromBaselineClass: baseline
+				withRepositoryDescription: repo)) repositoryExplorers at: 1
 ]
 
 { #category : #accessing }
 UsefulExamplesFromIMAD >> filterToExampleGroup [
 	<gtExample>
+	<return: #GtExplicitExampleGroup>
 	^ #printString gtReferences gtExamples
 ]
 
 { #category : #accessing }
 UsefulExamplesFromIMAD >> findAllTodosInAPackage [
 	<gtExample>
+	<return: #GtSearchIntersectionFilter>
 	^ #todo: gtPragmas & 'IMAD-Card' gtPackageMatches
 ]
 
 { #category : #accessing }
 UsefulExamplesFromIMAD >> findExamplesOfAClass [
 	<gtExample>
+	<return: #GtSearchIntersectionFilter>
 	^ BrTab gtReferences & #gtExample gtPragmas
 ]
 
@@ -482,14 +500,16 @@ UsefulExamplesFromIMAD >> graphWithoutClipping [
 	"
 
 	<gtExample>
+	<return: #BlPannableElement>
 	| root elts pannable |
 	elts := Dictionary new.
 	root := BlElement new
-		constraintsDo: [ :c | 
-			c horizontal matchParent.
-			c vertical matchParent ].
-	"Using fitContent instead of matchParent will zoom the graph to maximum size."
-	{'A' . 'B' . 'C'}
+			constraintsDo: [ :c | 
+				c horizontal matchParent.
+				c vertical matchParent ].	"Using fitContent instead of matchParent will zoom the graph to maximum size."
+	{'A'.
+		'B'.
+		'C'}
 		do: [ :each | 
 			| elt |
 			elt := self rectangleWithText: each.
@@ -497,16 +517,16 @@ UsefulExamplesFromIMAD >> graphWithoutClipping [
 			elt addEventHandler: BlPullHandler new.
 			elts at: each put: elt.
 			root addChild: elt ].
-	{('A' -> 'B').
-	('A' -> 'C')}
+	{'A' -> 'B'.
+		'A' -> 'C'}
 		do: [ :rel | 
 			| source target line |
 			source := elts at: rel key.
 			target := elts at: rel value.
 			source graph connectTo: target.
 			line := BlLineElement new
-				zIndex: -1;
-				border: (BlBorder paint: (Color gray alpha: 0.2) width: 5).
+					zIndex: -1;
+					border: (BlBorder paint: (Color gray alpha: 0.2) width: 5).
 			line
 				fromAnchor: (BlNearestPositionBoundsAnchor nearestTo: target from: source);
 				toAnchor: (BlNearestPositionBoundsAnchor nearestTo: source from: target).
@@ -523,6 +543,7 @@ UsefulExamplesFromIMAD >> gtToolsMenu [
 	"See GtWorldElement>>#newSubSpaceButton and GtToolsMenu"
 
 	<gtExample>
+	<return: #MessageNotUnderstood>
 	| menu |
 	"menu := GtToolsMenu new."
 	menu := BlElement new.	"initialize"
@@ -582,6 +603,7 @@ UsefulExamplesFromIMAD >> gtToolsMenu [
 { #category : #accessing }
 UsefulExamplesFromIMAD >> hamburgerDropdown [
 	<gtExample>
+	<return: #BrButton>
 	| subSpaceDropdown |
 	subSpaceDropdown := BrButton new
 			aptitude: BrGlamorousButtonWithIconAptitude - BrGlamorousButtonExteriorAptitude
@@ -601,6 +623,7 @@ UsefulExamplesFromIMAD >> hamburgerDropdown [
 { #category : #accessing }
 UsefulExamplesFromIMAD >> hamburgerWithIconLook [
 	<gtExample>
+	<return: #BrButton>
 	^ BrButton new
 		aptitude: BrGlamorousButtonWithIconAptitude;
 		icon: BrGlamorousIcons hamburger asElement;
@@ -610,6 +633,7 @@ UsefulExamplesFromIMAD >> hamburgerWithIconLook [
 { #category : #accessing }
 UsefulExamplesFromIMAD >> hamburgerWithLabelLook [
 	<gtExample>
+	<return: #BrButton>
 	^ BrButton new
 		aptitude: BrGlamorousButtonWithLabelAptitude;
 		icon: BrGlamorousIcons hamburger asElement;
@@ -619,12 +643,14 @@ UsefulExamplesFromIMAD >> hamburgerWithLabelLook [
 { #category : #accessing }
 UsefulExamplesFromIMAD >> johnDoeContact [
 	<gtExample>
+	<return: #GtABContact>
 	^ GtABAddressBookExample new johnDoeContact
 ]
 
 { #category : #accessing }
 UsefulExamplesFromIMAD >> lineWithHoverAndContextMenu [
 	<gtExample>
+	<return: #BlLineElement>
 	| line |
 	line := BlLineElement new
 			fromAnchor: (BlAbsolutePositionAnchor position: 75 @ 140);
@@ -651,28 +677,28 @@ UsefulExamplesFromIMAD >> linesDontRespondToEevents [
 	"Why can I pull the box but not the line?"
 
 	<gtExample>
+	<return: #BlElement>
 	| container line box |
 	container := BlElement new
-		background: Color white;
-		constraintsDo: [ :c | 
-			c horizontal matchParent.
-			c vertical matchParent ];
-		yourself.
+			background: Color white;
+			constraintsDo: [ :c | 
+				c horizontal matchParent.
+				c vertical matchParent ];
+			yourself.
 	box := BlElement new
-		size: 100 @ 100;
-		background: (Color gray alpha: 0.1);
-		addEventHandler: BlPullHandler new;
-		yourself.
+			size: 100 @ 100;
+			background: (Color gray alpha: 0.1);
+			addEventHandler: BlPullHandler new;
+			yourself.
 	line := BlLineElement new
-		fromAnchor: (BlAbsolutePositionAnchor position: 75 @ 140);
-		toAnchor: (BlAbsolutePositionAnchor position: 200 @ 240);
-		border: (BlBorder paint: Color blue width: 4);
-		addEventHandler: BlPullHandler new;
-		yourself.
+			fromAnchor: (BlAbsolutePositionAnchor position: 75 @ 140);
+			toAnchor: (BlAbsolutePositionAnchor position: 200 @ 240);
+			border: (BlBorder paint: Color blue width: 4);
+			addEventHandler: BlPullHandler new;
+			yourself.
 	container
-		addChildren:
-			{line.
-			box}.
+		addChildren: {line.
+				box}.
 	^ container
 ]
 
@@ -681,6 +707,7 @@ UsefulExamplesFromIMAD >> lookSubtraction [
 	"this simply means that we are not taking BrGlamorousButtonExteriorAptitude into account in this case, and we will get no border"
 
 	<gtExample>
+	<return: #BrButton>
 	^ BrButton new
 		aptitude: BrGlamorousButtonWithIconAptitude - BrGlamorousButtonExteriorAptitude;
 		icon: BrGlamorousIcons hamburger asElement;
@@ -698,6 +725,7 @@ UsefulExamplesFromIMAD >> menuFor: aString [
 UsefulExamplesFromIMAD >> mondrianWithButton [
 	<gtExample>
 	<todo: 'make the button add nodes to the mondrian graph'>
+	<return: #BlElement>
 	| mondrian container |
 	mondrian := GtMondrian new.
 	mondrian nodes
@@ -727,26 +755,24 @@ UsefulExamplesFromIMAD >> mondrianWithButton [
 UsefulExamplesFromIMAD >> nestedMenuTOFIX [
 	<todo: 'This is just a skeleton. How to get the nesting?'>
 	<gtExample>
+	<return: #BlElement>
 	| main nested |
 	nested := BlTextElement new text: 'nested' asRopedText.
 	nested
-		aptitude:
-			(BrGlamorousWithContextMenuAptitude
+		aptitude: (BrGlamorousWithContextMenuAptitude
 				content: [ BrGlamorousSimpleContextMenuContent new
-						items:
-							{('Change to blue' -> [ :e | e background: Color blue ]).
-							('Change to red' -> [ :e | e background: Color red ]).
-							('Change to green' -> [ :e | e background: Color green ])};
+						items: {'Change to blue' -> [ :e | e background: Color blue ].
+								'Change to red' -> [ :e | e background: Color red ].
+								'Change to green' -> [ :e | e background: Color green ]};
 						yourself ]);
 		yourself.
 	main := BlElement new
-		background: Color red;
-		yourself.
+			background: Color red;
+			yourself.
 	main
-		aptitude:
-			(BrGlamorousWithContextMenuAptitude
+		aptitude: (BrGlamorousWithContextMenuAptitude
 				content: [ BrGlamorousSimpleContextMenuContent new
-						items: {(nested -> [  ])};
+						items: {nested -> [  ]};
 						yourself ]);
 		yourself.
 	^ main
@@ -767,6 +793,7 @@ UsefulExamplesFromIMAD >> openTextInOwnWindow: aString [
 { #category : #accessing }
 UsefulExamplesFromIMAD >> paneWithTabs [
 	<gtExample>
+	<return: #VariableNotDeclared>
 	| contentPane label |
 	contentPane := BlElement new.
 	contentPane layout: BlLinearLayout vertical.
@@ -786,6 +813,7 @@ UsefulExamplesFromIMAD >> paneWithTabs [
 { #category : #accessing }
 UsefulExamplesFromIMAD >> rectangleWithText [
 	<gtExample>
+	<return: #BlElement>
 	^ self rectangleWithText: 'woohoo'
 ]
 
@@ -809,16 +837,17 @@ UsefulExamplesFromIMAD >> rectangleWithText: aString [
 { #category : #accessing }
 UsefulExamplesFromIMAD >> scrollableMethodCoder [
 	<gtExample>
-	^ ((GtMethodCoder
+	<return: #VariableNotDeclared>
+	^ (GtMethodCoder
 		forClass: CardDeckExamples
 		source: CardDeckExamples new facultyDoodleDomain generateStorageMethodString)
-		"expanded: true;"
-		asElement) asScrollableElement
+		asElement asScrollableElement	"expanded: true;"
 ]
 
 { #category : #accessing }
 UsefulExamplesFromIMAD >> searchFilterExamples [
 	<gtExample>
+	<return: #'GtSearchMethodReferencesFilterExamples class'>
 	^ GtSearchMethodReferencesFilterExamples
 ]
 
@@ -832,6 +861,7 @@ UsefulExamplesFromIMAD >> textWithMenuAtRight [
 	"Adapted from BlLinearLayoutUsageExamples>>#twoChildrenOnOppositeSidesWithSpan"
 
 	<gtExample>
+	<return: #BlElement>
 	| parent left span right |
 	parent := BlElement new.
 	parent layout: BlLinearLayout horizontal.
@@ -869,6 +899,7 @@ UsefulExamplesFromIMAD >> wrappedTooltip [
 	"Note that the exact width has to be set on the BrEditor and not the container. The problem is that the look (BrTooltipBottomCenterAptitude) will override the horizontal constaint on the content anyway."
 
 	<gtExample>
+	<return: #BlElement>
 	^ BlElement new
 		layout: BlLinearLayout vertical;
 		constraintsDo: [ :c | 

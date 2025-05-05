@@ -4,6 +4,7 @@ Extension { #name : #MovingPagesExamples }
 MovingPagesExamples >> helloWorldSnippetPage [
 	<moveablePage>
 	<gtExample>
+	<return: #LePage>
 	^ (LePage named: 'A HelloWorld snippet page')
 		addSnippet: (HelloWorldSnippet new
 				contentString: 'Hello world!';

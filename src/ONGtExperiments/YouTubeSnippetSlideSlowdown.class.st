@@ -10,6 +10,7 @@ Class {
 { #category : #accessing }
 YouTubeSnippetSlideSlowdown >> slidePriorities [
 	<gtExample>
+	<return: #Array>
 	^ #(youTubeSnippetIssue:)
 ]
 

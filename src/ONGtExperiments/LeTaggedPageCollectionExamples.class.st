@@ -7,6 +7,7 @@ Class {
 { #category : #page }
 LeTaggedPageCollectionExamples >> primaryDbPages [
 	<gtExample>
+	<return: #LeTaggedPageCollection>
 	| eg |
 	eg := LeTaggedPageCollection forPrimaryDatabase.
 	self assert: eg pages notEmpty.
@@ -17,12 +18,14 @@ LeTaggedPageCollectionExamples >> primaryDbPages [
 { #category : #page }
 LeTaggedPageCollectionExamples >> sampleDatabase [
 	<gtExample>
+	<return: #DatabaseHolderExamples>
 	^ DatabaseHolderExamples new initializedDatabase
 ]
 
 { #category : #page }
 LeTaggedPageCollectionExamples >> sampleDbPages [
 	<gtExample>
+	<return: #LeTaggedPageCollection>
 	| eg sample |
 	sample := self sampleDatabase.
 	eg := LeTaggedPageCollection forDatabase: sample database.

@@ -17,12 +17,14 @@ Class {
 { #category : #accessing }
 GitCommitChecker >> modifiedRepos [
 	<gtExample>
+	<return: #OrderedCollection>
 	^ (IceRepository gtGitRepositories reject: #isMissing) select: #isModified
 ]
 
 { #category : #accessing }
 GitCommitChecker >> refreshedModifiedRepos [
 	<gtExample>
+	<return: #OrderedCollection>
 	^ (self modifiedRepos reject: #isMissing)
 		select: [ :r | 
 			r hasChanges

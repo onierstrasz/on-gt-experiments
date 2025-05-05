@@ -19,10 +19,10 @@ MetaLinkDoNothingExamples >> complexUpdateState [
 { #category : #example }
 MetaLinkDoNothingExamples >> complexUpdateStateSendNode [
 	<gtExample>
+	<return: #RBMessageNode>
 	| sendNode |
 	sendNode := (self class lookupSelector: #complexUpdateState) sendNodes first.
-	self assert: sendNode selector equals: #ifTrue:.
-	"Ensure there are no links installed."
+	self assert: sendNode selector equals: #ifTrue:.	"Ensure there are no links installed."
 	sendNode links copy do: #uninstall.
 	^ sendNode
 ]
@@ -30,6 +30,7 @@ MetaLinkDoNothingExamples >> complexUpdateStateSendNode [
 { #category : #example }
 MetaLinkDoNothingExamples >> complexUpdateStateUpdated [
 	<gtExample>
+	<return: #MetaLinkDoNothingExamples>
 	self assert: self state equals: 0.
 	self complexUpdateState.
 	self assert: self state equals: 0.
@@ -39,6 +40,7 @@ MetaLinkDoNothingExamples >> complexUpdateStateUpdated [
 { #category : #example }
 MetaLinkDoNothingExamples >> complexUpdateStateUpdatedWithMetaLink [
 	<gtExample>
+	<return: #Error>
 	| link |
 	self assert: self state equals: 0.
 	link := self doNothingLink.
@@ -52,6 +54,7 @@ MetaLinkDoNothingExamples >> complexUpdateStateUpdatedWithMetaLink [
 { #category : #example }
 MetaLinkDoNothingExamples >> doNothingLink [
 	<gtExample>
+	<return: #MetaLink>
 	| link |
 	link := MetaLink new
 			metaObject: [ nil ];
@@ -80,6 +83,7 @@ MetaLinkDoNothingExamples >> state: anObject [
 { #category : #example }
 MetaLinkDoNothingExamples >> stateUpdated [
 	<gtExample>
+	<return: #MetaLinkDoNothingExamples>
 	self assert: self state equals: 0.
 	self updateState.
 	self assert: self state equals: 42.
@@ -89,6 +93,7 @@ MetaLinkDoNothingExamples >> stateUpdated [
 { #category : #example }
 MetaLinkDoNothingExamples >> stateUpdatedWithMetaLink [
 	<gtExample>
+	<return: #MetaLinkDoNothingExamples>
 	| link |
 	self assert: self state equals: 0.
 	link := self doNothingLink.
@@ -107,6 +112,7 @@ MetaLinkDoNothingExamples >> updateState [
 { #category : #example }
 MetaLinkDoNothingExamples >> updateStateSendNode [
 	<gtExample>
+	<return: #RBMessageNode>
 	| sendNode |
 	sendNode := (self class lookupSelector: #updateState) sendNodes first.
 	self assert: sendNode selector equals: #state:.

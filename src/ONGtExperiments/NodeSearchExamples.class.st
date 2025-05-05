@@ -11,6 +11,7 @@ Class {
 { #category : #accessing }
 NodeSearchExamples >> findBlock [
 	<gtExample>
+	<return: #RBBlockNode>
 	| nodes |
 	nodes := self methodToTest nodesForSource: '[^ temp raisedTo: 2]'.
 	self assert: nodes size equals: 1.
@@ -21,6 +22,7 @@ NodeSearchExamples >> findBlock [
 { #category : #accessing }
 NodeSearchExamples >> findTemp [
 	<gtExample>
+	<return: #OrderedCollection>
 	| nodes |
 	nodes := self methodToTest nodesForSource: 'temp'.
 	self assert: nodes size equals: 5.
@@ -30,12 +32,14 @@ NodeSearchExamples >> findTemp [
 { #category : #accessing }
 NodeSearchExamples >> methodToTest [
 	<gtExample>
+	<return: #CompiledMethod>
 	^ ReflectivityExamples2 >> #methodWithTempVarAccess
 ]
 
 { #category : #accessing }
 NodeSearchExamples >> replaceBlock [
 	<gtExample>
+	<return: #TestFailure>
 	| link result nodes |
 	link := MetaLink new
 			metaObject: [ 42 ];
