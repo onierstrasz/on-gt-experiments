@@ -8,13 +8,17 @@ Class {
 		'person',
 		'personSimple',
 		'ignore',
-		'bellairsLine'
+		'bellairsLine',
+		'role',
+		'workshop'
 	],
 	#category : #'ONGtExperiments-Bellairs'
 }
 
 { #category : #grammar }
 BellairsParser >> bellairsLine [
+	"A line of input should match one of these rules."
+
 	^ (workshopTitle / organizerRole / participantRole / person / personSimple
 		/ ignore) end
 ]
@@ -27,13 +31,17 @@ BellairsParser >> ignore [
 { #category : #grammar }
 BellairsParser >> organizerRole [
 	^ '<h1>Organizers</h1>' asPParser trim
-		==> [ :nodes "role := 'Organizer'." | nil ]
+		==> [ :nodes | 
+			role := 'Organizer'.
+			nil ]
 ]
 
 { #category : #grammar }
 BellairsParser >> participantRole [
 	^ '<h1>Confirmed Participants</h1>' asPParser trim
-		==> [ :nodes "role := 'Participant'." | nil ]
+		==> [ :nodes | 
+			role := 'Participant'.
+			nil ]
 ]
 
 { #category : #grammar }
@@ -47,8 +55,11 @@ BellairsParser >> person [
 		, $< asPParser negate plus flatten
 		, ('</li>' asPParser trim , '-->' asPParser trim optional))
 		==> [ :nodes | 
-			{'url' -> nodes third.
+			{
 				'name' -> nodes fifth.
+				'url' -> nodes third.
+				'workshop' -> self workshop.
+				'role' -> self role.
 				'institution' -> nodes seventh.
 				'country' -> nodes ninth} asDictionary ]
 ]
@@ -66,13 +77,25 @@ BellairsParser >> personSimple [
 ]
 
 { #category : #accessing }
+BellairsParser >> role [
+	^ role ifNil: [ 'Unknown' ]
+]
+
+{ #category : #accessing }
 BellairsParser >> start [
 	^ bellairsLine
+]
+
+{ #category : #accessing }
+BellairsParser >> workshop [
+	^ workshop ifNil: [ 'Unknown' ]
 ]
 
 { #category : #grammar }
 BellairsParser >> workshopTitle [
 	^ ('<!-- all content &copy; ' asPParser
 		, (' -->' asPParser not , #any asPParser) star flatten , ' -->' asPParser)
-		==> [ :nodes "workshop := nodes second trim." | nil ]
+		==> [ :nodes | 
+			workshop := nodes second trim.
+			nil ]
 ]
