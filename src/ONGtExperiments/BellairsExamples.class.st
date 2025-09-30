@@ -11,17 +11,29 @@ BellairsExamples >> allLines [
 	<gtExample>
 	| allLines |
 	allLines := self participantsTestFile contents lines.
+	self assert: allLines size > 500.
 	^ allLines
 ]
 
 { #category : #examples }
+BellairsExamples >> bellairsGtJson [
+	<gtExample>
+	^ self bellairsJson asGtJson
+]
+
+{ #category : #examples }
 BellairsExamples >> bellairsJson [
+	"NB: the assertions will be fragile in case the test data are update."
+
 	<gtExample>
 	| parser json |
 	parser := BellairsParser new.
 	json := self allLines
 			collect: [ :line | parser parse: line ]
 			thenSelect: #notNil.
+	self assert: json size equals: 135.
+	self assert: (json collect: [ :d | d at: 'workshop' ]) asSet size equals: 8.
+	self assert: (json collect: [ :d | d at: 'role' ]) asSet size equals: 2.
 	^ json
 ]
 

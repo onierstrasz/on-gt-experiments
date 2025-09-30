@@ -72,6 +72,8 @@ BellairsParser >> personSimple [
 		, $< asPParser negate plus flatten , '</li>' asPParser)
 		==> [ :nodes | 
 			{'name' -> nodes third.
+				'workshop' -> self workshop.
+				'role' -> self role.
 				'institution' -> nodes fifth.
 				'country' -> nodes seventh} asDictionary ]
 ]
