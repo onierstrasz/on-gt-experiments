@@ -45,6 +45,14 @@ BellairsExamples >> bellairsJsonString [
 ]
 
 { #category : #examples }
+BellairsExamples >> bellairsRegistry [
+	<gtExample>
+	| registry |
+	registry := BellairsWorkshopsRegistry new initializeFromJson: self bellairsJson.
+	^ registry
+]
+
+{ #category : #examples }
 BellairsExamples >> dataFolder [
 	<gtExample>
 	^ FileLocator gtResource / 'onierstrasz' / 'on-gt-experiments' / 'data'

@@ -1,77 +1,109 @@
 Class {
 	#name : #BellairsPerson,
 	#superclass : #BellairsEntity,
+	#instVars : [
+		'person',
+		'workshops',
+		'institutions'
+	],
 	#category : #'ONGtExperiments-Bellairs'
 }
 
-{ #category : #accessing }
-BellairsPerson >> country [
-	^ self json at: 'country'
+{ #category : #querying }
+BellairsPerson >> entries [
+	^ self json select: [ :d | (d at: 'name') = self name ]
 ]
 
 { #category : #views }
-BellairsPerson >> gtSummaryFor: aView [
+BellairsPerson >> gtInstitutionsFor: aView [
 	<gtView>
-	"self summary ifEmpty: [ ^ aView empty ]."
 	^ aView columnedList
-		title: 'Summary';
-		priority: 20;
-		items: [ self summary ];
+		title: 'Institutions';
+		priority: 30;
+		items: [ self institutions sortedAs: #name ];
 		column: 'Index'
 			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
 			width: 45;
-		column: 'Key'
-			text: #first
-			width: 100;
-		column: 'Value' text: #second;
-		send: #last;
+		column: 'Value' text: [ :each | each value gtDisplayString ];
+		send: [ :each | each value ];
 		actionUpdateButton
 ]
 
+{ #category : #views }
+BellairsPerson >> gtWorkshopsFor: aView [
+	<gtView>
+	^ aView columnedList
+		title: 'Workshops';
+		priority: 20;
+		items: [ self workshops sortedAs: #name ];
+		column: 'Index'
+			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
+			width: 45;
+		column: 'Value' text: [ :each | each value gtDisplayString ];
+		send: [ :each | each value ];
+		actionUpdateButton
+]
+
+{ #category : #initialization }
+BellairsPerson >> initializeFrom: aDictionary [
+	person := aDictionary at: 'name'
+]
+
 { #category : #accessing }
-BellairsPerson >> institution [
-	^ self json at: 'institution'
+BellairsPerson >> institutions [
+	^ institutions
+		ifNil: [ institutions := (self entries collect: [ :d | d at: 'institution' ]) copyWithoutDuplicates
+	collect: [ :name | self registry institutionNamed: name ] ]
+]
+
+{ #category : #querying }
+BellairsPerson >> isOrganizer [
+	^ (self entries collect: [ :d | d at: 'role' ]) includes: 'Organizer'
+]
+
+{ #category : #querying }
+BellairsPerson >> isParticipant [
+	^ (self entries collect: [ :d | d at: 'role' ]) includes: 'Participant'
+]
+
+{ #category : #mondrian }
+BellairsPerson >> mondrianBorder [
+	^ self isOrganizer
+		ifTrue: [ BlBorder paint: Color red width: 1 ]
+		ifFalse: [ BlBorder paint: Color black width: 1 ]
+]
+
+{ #category : #mondrian }
+BellairsPerson >> mondrianNodeColor [
+	^ self workshops size = 1 ifTrue: [ Color paleGreen ] ifFalse: [ Color green ]
+]
+
+{ #category : #mondrian }
+BellairsPerson >> mondrianNodeElement [
+	^ super mondrianNodeElement
+		geometry: BlCircleGeometry new;
+		yourself
 ]
 
 { #category : #accessing }
 BellairsPerson >> name [
-	^ self json at: 'name'
-]
-
-{ #category : #'printing\t\t' }
-BellairsPerson >> printOn: aStream [
-	aStream nextPutAll: self name
+	^ self person
 ]
 
 { #category : #accessing }
-BellairsPerson >> role [
-	^ self json at: 'role'
+BellairsPerson >> person [
+	^ person
 ]
 
 { #category : #accessing }
 BellairsPerson >> summary [
-	"To do: add send fields"
-
 	^ {{'name'.
-			self name}.
-		{'institution'.
-			self institution}.
-		{'url'.
-			self url}.
-		{'country'.
-			self country}.
-		{'workshop'.
-			self workshop}.
-		{'role'.
-			self role}}
+			self name}}
 ]
 
 { #category : #accessing }
-BellairsPerson >> url [
-	^ self json at: 'url' ifAbsent: '-'
-]
-
-{ #category : #accessing }
-BellairsPerson >> workshop [
-	^ self json at: 'workshop'
+BellairsPerson >> workshops [
+	^ workshops
+		ifNil: [ workshops := self entries
+					collect: [ :d | self registry workshopNamed: (d at: 'workshop') ] ]
 ]
