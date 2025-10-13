@@ -1,6 +1,10 @@
+"
+I am a Bellairs workshop held in a given year.
+
+"
 Class {
 	#name : #BellairsWorkshop,
-	#superclass : #BellairsEntity,
+	#superclass : #AbstractBellairsEntity,
 	#instVars : [
 		'workshop',
 		'persons'

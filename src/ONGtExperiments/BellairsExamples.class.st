@@ -1,3 +1,15 @@
+"
+I contain various examples of Bellairs Workshop entities, including relevant tests.
+
+The key example is:
+```
+BellairsExamples new bellairsRegistry
+```
+
+This uses a stored JSON file ({{gtMethod:name=BellairsExamples>>#participantsTestFile}}) which has been produced from the source data.
+To update this JSON, use the example {{gtMethod:name=BellairsExamples>>#writeParticipantsToTestFile}}.
+
+"
 Class {
 	#name : #BellairsExamples,
 	#superclass : #Object,
@@ -38,7 +50,7 @@ BellairsExamples >> bellairsJson [
 ]
 
 { #category : #examples }
-BellairsExamples >> bellairsJsonString [
+BellairsExamples >> bellairsPrettyJsonString [
 	<gtExample>
 	<noTest>
 	^ STONJSON toStringPretty: self bellairsJson
@@ -94,22 +106,8 @@ BellairsExamples >> participantsTestFile [
 ]
 
 { #category : #examples }
-BellairsExamples >> writeJsonTestFile [
-	<gtExample>
-	<noTest>
-	| jsonFile |
-	jsonFile := self jsonTestFile.
-	jsonFile ensureDelete.
-	jsonFile
-		writeStreamDo: [ :aStream | 
-			aStream nextPutAll: self bellairsJsonString.
-			aStream close ].
-	^ jsonFile
-]
-
-{ #category : #examples }
 BellairsExamples >> writeParticipantsToTestFile [
-	"Write all of the participants webfiles to a single, cached test file."
+	"Write all of the participant webfiles to a single, cached test file."
 
 	<gtExample>
 	<noTest>
@@ -121,4 +119,20 @@ BellairsExamples >> writeParticipantsToTestFile [
 			self participants do: [ :each | aStream nextPutAll: each ].
 			aStream close ].
 	^ testFile
+]
+
+{ #category : #examples }
+BellairsExamples >> writePrettyJsonTestFile [
+	"Pretty print the JSON."
+
+	<gtExample>
+	<noTest>
+	| jsonFile |
+	jsonFile := self jsonTestFile.
+	jsonFile ensureDelete.
+	jsonFile
+		writeStreamDo: [ :aStream | 
+			aStream nextPutAll: self bellairsPrettyJsonString.
+			aStream close ].
+	^ jsonFile
 ]

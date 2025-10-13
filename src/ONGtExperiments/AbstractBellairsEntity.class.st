@@ -1,5 +1,14 @@
+"
+I am an abstract parent of various  Bellairs domain entities.
+I know  my `registry` and its `json`.
+
+My subclasses should implement `initializeFrom:` and `entries`.
+
+Subclasses may also override their `name`, `printOn:`, `summary` view entries, and `mondrian*` configuration methods.
+
+"
 Class {
-	#name : #BellairsEntity,
+	#name : #AbstractBellairsEntity,
 	#superclass : #Object,
 	#instVars : [
 		'registry'
@@ -7,13 +16,18 @@ Class {
 	#category : #'ONGtExperiments-Bellairs'
 }
 
+{ #category : #testing }
+AbstractBellairsEntity class >> isAbstract [
+	^ self == AbstractBellairsEntity
+]
+
 { #category : #mondrian }
-BellairsEntity >> entries [
+AbstractBellairsEntity >> entries [
 	self subclassResponsibility
 ]
 
 { #category : #views }
-BellairsEntity >> gtEntriesFor: aView [
+AbstractBellairsEntity >> gtEntriesFor: aView [
 	<gtView>
 	^ aView forward
 		title: 'Entries';
@@ -23,7 +37,7 @@ BellairsEntity >> gtEntriesFor: aView [
 ]
 
 { #category : #views }
-BellairsEntity >> gtSummaryFor: aView [
+AbstractBellairsEntity >> gtSummaryFor: aView [
 	<gtView>
 	"self summary ifEmpty: [ ^ aView empty ]."
 	^ aView columnedList
@@ -42,32 +56,32 @@ BellairsEntity >> gtSummaryFor: aView [
 ]
 
 { #category : #initialization }
-BellairsEntity >> initializeFrom: aDictionary [
+AbstractBellairsEntity >> initializeFrom: aDictionary [
 	self subclassResponsibility
 ]
 
 { #category : #accessing }
-BellairsEntity >> json [
+AbstractBellairsEntity >> json [
 	^ self registry json
 ]
 
 { #category : #mondrian }
-BellairsEntity >> mondrianBorder [
+AbstractBellairsEntity >> mondrianBorder [
 	^ BlBorder paint: Color black width: 1
 ]
 
 { #category : #mondrian }
-BellairsEntity >> mondrianChildren [
+AbstractBellairsEntity >> mondrianChildren [
 	^ {}
 ]
 
 { #category : #mondrian }
-BellairsEntity >> mondrianNodeColor [
+AbstractBellairsEntity >> mondrianNodeColor [
 	^ Color paleBlue
 ]
 
 { #category : #mondrian }
-BellairsEntity >> mondrianNodeElement [
+AbstractBellairsEntity >> mondrianNodeElement [
 	^ BlElement new
 		size: 10 @ 10;
 		border: self mondrianBorder;
@@ -76,27 +90,27 @@ BellairsEntity >> mondrianNodeElement [
 ]
 
 { #category : #accessing }
-BellairsEntity >> name [
+AbstractBellairsEntity >> name [
 	self subclassResponsibility
 ]
 
 { #category : #'as yet unclassified' }
-BellairsEntity >> printOn: aStream [
+AbstractBellairsEntity >> printOn: aStream [
 	aStream nextPutAll: self name
 ]
 
 { #category : #accessing }
-BellairsEntity >> registry [
+AbstractBellairsEntity >> registry [
 	^ registry
 ]
 
 { #category : #accessing }
-BellairsEntity >> registry: anObject [
+AbstractBellairsEntity >> registry: anObject [
 	registry := anObject
 ]
 
 { #category : #views }
-BellairsEntity >> summary [
+AbstractBellairsEntity >> summary [
 	^ {{'name'.
 			self name}}
 ]

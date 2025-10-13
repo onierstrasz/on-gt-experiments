@@ -1,6 +1,11 @@
+"
+I represent the Institution of a Bellairs workshop participant.
+
+*NB:* a person might change insituitions over the years.
+"
 Class {
 	#name : #BellairsInstitution,
-	#superclass : #BellairsEntity,
+	#superclass : #AbstractBellairsEntity,
 	#instVars : [
 		'institution',
 		'country',

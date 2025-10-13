@@ -1,3 +1,10 @@
+"
+I am a parser for the web pages of the Bellairs workshop series.
+
+The pages each list the participations of persons from various institutions in the given workshop, in a particularrole (organizer or participant).
+I extract this information from each web page, and generate a JSON of dictionaries, each containing  the details of one such participation.
+The result is used by the {{gtClass:name=BellairsWorkshopsRegistry}} to create domain entities from the JSON.
+"
 Class {
 	#name : #BellairsParser,
 	#superclass : #PP2CompositeNode,

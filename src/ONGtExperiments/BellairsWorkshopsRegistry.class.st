@@ -1,3 +1,8 @@
+"
+I am a registry for Bellairs workshops. I am initialized from a JSON produced with the help of the {{gtClass:name=BellairsParser}} from web pages listing the workshop participants.
+
+I hold the JSON and use it to create domain entities representing the workshops, their participants, and their institutions.
+"
 Class {
 	#name : #BellairsWorkshopsRegistry,
 	#superclass : #Object,

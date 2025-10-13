@@ -1,6 +1,11 @@
+"
+I represent a person who has participated in one or more Bellairs workshops as either an organizer or a regular participant.
+
+*NB:* my name might contain some HTML accents.
+"
 Class {
 	#name : #BellairsPerson,
-	#superclass : #BellairsEntity,
+	#superclass : #AbstractBellairsEntity,
 	#instVars : [
 		'person',
 		'workshops',
