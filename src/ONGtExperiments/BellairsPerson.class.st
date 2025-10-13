@@ -25,31 +25,21 @@ BellairsPerson >> entries [
 { #category : #views }
 BellairsPerson >> gtInstitutionsFor: aView [
 	<gtView>
-	^ aView columnedList
+	^ aView forward
 		title: 'Institutions';
 		priority: 30;
-		items: [ self institutions sortedAs: #displayName ];
-		column: 'Index'
-			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
-			width: 45;
-		column: 'Value' text: [ :each | each value gtDisplayString ];
-		send: [ :each | each value ];
-		actionUpdateButton
+		object: [ self participations ];
+		view: #gtInstitutionsFor:
 ]
 
 { #category : #views }
 BellairsPerson >> gtWorkshopsFor: aView [
 	<gtView>
-	^ aView columnedList
+	^ aView forward
 		title: 'Workshops';
-		priority: 20;
-		items: [ self workshops sortedAs: #displayName ];
-		column: 'Index'
-			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
-			width: 45;
-		column: 'Value' text: [ :each | each value gtDisplayString ];
-		send: [ :each | each value ];
-		actionUpdateButton
+		priority: 10;
+		object: [ self participations ];
+		view: #gtWorkshopsFor:
 ]
 
 { #category : #initialization }

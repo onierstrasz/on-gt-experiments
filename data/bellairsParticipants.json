@@ -2,7 +2,7 @@
 	{
 		"institution" : "Professor",
 		"url" : "http://people.irisa.fr/Benoit.Combemale/",
-		"country" : "Universit&eacute; de Toulouse, France",
+		"country" : "Université de Toulouse, France",
 		"role" : "Organizer",
 		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018",
 		"name" : "Benoit Combemale"
@@ -13,7 +13,7 @@
 		"country" : "McGill University, Canada",
 		"role" : "Organizer",
 		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018",
-		"name" : "J&ouml;rg Kienzle"
+		"name" : "Jörg Kienzle"
 	},
 	{
 		"institution" : "Assistant Professor",
@@ -24,7 +24,7 @@
 		"name" : "Gunter Mussbacher"
 	},
 	{
-		"institution" : "INRIA/IRISA / Universit&eacute; de Rennes 1",
+		"institution" : "INRIA/IRISA / Université de Rennes 1",
 		"url" : "http://olivier.barais.fr/",
 		"country" : "France",
 		"role" : "Participant",
@@ -32,7 +32,7 @@
 		"name" : "Olivier Barais"
 	},
 	{
-		"institution" : "Universit&eacute; de Toulouse",
+		"institution" : "Université de Toulouse",
 		"url" : "http://jmb.c.la",
 		"country" : "France",
 		"role" : "Participant",
@@ -40,7 +40,7 @@
 		"name" : "Jean-Michel Bruel"
 	},
 	{
-		"institution" : "Universit&eacute; de Nice-Sophia Antipolis",
+		"institution" : "Université de Nice-Sophia Antipolis",
 		"url" : "http://www.i3s.unice.fr/~collet/",
 		"country" : "France",
 		"role" : "Participant",
@@ -48,7 +48,7 @@
 		"name" : "Philippe Collet"
 	},
 	{
-		"institution" : "Universidad Aut&oacute;noma de Madrid",
+		"institution" : "Universidad Autónoma de Madrid",
 		"url" : "http://arantxa.ii.uam.es/~eguerra/",
 		"country" : "Spain",
 		"role" : "Participant",
@@ -57,27 +57,29 @@
 	},
 	{
 		"institution" : "McGill University",
-		"name" : "Yanis Hattab",
-		"country" : "Canada"
+		"country" : "Canada",
+		"role" : "Participant",
+		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018",
+		"name" : "Yanis Hattab"
 	},
 	{
-		"institution" : "SINTEF / &Oslash;stfold University College",
+		"institution" : "SINTEF / Østfold University College",
 		"url" : "http://www.it.hiof.no/~oysteiha/",
 		"country" : "Norway",
 		"role" : "Participant",
 		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018",
-		"name" : "&Oslash;ystein Haugen"
+		"name" : "Øystein Haugen"
 	},
 	{
-		"institution" : "IRISA / Universit&eacute; de Rennes 1",
+		"institution" : "IRISA / Université de Rennes 1",
 		"url" : "http://www.irisa.fr/prive/jezequel/",
 		"country" : "France",
 		"role" : "Participant",
 		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018",
-		"name" : "Jean-Marc J&eacute;z&eacute;quel"
+		"name" : "Jean-Marc Jézéquel"
 	},
 	{
-		"institution" : "Universidad Aut&oacute;noma de Madrid",
+		"institution" : "Universidad Autónoma de Madrid",
 		"url" : "http://arantxa.ii.uam.es/~jlara/",
 		"country" : "Spain",
 		"role" : "Participant",
@@ -85,7 +87,7 @@
 		"name" : "Juan de Lara"
 	},
 	{
-		"institution" : "Technische Universit&auml;t Wien",
+		"institution" : "Technische Universität Wien",
 		"url" : "https://www.big.tuwien.ac.at/people/dleroy/",
 		"country" : "Austria",
 		"role" : "Participant",
@@ -93,12 +95,12 @@
 		"name" : "Dorian Leroy"
 	},
 	{
-		"institution" : "Universit&eacute; C&ocirc;te d'Azur",
+		"institution" : "Université Côte d'Azur",
 		"url" : "http://www.i3s.unice.fr/~mosser/",
 		"country" : "France",
 		"role" : "Participant",
 		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018",
-		"name" : "S&eacute;bastien Mosser"
+		"name" : "Sébastien Mosser"
 	},
 	{
 		"institution" : "McGill University",
@@ -106,7 +108,7 @@
 		"country" : "Canada",
 		"role" : "Participant",
 		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018",
-		"name" : "Matthias Sch&ouml;ttle"
+		"name" : "Matthias Schöttle"
 	},
 	{
 		"institution" : "University of Montreal",
@@ -135,15 +137,15 @@
 	{
 		"institution" : "Professor",
 		"url" : "http://www.irisa.fr/prive/jezequel/",
-		"country" : "IRISA / Universit&eacute; de Rennes 1, France",
+		"country" : "IRISA / Université de Rennes 1, France",
 		"role" : "Organizer",
 		"workshop" : "2019 Data and Models at Bellairs 2019",
-		"name" : "Jean-Marc J&eacute;z&eacute;quel"
+		"name" : "Jean-Marc Jézéquel"
 	},
 	{
 		"institution" : "Professor",
 		"url" : "http://people.irisa.fr/Benoit.Combemale/",
-		"country" : "Universit&eacute; de Toulouse, France",
+		"country" : "Université de Toulouse, France",
 		"role" : "Organizer",
 		"workshop" : "2019 Data and Models at Bellairs 2019",
 		"name" : "Benoit Combemale"
@@ -154,7 +156,7 @@
 		"country" : "McGill University, Canada",
 		"role" : "Organizer",
 		"workshop" : "2019 Data and Models at Bellairs 2019",
-		"name" : "J&ouml;rg Kienzle"
+		"name" : "Jörg Kienzle"
 	},
 	{
 		"institution" : "Assistant Professor",
@@ -166,8 +168,10 @@
 	},
 	{
 		"institution" : "McGill University",
-		"name" : "Hyacinth Ali",
-		"country" : "Canada"
+		"country" : "Canada",
+		"role" : "Participant",
+		"workshop" : "2019 Data and Models at Bellairs 2019",
+		"name" : "Hyacinth Ali"
 	},
 	{
 		"institution" : "University of Ottawa",
@@ -179,13 +183,17 @@
 	},
 	{
 		"institution" : "Queen's University",
-		"name" : "Mojtaba Bagherzadeh",
-		"country" : "Canada"
+		"country" : "Canada",
+		"role" : "Participant",
+		"workshop" : "2019 Data and Models at Bellairs 2019",
+		"name" : "Mojtaba Bagherzadeh"
 	},
 	{
-		"institution" : "Universit&eacute; de Montr&eacute;al",
-		"name" : "Edouard Batot",
-		"country" : "Canada"
+		"institution" : "Université de Montréal",
+		"country" : "Canada",
+		"role" : "Participant",
+		"workshop" : "2019 Data and Models at Bellairs 2019",
+		"name" : "Edouard Batot"
 	},
 	{
 		"institution" : "Aston University",
@@ -196,7 +204,7 @@
 		"name" : "Nelly Bencomo"
 	},
 	{
-		"institution" : "Universit&eacute; C&ocirc;te d'Azur",
+		"institution" : "Université Côte d'Azur",
 		"url" : "http://www.i3s.unice.fr/~benni/",
 		"country" : "France",
 		"role" : "Participant",
@@ -204,7 +212,7 @@
 		"name" : "Benjamin Benni"
 	},
 	{
-		"institution" : "Universit&eacute; de Toulouse",
+		"institution" : "Université de Toulouse",
 		"url" : "http://jmb.c.la",
 		"country" : "France",
 		"role" : "Participant",
@@ -220,7 +228,7 @@
 		"name" : "Betty H.C. Cheng"
 	},
 	{
-		"institution" : "Universit&eacute; de Nice-Sophia Antipolis",
+		"institution" : "Université de Nice-Sophia Antipolis",
 		"url" : "http://www.i3s.unice.fr/~collet/",
 		"country" : "France",
 		"role" : "Participant",
@@ -228,7 +236,7 @@
 		"name" : "Philippe Collet"
 	},
 	{
-		"institution" : "Universit&auml;t Paderborn",
+		"institution" : "Universität Paderborn",
 		"url" : "http://www.upb.de/cs/engels.html",
 		"country" : "Germany",
 		"role" : "Participant",
@@ -236,7 +244,7 @@
 		"name" : "Gregor Engels"
 	},
 	{
-		"institution" : "Karlsruher Institut f&uuml;r Technologie",
+		"institution" : "Karlsruher Institut für Technologie",
 		"url" : "https://sdq.ipd.kit.edu/people/robert-heinrich/",
 		"country" : "Germany",
 		"role" : "Participant",
@@ -244,7 +252,7 @@
 		"name" : "Robert Heinrich"
 	},
 	{
-		"institution" : "Karlsruher Institut f&uuml;r Technologie",
+		"institution" : "Karlsruher Institut für Technologie",
 		"url" : "https://are.ipd.kit.edu/people/anne-koziolek/",
 		"country" : "Germany",
 		"role" : "Participant",
@@ -252,15 +260,15 @@
 		"name" : "Anne Koziolek"
 	},
 	{
-		"institution" : "Universit&eacute; C&ocirc;te d'Azur",
+		"institution" : "Université Côte d'Azur",
 		"url" : "http://www.i3s.unice.fr/~mosser/",
 		"country" : "France",
 		"role" : "Participant",
 		"workshop" : "2019 Data and Models at Bellairs 2019",
-		"name" : "S&eacute;bastien Mosser"
+		"name" : "Sébastien Mosser"
 	},
 	{
-		"institution" : "Karlsruher Institut f&uuml;r Technologie",
+		"institution" : "Karlsruher Institut für Technologie",
 		"url" : "https://sdq.ipd.kit.edu/people/ralf-reussner/",
 		"country" : "Germany",
 		"role" : "Participant",
@@ -268,7 +276,7 @@
 		"name" : "Ralf Reussner"
 	},
 	{
-		"institution" : "Universit&eacute; de Montr&eacute;al",
+		"institution" : "Université de Montréal",
 		"url" : "http://www.iro.umontreal.ca/~sahraouh/",
 		"country" : "Canada",
 		"role" : "Participant",
@@ -277,24 +285,28 @@
 	},
 	{
 		"institution" : "McGill University",
-		"name" : "Rijul Saini",
-		"country" : "Canada"
+		"country" : "Canada",
+		"role" : "Participant",
+		"workshop" : "2019 Data and Models at Bellairs 2019",
+		"name" : "Rijul Saini"
 	},
 	{
-		"institution" : "IRISA / Universit&eacute; de Rennes 1",
-		"name" : "June Sallou",
-		"country" : "France"
+		"institution" : "IRISA / Université de Rennes 1",
+		"country" : "France",
+		"role" : "Participant",
+		"workshop" : "2019 Data and Models at Bellairs 2019",
+		"name" : "June Sallou"
 	},
 	{
-		"institution" : "Sorbonne Universit&eacute;",
+		"institution" : "Sorbonne Université",
 		"url" : "https://twitter.com/SergeStinckwich",
-		"country" : "France / Universit&eacute; de Yaound&eacute; I, Cameroun",
+		"country" : "France / Université de Yaoundé I, Cameroun",
 		"role" : "Participant",
 		"workshop" : "2019 Data and Models at Bellairs 2019",
 		"name" : "Serge Stinckwich"
 	},
 	{
-		"institution" : "Universit&eacute; de Montr&eacute;al",
+		"institution" : "Université de Montréal",
 		"url" : "http://www.iro.umontreal.ca/~syriani",
 		"country" : "Canada",
 		"role" : "Participant",
@@ -304,7 +316,7 @@
 	{
 		"institution" : "Professor",
 		"url" : "http://people.irisa.fr/Benoit.Combemale/",
-		"country" : "Universit&eacute; de Toulouse, France",
+		"country" : "Université de Toulouse, France",
 		"role" : "Organizer",
 		"workshop" : "2020 Data and Models at Bellairs 2020",
 		"name" : "Benoit Combemale"
@@ -315,7 +327,7 @@
 		"country" : "McGill University, Canada",
 		"role" : "Organizer",
 		"workshop" : "2020 Data and Models at Bellairs 2020",
-		"name" : "J&ouml;rg Kienzle"
+		"name" : "Jörg Kienzle"
 	},
 	{
 		"institution" : "Associate Professor",
@@ -326,17 +338,19 @@
 		"name" : "Gunter Mussbacher"
 	},
 	{
-		"institution" : "Universitat Polit&egrave;cnica de Val&egrave;ncia",
+		"institution" : "Universitat Politècnica de València",
 		"url" : "https://sabrahao.wixsite.com/dsic-upv",
 		"country" : "Spain",
 		"role" : "Participant",
 		"workshop" : "2020 Data and Models at Bellairs 2020",
-		"name" : "Silvia Abrah&atilde;o"
+		"name" : "Silvia Abrahão"
 	},
 	{
 		"institution" : "McGill University",
-		"name" : "Hyacinth Ali",
-		"country" : "Canada"
+		"country" : "Canada",
+		"role" : "Participant",
+		"workshop" : "2020 Data and Models at Bellairs 2020",
+		"name" : "Hyacinth Ali"
 	},
 	{
 		"institution" : "Aston University",
@@ -360,10 +374,10 @@
 		"country" : "Spain / CEA List, France",
 		"role" : "Participant",
 		"workshop" : "2020 Data and Models at Bellairs 2020",
-		"name" : "Loli Burgue&ntilde;o"
+		"name" : "Loli Burgueño"
 	},
 	{
-		"institution" : "Universit&auml;t Paderborn",
+		"institution" : "Universität Paderborn",
 		"url" : "http://www.upb.de/cs/engels.html",
 		"country" : "Germany",
 		"role" : "Participant",
@@ -372,35 +386,37 @@
 	},
 	{
 		"institution" : "INRIA",
-		"name" : "Pierre Jeanjean",
-		"country" : "France"
+		"country" : "France",
+		"role" : "Participant",
+		"workshop" : "2020 Data and Models at Bellairs 2020",
+		"name" : "Pierre Jeanjean"
 	},
 	{
-		"institution" : "IRISA / Universit&eacute; de Rennes 1",
+		"institution" : "IRISA / Université de Rennes 1",
 		"url" : "http://www.irisa.fr/prive/jezequel/",
 		"country" : "France",
 		"role" : "Participant",
 		"workshop" : "2020 Data and Models at Bellairs 2020",
-		"name" : "Jean-Marc J&eacute;z&eacute;quel"
+		"name" : "Jean-Marc Jézéquel"
 	},
 	{
-		"institution" : "Karlsruher Institut f&uuml;r Technologie",
+		"institution" : "Karlsruher Institut für Technologie",
 		"url" : "https://sdq.ipd.kit.edu/people/thomas-kuehn/",
 		"country" : "Germany",
 		"role" : "Participant",
 		"workshop" : "2020 Data and Models at Bellairs 2020",
-		"name" : "Thomas K&uuml;hn"
+		"name" : "Thomas Kühn"
 	},
 	{
-		"institution" : "Universit&eacute; du Qu&eacute;bec &agrave; Montr&eacute;al",
+		"institution" : "Université du Québec à Montréal",
 		"url" : "https://mosser.github.io/",
 		"country" : "Canada",
 		"role" : "Participant",
 		"workshop" : "2020 Data and Models at Bellairs 2020",
-		"name" : "S&eacute;bastien Mosser"
+		"name" : "Sébastien Mosser"
 	},
 	{
-		"institution" : "Universit&eacute; de Montr&eacute;al",
+		"institution" : "Université de Montréal",
 		"url" : "http://www.iro.umontreal.ca/~sahraouh/",
 		"country" : "Canada",
 		"role" : "Participant",
@@ -408,7 +424,7 @@
 		"name" : "Houari Sahraoui"
 	},
 	{
-		"institution" : "Universit&eacute; de Montr&eacute;al",
+		"institution" : "Université de Montréal",
 		"url" : "http://www.iro.umontreal.ca/~syriani",
 		"country" : "Canada",
 		"role" : "Participant",
@@ -421,10 +437,10 @@
 		"country" : "Canada",
 		"role" : "Participant",
 		"workshop" : "2020 Data and Models at Bellairs 2020",
-		"name" : "D&aacute;niel Varr&oacute;"
+		"name" : "Dániel Varró"
 	},
 	{
-		"institution" : "Universit&eacute; de Montr&eacute;al",
+		"institution" : "Université de Montréal",
 		"url" : "https://mweyssow.github.io/",
 		"country" : "Canada",
 		"role" : "Participant",
@@ -434,7 +450,7 @@
 	{
 		"institution" : "Professor",
 		"url" : "http://people.irisa.fr/Benoit.Combemale/",
-		"country" : "IRISA / Universit&eacute; de Rennes 1, France",
+		"country" : "IRISA / Université de Rennes 1, France",
 		"role" : "Organizer",
 		"workshop" : "2022 Polyglot Development at Bellairs 2022",
 		"name" : "Benoit Combemale"
@@ -445,7 +461,7 @@
 		"country" : "McGill University, Canada",
 		"role" : "Organizer",
 		"workshop" : "2022 Polyglot Development at Bellairs 2022",
-		"name" : "J&ouml;rg Kienzle"
+		"name" : "Jörg Kienzle"
 	},
 	{
 		"institution" : "Associate Professor",
@@ -464,9 +480,9 @@
 		"name" : "Omar Alam"
 	},
 	{
-		"institution" : "&Eacute;cole de technologie sup&eacute;rieure",
+		"institution" : "École de technologie supérieure",
 		"url" : "https://www.etsmtl.ca/en/research/professors/fbordeleau/",
-		"country" : "Universit&eacute; du Qu&eacute;bec, Canada",
+		"country" : "Université du Québec, Canada",
 		"role" : "Participant",
 		"workshop" : "2022 Polyglot Development at Bellairs 2022",
 		"name" : "Francis Bordeleau"
@@ -477,10 +493,10 @@
 		"country" : "Spain / CEA List, France",
 		"role" : "Participant",
 		"workshop" : "2022 Polyglot Development at Bellairs 2022",
-		"name" : "Loli Burgue&ntilde;o"
+		"name" : "Loli Burgueño"
 	},
 	{
-		"institution" : "Universit&auml;t Paderborn",
+		"institution" : "Universität Paderborn",
 		"url" : "http://www.upb.de/cs/engels.html",
 		"country" : "Germany",
 		"role" : "Participant",
@@ -488,7 +504,7 @@
 		"name" : "Gregor Engels"
 	},
 	{
-		"institution" : "Universit&eacute; de Montr&eacute;al",
+		"institution" : "Université de Montréal",
 		"url" : "https://jgalasso.github.io/",
 		"country" : "Canada",
 		"role" : "Participant",
@@ -496,12 +512,12 @@
 		"name" : "Jessie Galasso-Carbonnel"
 	},
 	{
-		"institution" : "IRISA / Universit&eacute; de Rennes 1",
+		"institution" : "IRISA / Université de Rennes 1",
 		"url" : "http://www.irisa.fr/prive/jezequel/",
 		"country" : "France",
 		"role" : "Participant",
 		"workshop" : "2022 Polyglot Development at Bellairs 2022",
-		"name" : "Jean-Marc J&eacute;z&eacute;quel"
+		"name" : "Jean-Marc Jézéquel"
 	},
 	{
 		"institution" : "McGill University",
@@ -517,10 +533,10 @@
 		"country" : "Canada",
 		"role" : "Participant",
 		"workshop" : "2022 Polyglot Development at Bellairs 2022",
-		"name" : "S&eacute;bastien Mosser"
+		"name" : "Sébastien Mosser"
 	},
 	{
-		"institution" : "Universit&eacute; de Montr&eacute;al",
+		"institution" : "Université de Montréal",
 		"url" : "http://www.iro.umontreal.ca/~sahraouh/",
 		"country" : "Canada",
 		"role" : "Participant",
@@ -536,7 +552,7 @@
 		"name" : "Maximilian Schiedermeier"
 	},
 	{
-		"institution" : "Universit&eacute; de Montr&eacute;al",
+		"institution" : "Université de Montréal",
 		"url" : "http://www.iro.umontreal.ca/~syriani",
 		"country" : "Canada",
 		"role" : "Participant",
@@ -546,7 +562,7 @@
 	{
 		"institution" : "Professor",
 		"url" : "http://people.irisa.fr/Benoit.Combemale/",
-		"country" : "IRISA / Universit&eacute; de Rennes 1, France",
+		"country" : "IRISA / Université de Rennes 1, France",
 		"role" : "Organizer",
 		"workshop" : "2023 Polyglot Development at Bellairs 2023",
 		"name" : "Benoit Combemale"
@@ -557,7 +573,7 @@
 		"country" : "McGill University, Canada",
 		"role" : "Organizer",
 		"workshop" : "2023 Polyglot Development at Bellairs 2023",
-		"name" : "J&ouml;rg Kienzle"
+		"name" : "Jörg Kienzle"
 	},
 	{
 		"institution" : "Associate Professor",
@@ -568,12 +584,12 @@
 		"name" : "Gunter Mussbacher"
 	},
 	{
-		"institution" : "Universidad de M&aacute;laga",
+		"institution" : "Universidad de Málaga",
 		"url" : "https://som-research.uoc.edu/lburgueno/",
 		"country" : "Spain",
 		"role" : "Participant",
 		"workshop" : "2023 Polyglot Development at Bellairs 2023",
-		"name" : "Lola Burgue&ntilde;o"
+		"name" : "Lola Burgueño"
 	},
 	{
 		"institution" : "University of York",
@@ -584,15 +600,15 @@
 		"name" : "Antonio Garcia-Dominguez"
 	},
 	{
-		"institution" : "IRISA / Universit&eacute; de Rennes 1",
+		"institution" : "IRISA / Université de Rennes 1",
 		"url" : "http://www.irisa.fr/prive/jezequel/",
 		"country" : "France",
 		"role" : "Participant",
 		"workshop" : "2023 Polyglot Development at Bellairs 2023",
-		"name" : "Jean-Marc J&eacute;z&eacute;quel"
+		"name" : "Jean-Marc Jézéquel"
 	},
 	{
-		"institution" : "Universit&eacute; de Rennes 1",
+		"institution" : "Université de Rennes 1",
 		"url" : "https://www.gwendal-jouneaux.fr/",
 		"country" : "France",
 		"role" : "Participant",
@@ -600,7 +616,7 @@
 		"name" : "Gwendal Jouneaux"
 	},
 	{
-		"institution" : "IRISA / Universit&eacute; de Rennes 1",
+		"institution" : "IRISA / Université de Rennes 1",
 		"url" : "https://people.irisa.fr/Djamel-Eddine.Khelladi/",
 		"country" : "France",
 		"role" : "Participant",
@@ -613,18 +629,18 @@
 		"country" : "Canada",
 		"role" : "Participant",
 		"workshop" : "2023 Polyglot Development at Bellairs 2023",
-		"name" : "S&eacute;bastien Mosser"
+		"name" : "Sébastien Mosser"
 	},
 	{
-		"institution" : "&Eacute;cole de technologie sup&eacute;rieure",
+		"institution" : "École de technologie supérieure",
 		"url" : "https://www.linkedin.com/in/corinne-pulgar-12a58190/",
-		"country" : "Universit&eacute; du Qu&eacute;bec, Canada",
+		"country" : "Université du Québec, Canada",
 		"role" : "Participant",
 		"workshop" : "2023 Polyglot Development at Bellairs 2023",
 		"name" : "Corinne Pulgar"
 	},
 	{
-		"institution" : "Universit&eacute; de Montr&eacute;al",
+		"institution" : "Université de Montréal",
 		"url" : "http://www.iro.umontreal.ca/~sahraouh/",
 		"country" : "Canada",
 		"role" : "Participant",
@@ -650,7 +666,7 @@
 	{
 		"institution" : "Professor",
 		"url" : "http://people.irisa.fr/Benoit.Combemale/",
-		"country" : "IRISA / Universit&eacute; de Rennes 1, France",
+		"country" : "IRISA / Université de Rennes 1, France",
 		"role" : "Organizer",
 		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024",
 		"name" : "Benoit Combemale"
@@ -661,7 +677,7 @@
 		"country" : "McGill University, Canada",
 		"role" : "Organizer",
 		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024",
-		"name" : "J&ouml;rg Kienzle"
+		"name" : "Jörg Kienzle"
 	},
 	{
 		"institution" : "Associate Professor",
@@ -672,7 +688,7 @@
 		"name" : "Gunter Mussbacher"
 	},
 	{
-		"institution" : "Universit&eacute; de Montr&eacute;al",
+		"institution" : "Université de Montréal",
 		"url" : "https://pascalarchambault.ca",
 		"country" : "Canada",
 		"role" : "Organizer",
@@ -688,12 +704,12 @@
 		"name" : "Jean-Michel Bruel"
 	},
 	{
-		"institution" : "Universidad de M&aacute;laga",
+		"institution" : "Universidad de Málaga",
 		"url" : "https://lolaburgueno.github.io/",
 		"country" : "Spain",
 		"role" : "Organizer",
 		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024",
-		"name" : "Lola Burgue&ntilde;o"
+		"name" : "Lola Burgueño"
 	},
 	{
 		"institution" : "Michigan State University",
@@ -728,7 +744,7 @@
 		"name" : "Damien Foures"
 	},
 	{
-		"institution" : "Johannes Kepler Universit&auml;t Linz",
+		"institution" : "Johannes Kepler Universität Linz",
 		"url" : "https://klikovits.net",
 		"country" : "Austria",
 		"role" : "Organizer",
@@ -757,10 +773,10 @@
 		"country" : "Canada",
 		"role" : "Organizer",
 		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024",
-		"name" : "S&eacute;bastien Mosser"
+		"name" : "Sébastien Mosser"
 	},
 	{
-		"institution" : "Universit&eacute; de Montr&eacute;al",
+		"institution" : "Université de Montréal",
 		"url" : "http://www.iro.umontreal.ca/~sahraouh/",
 		"country" : "Canada",
 		"role" : "Organizer",
@@ -776,7 +792,7 @@
 		"name" : "Eugene Syriani"
 	},
 	{
-		"institution" : "Universit&auml;t Stuttgart",
+		"institution" : "Universität Stuttgart",
 		"url" : "https://awortmann.github.io/",
 		"country" : "Germany",
 		"role" : "Organizer",
@@ -786,7 +802,7 @@
 	{
 		"institution" : "Professor",
 		"url" : "http://people.irisa.fr/Benoit.Combemale/",
-		"country" : "IRISA / Universit&eacute; de Rennes 1, France",
+		"country" : "IRISA / Université de Rennes 1, France",
 		"role" : "Organizer",
 		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025",
 		"name" : "Benoit Combemale"
@@ -805,7 +821,7 @@
 		"country" : "McGill University, Canada",
 		"role" : "Organizer",
 		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025",
-		"name" : "J&ouml;rg Kienzle"
+		"name" : "Jörg Kienzle"
 	},
 	{
 		"institution" : "Associate Professor",
@@ -816,7 +832,7 @@
 		"name" : "Gunter Mussbacher"
 	},
 	{
-		"institution" : "Universit&eacute; de Montr&eacute;al",
+		"institution" : "Université de Montréal",
 		"url" : "https://pascalarchambault.ca",
 		"country" : "Canada",
 		"role" : "Organizer",
@@ -832,7 +848,7 @@
 		"name" : "Nelly Bencomo"
 	},
 	{
-		"institution" : "Technische Universit&auml;t Wien",
+		"institution" : "Technische Universität Wien",
 		"url" : "https://model-engineering.info/",
 		"country" : "Austria",
 		"role" : "Organizer",
@@ -840,7 +856,7 @@
 		"name" : "Dominik Bork"
 	},
 	{
-		"institution" : "INRIA / Universit&eacute; C&ocirc;te d'Azur",
+		"institution" : "INRIA / Université Côte d'Azur",
 		"url" : "https://webusers.i3s.unice.fr/~deantoni/",
 		"country" : "France ",
 		"role" : "Organizer",
@@ -848,7 +864,7 @@
 		"name" : "Julien Deantoni"
 	},
 	{
-		"institution" : "Universit&eacute; de Montr&eacute;al",
+		"institution" : "Université de Montréal",
 		"url" : "https://kevindelcourt.github.io/",
 		"country" : "Canada",
 		"role" : "Organizer",
@@ -896,7 +912,7 @@
 		"name" : "Quentin Perez"
 	},
 	{
-		"institution" : "Universit&eacute; de Montr&eacute;al",
+		"institution" : "Université de Montréal",
 		"url" : "http://www.iro.umontreal.ca/~sahraouh/",
 		"country" : "Canada",
 		"role" : "Organizer",
@@ -922,7 +938,7 @@
 	{
 		"institution" : "Professor",
 		"url" : "http://people.irisa.fr/Benoit.Combemale/",
-		"country" : "IRISA / Universit&eacute; de Rennes 1, France",
+		"country" : "IRISA / Université de Rennes 1, France",
 		"role" : "Organizer",
 		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026",
 		"name" : "Benoit Combemale"
@@ -944,7 +960,7 @@
 		"name" : "Gunter Mussbacher"
 	},
 	{
-		"institution" : "Universit&eacute; de Montr&eacute;al",
+		"institution" : "Université de Montréal",
 		"url" : "https://pascalarchambault.ca",
 		"country" : "Canada",
 		"role" : "Organizer",
@@ -960,7 +976,7 @@
 		"name" : "Nelly Bencomo"
 	},
 	{
-		"institution" : "Technische Universit&auml;t Wien",
+		"institution" : "Technische Universität Wien",
 		"url" : "https://model-engineering.info/",
 		"country" : "Austria",
 		"role" : "Organizer",
@@ -968,7 +984,7 @@
 		"name" : "Dominik Bork"
 	},
 	{
-		"institution" : "INRIA / Universit&eacute; C&ocirc;te d'Azur",
+		"institution" : "INRIA / Université Côte d'Azur",
 		"url" : "https://webusers.i3s.unice.fr/~deantoni/",
 		"country" : "France ",
 		"role" : "Organizer",
@@ -976,7 +992,7 @@
 		"name" : "Julien Deantoni"
 	},
 	{
-		"institution" : "Universit&eacute; de Montr&eacute;al",
+		"institution" : "Université de Montréal",
 		"url" : "https://kevindelcourt.github.io/",
 		"country" : "Canada",
 		"role" : "Organizer",
@@ -997,7 +1013,7 @@
 		"country" : "McGill University, Canada",
 		"role" : "Organizer",
 		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026",
-		"name" : "J&ouml;rg Kienzle"
+		"name" : "Jörg Kienzle"
 	},
 	{
 		"institution" : "Tata Consultancy Services",
@@ -1032,7 +1048,7 @@
 		"name" : "Quentin Perez"
 	},
 	{
-		"institution" : "Universit&eacute; de Montr&eacute;al",
+		"institution" : "Université de Montréal",
 		"url" : "http://www.iro.umontreal.ca/~sahraouh/",
 		"country" : "Canada",
 		"role" : "Organizer",

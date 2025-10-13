@@ -95,6 +95,9 @@ BellairsExamples >> linesWithAccents [
 
 { #category : #examples }
 BellairsExamples >> linesWithAccentsTranslated [
+	"NB: we translate all accents except the `&copy;` symbols, which serve
+	as a marker for the workshop titles in the parser."
+
 	<gtExample>
 	| allLines translatedLines map accentLines |
 	allLines := self allLines.
@@ -102,23 +105,19 @@ BellairsExamples >> linesWithAccentsTranslated [
 	accentLines := allLines select: [ :l | l matchesRegex: '.*\&[^&]+;.*' ].
 	self assert: accentLines size > 50.
 
-	map := BellairsHtmlAccents new htmlAccents.
-	translatedLines := allLines
-			collect: [ :line | 
-				| updatedLine |
-				updatedLine := line.
-				map keys
-					do: [ :accent | updatedLine := updatedLine copyReplaceAll: accent with: (map at: accent) ].
-				updatedLine ].
+	map := BellairsHtmlAccents new.
+	translatedLines := allLines collect: [ :line | map translateLine: line ].
 
 	accentLines := translatedLines select: [ :l | l matchesRegex: '.*\&[^&]+;.*' ].
-	self assert: accentLines isEmpty.
+	self
+		assert: (accentLines select: [ :l | l matchesRegex: '.*\&copy;.*' ]) size
+		equals: 8.
 
 	^ translatedLines
 ]
 
 { #category : #examples }
-BellairsExamples >> participants [
+BellairsExamples >> participantWebFiles [
 	"Only download the source data if we need to update the test file."
 
 	<gtExample>
@@ -150,7 +149,7 @@ BellairsExamples >> writeParticipantsToTestFile [
 	testFile ensureDelete.
 	testFile
 		writeStreamDo: [ :aStream | 
-			self participants do: [ :each | aStream nextPutAll: each ].
+			self participantWebFiles do: [ :each | aStream nextPutAll: each ].
 			aStream close ].
 	^ testFile
 ]

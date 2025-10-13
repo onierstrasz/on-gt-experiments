@@ -31,16 +31,11 @@ BellairsInstitution >> entries [
 { #category : #views }
 BellairsInstitution >> gtPersonsFor: aView [
 	<gtView>
-	^ aView columnedList
+	^ aView forward
 		title: 'Persons';
-		priority: 30;
-		items: [ self persons sortedAs: #name ];
-		column: 'Index'
-			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
-			width: 45;
-		column: 'Value' text: [ :each | each value gtDisplayString ];
-		send: [ :each | each value ];
-		actionUpdateButton
+		priority: 20;
+		object: [ self participations ];
+		view: #gtPersonsFor:
 ]
 
 { #category : #views }
