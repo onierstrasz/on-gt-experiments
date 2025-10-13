@@ -68,7 +68,8 @@ BellairsParticipationGroup >> gtParticipationsFor: aView [
 
 { #category : #accessing }
 BellairsParticipationGroup >> institutions [
-	^ self collect: [ :p | self registry institutionNamed: p institution ]
+	^ (self collect: [ :p | self registry institutionNamed: p institution ])
+		copyWithoutDuplicates
 ]
 
 { #category : #accessing }
@@ -93,5 +94,6 @@ BellairsParticipationGroup >> persons [
 
 { #category : #accessing }
 BellairsParticipationGroup >> workshops [
-	^ self collect: [ :p | self registry workshopNamed: p workshop ]
+	^ (self collect: [ :p | self registry workshopNamed: p workshop ])
+		copyWithoutDuplicates
 ]

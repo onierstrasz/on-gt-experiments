@@ -3,7 +3,7 @@ Trait {
 	#category : #'ONGtExperiments-Bellairs'
 }
 
-{ #category : #requirement }
+{ #category : #accessing }
 TParticipationGroupViews >> countries [
 	^ (self participations collect: #country) copyWithoutDuplicates sorted
 ]
@@ -22,6 +22,16 @@ TParticipationGroupViews >> gtCountriesFor: aView [
 ]
 
 { #category : #views }
+TParticipationGroupViews >> gtGraphFor: aView [
+	<gtView>
+	^ aView mondrian
+		title: 'Graph';
+		priority: 60;
+		painting: [ :aMondrian | self workshopPersonsGraph: aMondrian ];
+		actionUpdateButton
+]
+
+{ #category : #views }
 TParticipationGroupViews >> gtInstitutionsFor: aView [
 	<gtView>
 	^ aView columnedList
@@ -31,7 +41,15 @@ TParticipationGroupViews >> gtInstitutionsFor: aView [
 		column: 'Index'
 			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
 			width: 45;
-		column: 'Value' text: [ :each | each value gtDisplayString ];
+		column: 'Institution'
+			text: [ :each | each value gtDisplayString ]
+			width: 300;
+		column: 'Country'
+			text: [ :each | each country ]
+			width: 200;
+		column: '# Persons'
+			text: [ :each | each persons size ]
+			width: 100;
 		send: [ :each | each value ];
 		actionUpdateButton
 ]
@@ -52,11 +70,19 @@ TParticipationGroupViews >> gtPersonsFor: aView [
 	^ aView columnedList
 		title: 'Persons';
 		priority: 20;
-		items: [ self persons sortedAs: #displayName ];
+		items: [ self personsSorted ];
 		column: 'Index'
 			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
 			width: 45;
-		column: 'Value' text: [ :each | each value gtDisplayString ];
+		column: 'Person'
+			text: [ :each | each value gtDisplayString ]
+			width: 250;
+		column: '# Workshops'
+			text: [ :each | each workshops  size ]
+			width: 100;
+		column: 'Institution'
+			text: [ :each | each institution ]
+			width: 200;
 		send: [ :each | each value ];
 		actionUpdateButton
 ]
@@ -67,11 +93,22 @@ TParticipationGroupViews >> gtWorkshopsFor: aView [
 	^ aView columnedList
 		title: 'Workshops';
 		priority: 10;
-		items: [  self workshops sortedAs: #displayName ];
+		items: [ self workshops sortedAs: #displayName ];
 		column: 'Index'
 			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
 			width: 45;
-		column: 'Value' text: [ :each | each value gtDisplayString ];
+		column: 'Workshop'
+			text: [ :each | each value gtDisplayString ]
+			width: 400;
+		column: '# Participants'
+			text: [ :each | each persons size ]
+			width: 100;
+		column: '# Countries'
+			text: [ :each | each countries size ]
+			width: 100;
+		column: '# Institutions'
+			text: [ :each | each institutions size ]
+			width: 100;
 		send: [ :each | each value ];
 		actionUpdateButton
 ]
@@ -89,6 +126,31 @@ TParticipationGroupViews >> participations [
 { #category : #requirement }
 TParticipationGroupViews >> persons [
 	^ self explicitRequirement
+]
+
+{ #category : #accessing }
+TParticipationGroupViews >> personsSorted [
+	^ self persons sort: [ :a :b | a surname < b surname ]
+]
+
+{ #category : #mondrian }
+TParticipationGroupViews >> workshopPersonsGraph: aMondrian [
+	| nodes |
+	nodes := self workshops , self persons.
+	aMondrian nodes
+		shape: [ :node | node mondrianNodeElement ];
+		with: nodes.
+	aMondrian edges connectToAll: #mondrianChildren.
+	aMondrian layout
+		custom: (GtGraphForceBasedLayout new
+				charge: -1000;
+				length: 50).
+	^ aMondrian
+]
+
+{ #category : #mondrian }
+TParticipationGroupViews >> workshopPersonsMondrianGraph [
+	^ self workshopPersonsGraph:GtMondrian new
 ]
 
 { #category : #requirement }

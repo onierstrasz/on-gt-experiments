@@ -5,12 +5,19 @@ I am a Bellairs workshop held in a given year.
 Class {
 	#name : #BellairsWorkshop,
 	#superclass : #AbstractBellairsEntity,
+	#traits : 'TParticipationGroupViews',
+	#classTraits : 'TParticipationGroupViews classTrait',
 	#instVars : [
 		'workshop',
 		'persons'
 	],
 	#category : #'ONGtExperiments-Bellairs'
 }
+
+{ #category : #accessing }
+BellairsWorkshop >> countries [
+	^ self participations countries
+]
 
 { #category : #printing }
 BellairsWorkshop >> displayName [
@@ -23,23 +30,34 @@ BellairsWorkshop >> entries [
 ]
 
 { #category : #views }
+BellairsWorkshop >> gtInstitutionsFor: aView [
+	<gtView>
+	^ aView forward
+		title: 'Institutions';
+		priority: 30;
+		object: [ self participations ];
+		view: #gtInstitutionsFor:
+]
+
+{ #category : #views }
 BellairsWorkshop >> gtPersonsFor: aView [
 	<gtView>
-	^ aView columnedList
+	^ aView forward
 		title: 'Persons';
 		priority: 20;
-		items: [ self persons ];
-		column: 'Index'
-			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
-			width: 45;
-		column: 'Value' text: [ :each | each value gtDisplayString ];
-		send: [ :each | each value ];
-		actionUpdateButton
+		object: [ self participations ];
+		view: #gtPersonsFor:
 ]
 
 { #category : #initialization }
 BellairsWorkshop >> initializeFrom: aDictionary [
 	workshop := aDictionary at: 'workshop'
+]
+
+{ #category : #accessing }
+BellairsWorkshop >> institutions [
+	^ self entries
+		collect: [ :d | self registry institutionNamed: (d at: 'institution') ]
 ]
 
 { #category : #mondrian }
@@ -71,10 +89,21 @@ BellairsWorkshop >> summary [
 			self}.
 		{'# persons'.
 			self persons size printString.
-			self persons}}
+			self persons}.
+		{'# institutions'.
+			self institutions size printString.
+			self institutions}.
+		{'# countries'.
+			self countries size printString.
+			self countries}}
 ]
 
 { #category : #accessing }
 BellairsWorkshop >> workshop [
 	^ workshop
+]
+
+{ #category : #accessing }
+BellairsWorkshop >> workshops [
+	^ {self}
 ]

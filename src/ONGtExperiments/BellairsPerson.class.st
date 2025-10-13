@@ -7,9 +7,7 @@ Class {
 	#name : #BellairsPerson,
 	#superclass : #AbstractBellairsEntity,
 	#instVars : [
-		'name',
-		'workshops',
-		'institutions'
+		'name'
 	],
 	#category : #'ONGtExperiments-Bellairs'
 }
@@ -60,10 +58,16 @@ BellairsPerson >> initializeFrom: aDictionary [
 ]
 
 { #category : #accessing }
+BellairsPerson >> institution [
+	^ self institutions size = 1
+		ifTrue: [ self institutions first displayString ]
+		ifFalse: [ self institutions first displayString , ' + '
+				, (self institutions size - 1) printString ]
+]
+
+{ #category : #accessing }
 BellairsPerson >> institutions [
-	^ institutions
-		ifNil: [ institutions := (self entries collect: [ :d | d at: 'institution' ]) copyWithoutDuplicates
-	collect: [ :name | self registry institutionNamed: name ] ]
+	^ self participations institutions
 ]
 
 { #category : #querying }
@@ -103,12 +107,25 @@ BellairsPerson >> name [
 { #category : #accessing }
 BellairsPerson >> summary [
 	^ {{'displayName'.
-			self displayName}}
+			self displayName.
+			self}.
+		{'# workshops'.
+			self workshops size.
+			self workshops}.
+		{'# institutions'.
+			self institutions size.
+			self institutions}.
+		{'institution'.
+			self institution.
+			self institutions first}}
+]
+
+{ #category : #accessing }
+BellairsPerson >> surname [
+	^ self name substrings last
 ]
 
 { #category : #accessing }
 BellairsPerson >> workshops [
-	^ workshops
-		ifNil: [ workshops := self entries
-					collect: [ :d | self registry workshopNamed: (d at: 'workshop') ] ]
+	^ self participations workshops
 ]

@@ -17,31 +17,6 @@ Class {
 	#category : #'ONGtExperiments-Bellairs'
 }
 
-{ #category : #views }
-BellairsWorkshopsRegistry >> gtGraphFor: aView [
-	<gtView>
-	^ aView mondrian
-		title: 'Graph';
-		priority: 60;
-		painting: [ :aMondrian | self workshopPersonsGraph: aMondrian ];
-		actionUpdateButton
-]
-
-{ #category : #views }
-BellairsWorkshopsRegistry >> gtWorkshopsFor: aView [
-	<gtView>
-	^ aView columnedList
-		title: 'Workshops';
-		priority: 10;
-		items: [  self workshops sortedAs: #displayName ];
-		column: 'Index'
-			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
-			width: 45;
-		column: 'Value' text: [ :each | each value gtDisplayString ];
-		send: [ :each | each value ];
-		actionUpdateButton
-]
-
 { #category : #initialization }
 BellairsWorkshopsRegistry >> initialize [
 	workshopDict := Dictionary new.
@@ -126,26 +101,6 @@ BellairsWorkshopsRegistry >> workshopDict [
 { #category : #querying }
 BellairsWorkshopsRegistry >> workshopNamed: aName [
 	^ self workshopDict detect: [ :workshop | workshop workshop = aName ]
-]
-
-{ #category : #mondrian }
-BellairsWorkshopsRegistry >> workshopPersonsGraph: aMondrian [
-	| nodes |
-	nodes := self workshops , self persons.
-	aMondrian nodes
-		shape: [ :node | node mondrianNodeElement ];
-		with: nodes.
-	aMondrian edges connectToAll: #mondrianChildren.
-	aMondrian layout
-		custom: (GtGraphForceBasedLayout new
-				charge: -1000;
-				length: 50).
-	^ aMondrian
-]
-
-{ #category : #mondrian }
-BellairsWorkshopsRegistry >> workshopPersonsMondrianGraph [
-	^ self workshopPersonsGraph:GtMondrian new
 ]
 
 { #category : #accessing }
