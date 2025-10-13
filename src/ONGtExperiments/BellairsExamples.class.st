@@ -40,7 +40,7 @@ BellairsExamples >> bellairsJson [
 	<gtExample>
 	| parser json |
 	parser := BellairsParser new.
-	json := self allLines
+	json := self linesWithAccentsTranslated
 			collect: [ :line | parser parse: line ]
 			thenSelect: #notNil.
 	self assert: json size equals: 135.
@@ -81,6 +81,40 @@ BellairsExamples >> jsonFromTestFile [
 BellairsExamples >> jsonTestFile [
 	<gtExample>
 	^ self dataFolder / 'bellairsParticipants.json'
+]
+
+{ #category : #examples }
+BellairsExamples >> linesWithAccents [
+	<gtExample>
+	| allLines accentLines |
+	allLines := self allLines.
+	accentLines := allLines select: [ :l | l matchesRegex: '.*\&[^&]+;.*' ].
+	self assert: accentLines size > 50.
+	^ accentLines
+]
+
+{ #category : #examples }
+BellairsExamples >> linesWithAccentsTranslated [
+	<gtExample>
+	| allLines translatedLines map accentLines |
+	allLines := self allLines.
+
+	accentLines := allLines select: [ :l | l matchesRegex: '.*\&[^&]+;.*' ].
+	self assert: accentLines size > 50.
+
+	map := BellairsHtmlAccents new htmlAccents.
+	translatedLines := allLines
+			collect: [ :line | 
+				| updatedLine |
+				updatedLine := line.
+				map keys
+					do: [ :accent | updatedLine := updatedLine copyReplaceAll: accent with: (map at: accent) ].
+				updatedLine ].
+
+	accentLines := translatedLines select: [ :l | l matchesRegex: '.*\&[^&]+;.*' ].
+	self assert: accentLines isEmpty.
+
+	^ translatedLines
 ]
 
 { #category : #examples }

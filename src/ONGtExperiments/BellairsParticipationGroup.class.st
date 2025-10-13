@@ -43,6 +43,16 @@ BellairsParticipationGroup >> entries [
 ]
 
 { #category : #views }
+BellairsParticipationGroup >> gtOrganizersFor: aView [
+	<gtView>
+	^ aView forward
+		title: 'Organizers';
+		priority: 25;
+		object: [ self organizers ];
+		view: #gtPersonsFor:
+]
+
+{ #category : #views }
 BellairsParticipationGroup >> gtParticipationsFor: aView [
 	<gtView>
 	^ aView columnedList
@@ -87,6 +97,12 @@ BellairsParticipationGroup >> items [
 				registry: self registry;
 				data: dict;
 				yourself ]
+]
+
+{ #category : #querying }
+BellairsParticipationGroup >> organizers [
+	^ self
+		participationGroupFrom: ((self select: [ :p | p role = 'Organizer' ]) collect: #data)
 ]
 
 { #category : #accessing }
