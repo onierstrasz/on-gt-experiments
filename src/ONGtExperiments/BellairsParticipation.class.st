@@ -12,6 +12,13 @@ Class {
 	#category : #'ONGtExperiments-Bellairs'
 }
 
+{ #category : #converting }
+BellairsParticipation >> asString [
+	"String for spotter searchers"
+
+	^ '; ' join: self data values
+]
+
 { #category : #accessing }
 BellairsParticipation >> country [
 	^ data at: 'country'

@@ -22,6 +22,11 @@ AbstractBellairsEntity class >> isAbstract [
 	^ self == AbstractBellairsEntity
 ]
 
+{ #category : #querying }
+AbstractBellairsEntity >> countries [
+	^ self participations countries
+]
+
 { #category : #printing }
 AbstractBellairsEntity >> displayName [
 	self subclassResponsibility
@@ -81,6 +86,11 @@ AbstractBellairsEntity >> initializeFrom: aDictionary [
 ]
 
 { #category : #accessing }
+AbstractBellairsEntity >> institutions [
+	^ self participations institutions
+]
+
+{ #category : #accessing }
 AbstractBellairsEntity >> json [
 	^ self registry json
 ]
@@ -122,6 +132,11 @@ AbstractBellairsEntity >> participations [
 	^ self participationGroupFrom: self entries
 ]
 
+{ #category : #accessing }
+AbstractBellairsEntity >> persons [
+	^ self participations persons
+]
+
 { #category : #printing }
 AbstractBellairsEntity >> printOn: aStream [
 	aStream nextPutAll: self displayName
@@ -140,5 +155,11 @@ AbstractBellairsEntity >> registry: anObject [
 { #category : #views }
 AbstractBellairsEntity >> summary [
 	^ {{'displayName'.
-			self displayName}}
+			self displayName.
+			self}}
+]
+
+{ #category : #querying }
+AbstractBellairsEntity >> workshops [
+	^ self participations workshops
 ]

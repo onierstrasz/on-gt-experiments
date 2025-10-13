@@ -65,11 +65,6 @@ BellairsPerson >> institution [
 				, (self institutions size - 1) printString ]
 ]
 
-{ #category : #accessing }
-BellairsPerson >> institutions [
-	^ self participations institutions
-]
-
 { #category : #querying }
 BellairsPerson >> isOrganizer [
 	^ (self entries collect: [ :d | d at: 'role' ]) includes: 'Organizer'
@@ -105,6 +100,18 @@ BellairsPerson >> name [
 ]
 
 { #category : #accessing }
+BellairsPerson >> roles [
+	^ self rolesIn: self participations
+]
+
+{ #category : #accessing }
+BellairsPerson >> rolesIn: aParticiationGroup [
+	^ ', '
+		join: ((aParticiationGroup participationsWithPersonNamed: self name) collect: #role)
+				copyWithoutDuplicates
+]
+
+{ #category : #accessing }
 BellairsPerson >> summary [
 	^ {{'displayName'.
 			self displayName.
@@ -123,9 +130,4 @@ BellairsPerson >> summary [
 { #category : #accessing }
 BellairsPerson >> surname [
 	^ self name substrings last
-]
-
-{ #category : #accessing }
-BellairsPerson >> workshops [
-	^ self participations workshops
 ]

@@ -3,21 +3,34 @@ Trait {
 	#category : #'ONGtExperiments-Bellairs'
 }
 
-{ #category : #accessing }
+{ #category : #requirement }
 TParticipationGroupViews >> countries [
-	^ (self participations collect: #country) copyWithoutDuplicates sorted
+	^ self explicitRequirement
 ]
 
 { #category : #views }
 TParticipationGroupViews >> gtCountriesFor: aView [
-	"To do: should a country be a domain entity?"
-
-	<gtView>
-	^ aView forward
+<gtView>
+	^ aView columnedList
 		title: 'Countries';
-		priority: 32;
-		object: [ self countries ];
-		view: #gtItemsFor:;
+		priority: 30;
+		items: [ self countries sortedAs: #displayName ];
+		column: 'Index'
+			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
+			width: 45;
+		column: 'Country'
+			text: [ :each | each value gtDisplayString ]
+			width: 300;
+		column: '# Workshops'
+			text: [ :each | each workshops size ]
+			width: 100;
+		column: '# Institutions'
+			text: [ :each | each institutions size ]
+			width: 100;
+		column: '# Persons'
+			text: [ :each | each persons size ]
+			width: 100;
+		send: [ :each | each value ];
 		actionUpdateButton
 ]
 
@@ -50,6 +63,9 @@ TParticipationGroupViews >> gtInstitutionsFor: aView [
 		column: '# Persons'
 			text: [ :each | each persons size ]
 			width: 100;
+		column: '# Workshops'
+			text: [ :each | each workshops size ]
+			width: 100;
 		send: [ :each | each value ];
 		actionUpdateButton
 ]
@@ -78,13 +94,36 @@ TParticipationGroupViews >> gtPersonsFor: aView [
 			text: [ :each | each value gtDisplayString ]
 			width: 250;
 		column: '# Workshops'
-			text: [ :each | each workshops  size ]
+			text: [ :each | each workshops size ]
 			width: 100;
+		column: 'Roles'
+			text: [ :each | each rolesIn: self participations ]
+			width: 180;
+		column: 'All roles'
+			text: [ :each | each roles ]
+			width: 180;
 		column: 'Institution'
 			text: [ :each | each institution ]
 			width: 200;
 		send: [ :each | each value ];
 		actionUpdateButton
+]
+
+{ #category : #searching }
+TParticipationGroupViews >> gtSpotterForParticipations: aSearch [
+	<gtSearch>
+	^ aSearch list
+		title: 'Fields';
+		priority: 10;
+		items: [ self participations items ];
+		itemsLimit: Float infinity;
+		itemName: #asString;
+		sendCategory: [ :aCategory :aStep :thisSearch | 
+			(self participations
+				participationGroupFrom: (aCategory items contents collect: #data))
+				searchString: aStep searchQuery;
+				yourself ];
+		filterBySubstring
 ]
 
 { #category : #views }

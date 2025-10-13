@@ -8,10 +8,17 @@ Class {
 	#traits : 'TGtGroup + TParticipationGroupViews',
 	#classTraits : 'TGtGroup classTrait + TParticipationGroupViews classTrait',
 	#instVars : [
-		'data'
+		'data',
+		'searchString'
 	],
 	#category : #'ONGtExperiments-Bellairs'
 }
+
+{ #category : #requirement }
+BellairsParticipationGroup >> countries [
+	^ (self collect: [ :p | self registry countryNamed: p country ])
+		copyWithoutDuplicates
+]
 
 { #category : #accessing }
 BellairsParticipationGroup >> data [
@@ -27,7 +34,7 @@ BellairsParticipationGroup >> data: aDictionary [
 BellairsParticipationGroup >> displayName [
 	"Display the query?"
 
-	^ 'a participation group'
+	^ self searchString ifNil: [ 'a participation group' ]
 ]
 
 { #category : #'as yet unclassified' }
@@ -74,11 +81,6 @@ BellairsParticipationGroup >> institutions [
 
 { #category : #accessing }
 BellairsParticipationGroup >> items [
-	^ self participations
-]
-
-{ #category : #accessing }
-BellairsParticipationGroup >> participations [
 	^ self entries
 		collect: [ :dict | 
 			BellairsParticipation new
@@ -88,8 +90,35 @@ BellairsParticipationGroup >> participations [
 ]
 
 { #category : #accessing }
+BellairsParticipationGroup >> participations [
+	^ self "entries
+		collect: [ :dict | 
+			BellairsParticipation new
+				registry: self registry;
+				data: dict;
+				yourself ]"
+]
+
+{ #category : #accessing }
+BellairsParticipationGroup >> participationsWithPersonNamed: aName [
+	^ (self participationGroupFrom: (data select: [ :d | (d at: 'name') = aName ]))
+		searchString: 'for person ', aName
+]
+
+{ #category : #accessing }
 BellairsParticipationGroup >> persons [
-	^ self collect: [ :p | self registry personNamed: p name ]
+	^ (self collect: [ :p | self registry personNamed: p name ])
+		copyWithoutDuplicates
+]
+
+{ #category : #accessing }
+BellairsParticipationGroup >> searchString [
+	^ searchString
+]
+
+{ #category : #accessing }
+BellairsParticipationGroup >> searchString: anObject [
+	searchString := anObject
 ]
 
 { #category : #accessing }

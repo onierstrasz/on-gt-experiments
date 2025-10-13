@@ -8,15 +8,14 @@ Class {
 	#superclass : #AbstractBellairsEntity,
 	#instVars : [
 		'institution',
-		'country',
-		'persons'
+		'countryName'
 	],
 	#category : #'ONGtExperiments-Bellairs'
 }
 
 { #category : #accessing }
 BellairsInstitution >> country [
-	^ country
+	^ self registry countryNamed: countryName
 ]
 
 { #category : #printing }
@@ -44,22 +43,25 @@ BellairsInstitution >> gtPersonsFor: aView [
 		actionUpdateButton
 ]
 
+{ #category : #views }
+BellairsInstitution >> gtWorkshopsFor: aView [
+	<gtView>
+	^ aView forward
+		title: 'Workshops';
+		priority: 10;
+		object: [ self participations ];
+		view: #gtWorkshopsFor:
+]
+
 { #category : #initialization }
 BellairsInstitution >> initializeFrom: aDictionary [
 	institution := aDictionary at: 'institution'.
-	country := aDictionary at: 'country'
+	countryName := aDictionary at: 'country'.
 ]
 
 { #category : #accessing }
 BellairsInstitution >> institution [
 	^ institution
-]
-
-{ #category : #querying }
-BellairsInstitution >> persons [
-	^ persons
-		ifNil: [ persons := (self entries collect: [ :d | d at: 'name' ]) copyWithoutDuplicates
-					collect: [ :name | self registry personNamed: name ] ]
 ]
 
 { #category : #views }

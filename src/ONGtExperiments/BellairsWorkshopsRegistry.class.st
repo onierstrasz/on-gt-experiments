@@ -12,16 +12,34 @@ Class {
 		'json',
 		'personDict',
 		'workshopDict',
-		'instDict'
+		'instDict',
+		'countryDict'
 	],
 	#category : #'ONGtExperiments-Bellairs'
 }
+
+{ #category : #requirement }
+BellairsWorkshopsRegistry >> countries [
+	"^ (self participations collect: #country) copyWithoutDuplicates sorted"
+	^ self countryDict values
+]
+
+{ #category : #accessing }
+BellairsWorkshopsRegistry >> countryDict [
+	^ countryDict
+]
+
+{ #category : #querying }
+BellairsWorkshopsRegistry >> countryNamed: aName [
+	^ self countryDict detect: [ :c | c country = aName ]
+]
 
 { #category : #initialization }
 BellairsWorkshopsRegistry >> initialize [
 	workshopDict := Dictionary new.
 	personDict := Dictionary new.
-	instDict := Dictionary new
+	instDict := Dictionary new.
+	countryDict := Dictionary new
 ]
 
 { #category : #initialization }
@@ -45,6 +63,12 @@ BellairsWorkshopsRegistry >> initializeFromJson: aJson [
 			instDict
 				at: (dict at: 'institution')
 				ifAbsentPut: [ BellairsInstitution new
+						registry: self;
+						initializeFrom: dict;
+						yourself ].
+			countryDict
+				at: (dict at: 'country')
+				ifAbsentPut: [ BellairsCountry new
 						registry: self;
 						initializeFrom: dict;
 						yourself ] ]
@@ -75,6 +99,7 @@ BellairsWorkshopsRegistry >> participations [
 	^ BellairsParticipationGroup new
 		registry: self;
 		data: self json;
+		searchString: '(all entries)'
 		yourself
 ]
 

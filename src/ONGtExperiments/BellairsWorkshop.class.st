@@ -8,15 +8,14 @@ Class {
 	#traits : 'TParticipationGroupViews',
 	#classTraits : 'TParticipationGroupViews classTrait',
 	#instVars : [
-		'workshop',
-		'persons'
+		'workshop'
 	],
 	#category : #'ONGtExperiments-Bellairs'
 }
 
-{ #category : #accessing }
+{ #category : #querying }
 BellairsWorkshop >> countries [
-	^ self participations countries
+	^ super countries
 ]
 
 { #category : #printing }
@@ -56,8 +55,7 @@ BellairsWorkshop >> initializeFrom: aDictionary [
 
 { #category : #accessing }
 BellairsWorkshop >> institutions [
-	^ self entries
-		collect: [ :d | self registry institutionNamed: (d at: 'institution') ]
+	^ super institutions
 ]
 
 { #category : #mondrian }
@@ -70,11 +68,14 @@ BellairsWorkshop >> mondrianNodeColor [
 	^ Color paleRed
 ]
 
-{ #category : #accessing }
+{ #category : #requirement }
+BellairsWorkshop >> participations [
+	^ super participations
+]
+
+{ #category : #querying }
 BellairsWorkshop >> persons [
-	^ persons
-		ifNil: [ persons := self entries
-					collect: [ :d | self registry personNamed: (d at: 'name') ] ]
+	^ super persons
 ]
 
 { #category : #printing }
