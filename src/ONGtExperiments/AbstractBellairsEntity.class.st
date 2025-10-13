@@ -1,10 +1,11 @@
 "
 I am an abstract parent of various  Bellairs domain entities.
 I know  my `registry` and its `json`.
+I also store my state in a `data` slot, which could be a dictionary or an array of dictionaries.
 
-My subclasses should implement `initializeFrom:` and `entries`.
+My subclasses should implement `entries` and `initializeFrom:`.
 
-Subclasses may also override their `name`, `printOn:`, `summary` view entries, and `mondrian*` configuration methods.
+Subclasses may also override their `displayName`, `printOn:`, `summary` view entries, and `mondrian*` configuration methods.
 
 "
 Class {
@@ -21,19 +22,38 @@ AbstractBellairsEntity class >> isAbstract [
 	^ self == AbstractBellairsEntity
 ]
 
-{ #category : #mondrian }
+{ #category : #printing }
+AbstractBellairsEntity >> displayName [
+	self subclassResponsibility
+]
+
+{ #category : #accessing }
 AbstractBellairsEntity >> entries [
+	"Return an array of raw dictionaries"
+
 	self subclassResponsibility
 ]
 
 { #category : #views }
 AbstractBellairsEntity >> gtEntriesFor: aView [
-	<gtView>
+	"<gtView>"
 	^ aView forward
 		title: 'Entries';
-		priority: 50;
+		priority: 55;
 		object: [ self entries ];
-		view: #gtTreeFor:context:
+		view: #gtTreeFor:context:;
+		actionUpdateButton
+]
+
+{ #category : #views }
+AbstractBellairsEntity >> gtParticipationsFor: aView [
+	<gtView>
+	^ aView forward
+		title: 'Participations';
+		priority: 50;
+		object: [ self participations ];
+		view: #gtParticipationsFor:;
+		actionUpdateButton
 ]
 
 { #category : #views }
@@ -86,17 +106,25 @@ AbstractBellairsEntity >> mondrianNodeElement [
 		size: 10 @ 10;
 		border: self mondrianBorder;
 		background: self mondrianNodeColor;
-		aptitude: (BrGlamorousWithExplicitTooltipAptitude text: self name)
+		aptitude: (BrGlamorousWithExplicitTooltipAptitude text: self displayName)
+]
+
+{ #category : #factory }
+AbstractBellairsEntity >> participationGroupFrom: aDictionaryCollection [
+	^ BellairsParticipationGroup new
+		registry: self registry;
+		data: aDictionaryCollection;
+		yourself
 ]
 
 { #category : #accessing }
-AbstractBellairsEntity >> name [
-	self subclassResponsibility
+AbstractBellairsEntity >> participations [
+	^ self participationGroupFrom: self entries
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #printing }
 AbstractBellairsEntity >> printOn: aStream [
-	aStream nextPutAll: self name
+	aStream nextPutAll: self displayName
 ]
 
 { #category : #accessing }
@@ -111,6 +139,6 @@ AbstractBellairsEntity >> registry: anObject [
 
 { #category : #views }
 AbstractBellairsEntity >> summary [
-	^ {{'name'.
-			self name}}
+	^ {{'displayName'.
+			self displayName}}
 ]

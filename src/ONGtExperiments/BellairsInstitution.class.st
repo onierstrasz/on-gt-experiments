@@ -19,6 +19,11 @@ BellairsInstitution >> country [
 	^ country
 ]
 
+{ #category : #printing }
+BellairsInstitution >> displayName [
+	^ self institution
+]
+
 { #category : #querying }
 BellairsInstitution >> entries [
 	^ self json select: [ :d | (d at: 'institution') = self institution ]
@@ -48,11 +53,6 @@ BellairsInstitution >> initializeFrom: aDictionary [
 { #category : #accessing }
 BellairsInstitution >> institution [
 	^ institution
-]
-
-{ #category : #accessing }
-BellairsInstitution >> name [
-	^ self institution
 ]
 
 { #category : #querying }

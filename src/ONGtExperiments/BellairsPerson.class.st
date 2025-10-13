@@ -7,12 +7,17 @@ Class {
 	#name : #BellairsPerson,
 	#superclass : #AbstractBellairsEntity,
 	#instVars : [
-		'person',
+		'name',
 		'workshops',
 		'institutions'
 	],
 	#category : #'ONGtExperiments-Bellairs'
 }
+
+{ #category : #printing }
+BellairsPerson >> displayName [
+	^ self name
+]
 
 { #category : #querying }
 BellairsPerson >> entries [
@@ -25,7 +30,7 @@ BellairsPerson >> gtInstitutionsFor: aView [
 	^ aView columnedList
 		title: 'Institutions';
 		priority: 30;
-		items: [ self institutions sortedAs: #name ];
+		items: [ self institutions sortedAs: #displayName ];
 		column: 'Index'
 			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
 			width: 45;
@@ -40,7 +45,7 @@ BellairsPerson >> gtWorkshopsFor: aView [
 	^ aView columnedList
 		title: 'Workshops';
 		priority: 20;
-		items: [ self workshops sortedAs: #name ];
+		items: [ self workshops sortedAs: #displayName ];
 		column: 'Index'
 			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
 			width: 45;
@@ -51,7 +56,7 @@ BellairsPerson >> gtWorkshopsFor: aView [
 
 { #category : #initialization }
 BellairsPerson >> initializeFrom: aDictionary [
-	person := aDictionary at: 'name'
+	name := aDictionary at: 'name'
 ]
 
 { #category : #accessing }
@@ -92,18 +97,13 @@ BellairsPerson >> mondrianNodeElement [
 
 { #category : #accessing }
 BellairsPerson >> name [
-	^ self person
-]
-
-{ #category : #accessing }
-BellairsPerson >> person [
-	^ person
+	^ name
 ]
 
 { #category : #accessing }
 BellairsPerson >> summary [
-	^ {{'name'.
-			self name}}
+	^ {{'displayName'.
+			self displayName}}
 ]
 
 { #category : #accessing }

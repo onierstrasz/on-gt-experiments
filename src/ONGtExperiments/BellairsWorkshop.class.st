@@ -12,6 +12,11 @@ Class {
 	#category : #'ONGtExperiments-Bellairs'
 }
 
+{ #category : #printing }
+BellairsWorkshop >> displayName [
+	^ self workshop
+]
+
 { #category : #querying }
 BellairsWorkshop >> entries [
 	^ self json select: [ :d | (d at: 'workshop') = self workshop ]
@@ -45,11 +50,6 @@ BellairsWorkshop >> mondrianChildren [
 { #category : #mondrian }
 BellairsWorkshop >> mondrianNodeColor [
 	^ Color paleRed
-]
-
-{ #category : #accessing }
-BellairsWorkshop >> name [
-	^ self workshop
 ]
 
 { #category : #accessing }

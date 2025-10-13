@@ -15,11 +15,30 @@ Class {
 	#category : #'ONGtExperiments-Bellairs'
 }
 
+{ #category : #accessing }
+BellairsWorkshopsRegistry >> countries [
+	^ (self participations collect: #country) copyWithoutDuplicates sorted
+]
+
+{ #category : #views }
+BellairsWorkshopsRegistry >> gtCountriesFor: aView [
+	"To do: should a country be a domain entity?"
+
+	<gtView>
+	^ aView forward
+		title: 'Countries';
+		priority: 32;
+		object: [ self countries ];
+		view: #gtItemsFor:;
+		actionUpdateButton
+]
+
 { #category : #views }
 BellairsWorkshopsRegistry >> gtGraphFor: aView [
 	<gtView>
 	^ aView mondrian
 		title: 'Graph';
+		priority: 60;
 		painting: [ :aMondrian | self workshopPersonsGraph: aMondrian ];
 		actionUpdateButton
 ]
@@ -30,7 +49,7 @@ BellairsWorkshopsRegistry >> gtInstitutionsFor: aView [
 	^ aView columnedList
 		title: 'Institutions';
 		priority: 30;
-		items: [ self institutions values sortedAs: #name ];
+		items: [ self institutions values sortedAs: #displayName ];
 		column: 'Index'
 			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
 			width: 45;
@@ -40,12 +59,22 @@ BellairsWorkshopsRegistry >> gtInstitutionsFor: aView [
 ]
 
 { #category : #views }
+BellairsWorkshopsRegistry >> gtParticipationsFor: aView [
+	<gtView>
+	^ aView forward
+		title: 'Participations';
+		priority: 50;
+		object: [ self participations ];
+		view: #gtParticipationsFor:
+]
+
+{ #category : #views }
 BellairsWorkshopsRegistry >> gtPersonsFor: aView [
 	<gtView>
 	^ aView columnedList
 		title: 'Persons';
 		priority: 20;
-		items: [ self persons values sortedAs: #name ];
+		items: [ self persons values sortedAs: #displayName ];
 		column: 'Index'
 			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
 			width: 45;
@@ -60,7 +89,7 @@ BellairsWorkshopsRegistry >> gtWorkshopsFor: aView [
 	^ aView columnedList
 		title: 'Workshops';
 		priority: 10;
-		items: [  self workshops values sortedAs: #name ];
+		items: [  self workshops values sortedAs: #displayName ];
 		column: 'Index'
 			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
 			width: 45;
@@ -73,7 +102,8 @@ BellairsWorkshopsRegistry >> gtWorkshopsFor: aView [
 BellairsWorkshopsRegistry >> initialize [
 	workshops := Dictionary new.
 	persons := Dictionary new.
-	institutions := Dictionary new
+	institutions := Dictionary new.
+	participations := OrderedCollection new.
 ]
 
 { #category : #initialization }
@@ -82,6 +112,11 @@ BellairsWorkshopsRegistry >> initializeFromJson: aJson [
 
 	json
 		do: [ :dict | 
+			self participations
+				add: (BellairsParticipation new
+						registry: self;
+						data: dict;
+						yourself).
 			self workshops
 				at: (dict at: 'workshop')
 				ifAbsentPut: [ BellairsWorkshop new
@@ -104,7 +139,7 @@ BellairsWorkshopsRegistry >> initializeFromJson: aJson [
 
 { #category : #querying }
 BellairsWorkshopsRegistry >> institutionNamed: aName [
-	^ self institutions detect: [ :inst | inst name = aName ]
+	^ self institutions detect: [ :inst | inst institution = aName ]
 ]
 
 { #category : #accessing }
@@ -115,6 +150,14 @@ BellairsWorkshopsRegistry >> institutions [
 { #category : #accessing }
 BellairsWorkshopsRegistry >> json [
 	^ json
+]
+
+{ #category : #accessing }
+BellairsWorkshopsRegistry >> participations [
+	^ BellairsParticipationGroup new
+		registry: self;
+		data: self json;
+		yourself
 ]
 
 { #category : #querying }
@@ -129,7 +172,7 @@ BellairsWorkshopsRegistry >> persons [
 
 { #category : #querying }
 BellairsWorkshopsRegistry >> workshopNamed: aName [
-	^ self workshops detect: [ :workshop | workshop name = aName ]
+	^ self workshops detect: [ :workshop | workshop workshop = aName ]
 ]
 
 { #category : #mondrian }
