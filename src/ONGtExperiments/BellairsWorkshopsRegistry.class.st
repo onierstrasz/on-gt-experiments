@@ -6,32 +6,16 @@ I hold the JSON and use it to create domain entities representing the workshops,
 Class {
 	#name : #BellairsWorkshopsRegistry,
 	#superclass : #Object,
+	#traits : 'TParticipationGroupViews',
+	#classTraits : 'TParticipationGroupViews classTrait',
 	#instVars : [
 		'json',
-		'persons',
-		'workshops',
-		'institutions'
+		'personDict',
+		'workshopDict',
+		'instDict'
 	],
 	#category : #'ONGtExperiments-Bellairs'
 }
-
-{ #category : #accessing }
-BellairsWorkshopsRegistry >> countries [
-	^ (self participations collect: #country) copyWithoutDuplicates sorted
-]
-
-{ #category : #views }
-BellairsWorkshopsRegistry >> gtCountriesFor: aView [
-	"To do: should a country be a domain entity?"
-
-	<gtView>
-	^ aView forward
-		title: 'Countries';
-		priority: 32;
-		object: [ self countries ];
-		view: #gtItemsFor:;
-		actionUpdateButton
-]
 
 { #category : #views }
 BellairsWorkshopsRegistry >> gtGraphFor: aView [
@@ -44,52 +28,12 @@ BellairsWorkshopsRegistry >> gtGraphFor: aView [
 ]
 
 { #category : #views }
-BellairsWorkshopsRegistry >> gtInstitutionsFor: aView [
-	<gtView>
-	^ aView columnedList
-		title: 'Institutions';
-		priority: 30;
-		items: [ self institutions values sortedAs: #displayName ];
-		column: 'Index'
-			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
-			width: 45;
-		column: 'Value' text: [ :each | each value gtDisplayString ];
-		send: [ :each | each value ];
-		actionUpdateButton
-]
-
-{ #category : #views }
-BellairsWorkshopsRegistry >> gtParticipationsFor: aView [
-	<gtView>
-	^ aView forward
-		title: 'Participations';
-		priority: 50;
-		object: [ self participations ];
-		view: #gtParticipationsFor:
-]
-
-{ #category : #views }
-BellairsWorkshopsRegistry >> gtPersonsFor: aView [
-	<gtView>
-	^ aView columnedList
-		title: 'Persons';
-		priority: 20;
-		items: [ self persons values sortedAs: #displayName ];
-		column: 'Index'
-			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
-			width: 45;
-		column: 'Value' text: [ :each | each value gtDisplayString ];
-		send: [ :each | each value ];
-		actionUpdateButton
-]
-
-{ #category : #views }
 BellairsWorkshopsRegistry >> gtWorkshopsFor: aView [
 	<gtView>
 	^ aView columnedList
 		title: 'Workshops';
 		priority: 10;
-		items: [  self workshops values sortedAs: #displayName ];
+		items: [  self workshops sortedAs: #displayName ];
 		column: 'Index'
 			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
 			width: 45;
@@ -100,10 +44,9 @@ BellairsWorkshopsRegistry >> gtWorkshopsFor: aView [
 
 { #category : #initialization }
 BellairsWorkshopsRegistry >> initialize [
-	workshops := Dictionary new.
-	persons := Dictionary new.
-	institutions := Dictionary new.
-	participations := OrderedCollection new.
+	workshopDict := Dictionary new.
+	personDict := Dictionary new.
+	instDict := Dictionary new
 ]
 
 { #category : #initialization }
@@ -112,24 +55,19 @@ BellairsWorkshopsRegistry >> initializeFromJson: aJson [
 
 	json
 		do: [ :dict | 
-			self participations
-				add: (BellairsParticipation new
-						registry: self;
-						data: dict;
-						yourself).
-			self workshops
+			workshopDict
 				at: (dict at: 'workshop')
 				ifAbsentPut: [ BellairsWorkshop new
 						registry: self;
 						initializeFrom: dict;
 						yourself ].
-			self persons
+			personDict
 				at: (dict at: 'name')
 				ifAbsentPut: [ BellairsPerson new
 						registry: self;
 						initializeFrom: dict;
 						yourself ].
-			self institutions
+			instDict
 				at: (dict at: 'institution')
 				ifAbsentPut: [ BellairsInstitution new
 						registry: self;
@@ -137,14 +75,19 @@ BellairsWorkshopsRegistry >> initializeFromJson: aJson [
 						yourself ] ]
 ]
 
+{ #category : #accessing }
+BellairsWorkshopsRegistry >> instDict [
+	^ instDict
+]
+
 { #category : #querying }
 BellairsWorkshopsRegistry >> institutionNamed: aName [
-	^ self institutions detect: [ :inst | inst institution = aName ]
+	^ self instDict detect: [ :inst | inst institution = aName ]
 ]
 
 { #category : #accessing }
 BellairsWorkshopsRegistry >> institutions [
-	^ institutions
+	^ instDict values
 ]
 
 { #category : #accessing }
@@ -160,19 +103,29 @@ BellairsWorkshopsRegistry >> participations [
 		yourself
 ]
 
+{ #category : #accessing }
+BellairsWorkshopsRegistry >> personDict [
+	^ personDict
+]
+
 { #category : #querying }
 BellairsWorkshopsRegistry >> personNamed: aName [
-	^ self persons detect: [ :person | person name = aName ]
+	^ self personDict detect: [ :person | person name = aName ]
 ]
 
 { #category : #accessing }
 BellairsWorkshopsRegistry >> persons [
-	^ persons
+	^ self personDict values
+]
+
+{ #category : #accessing }
+BellairsWorkshopsRegistry >> workshopDict [
+	^ workshopDict
 ]
 
 { #category : #querying }
 BellairsWorkshopsRegistry >> workshopNamed: aName [
-	^ self workshops detect: [ :workshop | workshop workshop = aName ]
+	^ self workshopDict detect: [ :workshop | workshop workshop = aName ]
 ]
 
 { #category : #mondrian }
@@ -197,5 +150,5 @@ BellairsWorkshopsRegistry >> workshopPersonsMondrianGraph [
 
 { #category : #accessing }
 BellairsWorkshopsRegistry >> workshops [
-	^ workshops
+	^ workshopDict values
 ]

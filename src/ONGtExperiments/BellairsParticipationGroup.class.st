@@ -5,8 +5,8 @@ I represent a group of Participations, typically as the result of a query.
 Class {
 	#name : #BellairsParticipationGroup,
 	#superclass : #AbstractBellairsEntity,
-	#traits : 'TGtGroup',
-	#classTraits : 'TGtGroup classTrait',
+	#traits : 'TGtGroup + TParticipationGroupViews',
+	#classTraits : 'TGtGroup classTrait + TParticipationGroupViews classTrait',
 	#instVars : [
 		'data'
 	],
@@ -67,6 +67,11 @@ BellairsParticipationGroup >> gtParticipationsFor: aView [
 ]
 
 { #category : #accessing }
+BellairsParticipationGroup >> institutions [
+	^ self collect: [ :p | self registry institutionNamed: p institution ]
+]
+
+{ #category : #accessing }
 BellairsParticipationGroup >> items [
 	^ self participations
 ]
@@ -79,4 +84,14 @@ BellairsParticipationGroup >> participations [
 				registry: self registry;
 				data: dict;
 				yourself ]
+]
+
+{ #category : #accessing }
+BellairsParticipationGroup >> persons [
+	^ self collect: [ :p | self registry personNamed: p name ]
+]
+
+{ #category : #accessing }
+BellairsParticipationGroup >> workshops [
+	^ self collect: [ :p | self registry workshopNamed: p workshop ]
 ]
