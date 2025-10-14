@@ -72,11 +72,11 @@ BellairsCountry >> summary [
 			self}.
 		{'# workshops'.
 			self workshops size.
-			self workshops}.
+			self arrayOrUniqueElement: self workshops}.
 		{'# institutions'.
 			self institutions size.
-			self institutions}.
+			self arrayOrUniqueElement: self institutions}.
 		{'# persons'.
 			self persons size.
-			self persons}}
+			self arrayOrUniqueElement: self persons}}
 ]

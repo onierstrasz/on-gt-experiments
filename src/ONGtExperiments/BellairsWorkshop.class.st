@@ -95,13 +95,13 @@ BellairsWorkshop >> summary [
 			self}.
 		{'# persons'.
 			self persons size printString.
-			self persons}.
+			self arrayOrUniqueElement: self persons}.
 		{'# institutions'.
 			self institutions size printString.
-			self institutions}.
+			self arrayOrUniqueElement: self institutions}.
 		{'# countries'.
 			self countries size printString.
-			self countries}}
+			self arrayOrUniqueElement: self countries}}
 ]
 
 { #category : #accessing }

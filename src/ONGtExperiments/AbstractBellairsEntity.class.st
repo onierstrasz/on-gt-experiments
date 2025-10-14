@@ -22,6 +22,11 @@ AbstractBellairsEntity class >> isAbstract [
 	^ self == AbstractBellairsEntity
 ]
 
+{ #category : #accessing }
+AbstractBellairsEntity >> arrayOrUniqueElement: anArray [
+	^ anArray size = 1 ifTrue: [ anArray first ] ifFalse: [ anArray ]
+]
+
 { #category : #querying }
 AbstractBellairsEntity >> countries [
 	^ self participations countries
@@ -37,6 +42,19 @@ AbstractBellairsEntity >> entries [
 	"Return an array of raw dictionaries"
 
 	self subclassResponsibility
+]
+
+{ #category : #actions }
+AbstractBellairsEntity >> gtActionInspectParticipationsFor: anAction [
+	<gtAction>
+	^ anAction button
+		priority: 80;
+		label: 'P';
+		tooltip: 'Inspect participations';
+		id: GtInspectorInspectButtonId;
+		action: [ :aButton | aButton phlow spawnObject: self participations ];
+		primaryModifierAction: [ :aButton | aButton phlow showObject: self participations ]
+			mouseCursor: BlCopyCursor new
 ]
 
 { #category : #views }
@@ -129,7 +147,9 @@ AbstractBellairsEntity >> participationGroupFrom: aDictionaryCollection [
 
 { #category : #accessing }
 AbstractBellairsEntity >> participations [
-	^ self participationGroupFrom: self entries
+	^ (self participationGroupFrom: self entries)
+		searchString: 'participations for ' , self displayName;
+		yourself
 ]
 
 { #category : #accessing }
@@ -157,6 +177,11 @@ AbstractBellairsEntity >> summary [
 	^ {{'displayName'.
 			self displayName.
 			self}}
+]
+
+{ #category : #querying }
+AbstractBellairsEntity >> urls [
+	^ self participations urls
 ]
 
 { #category : #querying }

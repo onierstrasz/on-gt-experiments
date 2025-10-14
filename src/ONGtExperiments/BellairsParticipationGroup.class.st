@@ -133,8 +133,35 @@ BellairsParticipationGroup >> searchString [
 ]
 
 { #category : #accessing }
-BellairsParticipationGroup >> searchString: anObject [
-	searchString := anObject
+BellairsParticipationGroup >> searchString: aString [
+	searchString := aString
+]
+
+{ #category : #views }
+BellairsParticipationGroup >> summary [
+	^ {{'displayName'.
+			self displayName.
+			self}.
+		{'# workshops'.
+			self workshops size.
+			self arrayOrUniqueElement: self workshops}.
+		{'# persons'.
+			self persons size.
+			self arrayOrUniqueElement: self persons}.
+		{'# institutions'.
+			self institutions size.
+			self arrayOrUniqueElement: self institutions}.
+		{'# countries'.
+			self countries size.
+			self arrayOrUniqueElement: self countries}.
+		{'# participations'.
+			self participations size.
+			self arrayOrUniqueElement: self participations}}
+]
+
+{ #category : #accessing }
+BellairsParticipationGroup >> urls [
+	^ (self collect: #url) copyWithoutDuplicates
 ]
 
 { #category : #accessing }

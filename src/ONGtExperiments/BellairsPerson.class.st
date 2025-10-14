@@ -12,6 +12,11 @@ Class {
 	#category : #'ONGtExperiments-Bellairs'
 }
 
+{ #category : #accessing }
+BellairsPerson >> allRoles [
+	^ self rolesIn: self registry participations
+]
+
 { #category : #printing }
 BellairsPerson >> displayName [
 	^ self name
@@ -30,6 +35,17 @@ BellairsPerson >> gtInstitutionsFor: aView [
 		priority: 30;
 		object: [ self participations ];
 		view: #gtInstitutionsFor:
+]
+
+{ #category : #'as yet unclassified' }
+BellairsPerson >> gtOpenWebBrowserActionFor: anAction [
+	<todo: 'Create a menu of URLs if there are more than one.'>
+	<gtAction>
+	self urls isEmpty ifTrue: [ ^ anAction noAction ].
+	^ anAction button
+		tooltip: 'Open web page';
+		icon: BrGlamorousVectorIcons link;
+		action: [ :aButton :aTab | WebBrowser openOn: self urls first asZnUrl ]
 ]
 
 { #category : #views }
@@ -108,13 +124,16 @@ BellairsPerson >> summary [
 			self}.
 		{'# workshops'.
 			self workshops size.
-			self workshops}.
+			self arrayOrUniqueElement:self workshops}.
+		{'Roles'.
+			self allRoles.
+			self arrayOrUniqueElement:self participations}.
 		{'# institutions'.
 			self institutions size.
-			self institutions}.
-		{'institution'.
-			self institution.
-			self institutions first}}
+			self arrayOrUniqueElement: self institutions}.
+		{'# urls'.
+			self urls size.
+			self arrayOrUniqueElement: self urls}}
 ]
 
 { #category : #accessing }
