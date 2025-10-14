@@ -43,16 +43,18 @@ BellairsRewriteMaps >> patchCountries [
 		ifNil: [ patchCountries := {'France </li>' -> 'France</li>'.
 					'Sorbonne Universit&eacute;, France / Universit&eacute; de Yaound&eacute; I, Cameroun</li>'
 						-> 'Sorbonne Universit&eacute;/Universit&eacute; de Yaound&eacute; I, France/Cameroun</li>'.
-					'Assistant Professor, ' -> ''.
-					'Professor, ' -> ''} asDictionary ]
+					', Assistant Professor, ' -> ', '.
+					', Professor, ' -> ', '} asDictionary ]
 ]
 
 { #category : #converting }
 BellairsRewriteMaps >> translateLine: aLine [
+	"NB: fix accents last so rewrite rules apply to the version with HTML accents."
+
 	| theLine |
 	theLine := aLine.
-	theLine := self translateLine: theLine using: self htmlAccents.
 	theLine := self translateLine: theLine using: self patchCountries.
+	theLine := self translateLine: theLine using: self htmlAccents.
 	^ theLine
 ]
 
