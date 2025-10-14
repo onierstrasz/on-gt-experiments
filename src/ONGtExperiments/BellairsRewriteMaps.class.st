@@ -41,10 +41,16 @@ BellairsRewriteMaps >> patchCountries [
 	<gtExample>
 	^ patchCountries
 		ifNil: [ patchCountries := {'France </li>' -> 'France</li>'.
+					', Assistant Professor, ' -> ', '.
+					', Associate Professor, ' -> ', '.
+					', Professor, ' -> ', '.
 					'Sorbonne Universit&eacute;, France / Universit&eacute; de Yaound&eacute; I, Cameroun</li>'
 						-> 'Sorbonne Universit&eacute;/Universit&eacute; de Yaound&eacute; I, France/Cameroun</li>'.
-					', Assistant Professor, ' -> ', '.
-					', Professor, ' -> ', '} asDictionary ]
+					',  Universitat Oberta de Catalunya, Spain / CEA List, France</li>'
+						-> ',  Universitat Oberta de Catalunya/CEA List, Spain/France</li>'.
+					', &Eacute;cole de technologie sup&eacute;rieure, Universit&eacute; du Qu&eacute;bec, Canada</li>'
+						-> ', &Eacute;cole de technologie sup&eacute;rieure - Universit&eacute; du Qu&eacute;bec, Canada</li>'}
+					asDictionary ]
 ]
 
 { #category : #converting }

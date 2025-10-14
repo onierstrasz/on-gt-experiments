@@ -46,6 +46,7 @@ BellairsParser >> organizerRole [
 { #category : #grammar }
 BellairsParser >> participantRole [
 	^ '<h1>Confirmed Participants</h1>' asPParser trim
+		/ '<h1>Participants</h1>' asPParser trim
 		==> [ :nodes | 
 			role := 'Participant'.
 			nil ]

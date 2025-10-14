@@ -99,9 +99,9 @@ TParticipationGroupViews >> gtPersonsFor: aView [
 		column: 'Roles'
 			text: [ :each | each rolesIn: self participations ]
 			width: 180;
-		column: 'All roles'
+		"column: 'All roles'
 			text: [ :each | each roles ]
-			width: 180;
+			width: 180;"
 		column: 'Institution'
 			text: [ :each | each institution ]
 			width: 200;
@@ -141,6 +141,9 @@ TParticipationGroupViews >> gtWorkshopsFor: aView [
 			width: 400;
 		column: '# Participants'
 			text: [ :each | each persons size ]
+			width: 100;
+		column: '# Organizers'
+			text: [ :each | each organizers size ]
 			width: 100;
 		column: '# Countries'
 			text: [ :each | each countries size ]

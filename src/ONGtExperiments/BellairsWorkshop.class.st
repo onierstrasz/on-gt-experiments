@@ -68,6 +68,11 @@ BellairsWorkshop >> mondrianNodeColor [
 	^ Color paleRed
 ]
 
+{ #category : #querying }
+BellairsWorkshop >> organizers [
+	^ self participations organizers
+]
+
 { #category : #requirement }
 BellairsWorkshop >> participations [
 	^ super participations
