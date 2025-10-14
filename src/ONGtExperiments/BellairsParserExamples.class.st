@@ -1,0 +1,205 @@
+"
+I provide examples illustrating how the Bellairs web pages are parsed and turned intio a JSON to initialize a registry of domain entities.
+
+The key example is:
+```
+BellairsParserExamples new bellairsRegistry
+```
+
+This uses a stored JSON file ({{gtMethod:name=BellairsParserExamples >>#participantsTestFile}}) which has been produced from the source data.
+To update this JSON, use the example {{gtMethod:name=BellairsParserExamples>>#writeParticipantsToTestFile}}.
+
+"
+Class {
+	#name : #BellairsParserExamples,
+	#superclass : #Object,
+	#category : #'ONGtExperiments-Bellairs'
+}
+
+{ #category : #examples }
+BellairsParserExamples >> allLines [
+	"Split the data from the cached test file into lines, since parse the input line-by-line."
+
+	<gtExample>
+	| allLines |
+	allLines := self participantsTestFile contents lines.
+	self assert: allLines size > 500.
+	^ allLines
+]
+
+{ #category : #examples }
+BellairsParserExamples >> bellairsGtJson [
+	<gtExample>
+	^ self bellairsJson asGtJson
+]
+
+{ #category : #examples }
+BellairsParserExamples >> bellairsJson [
+	"NB: the assertions will be fragile in case the test data are update."
+
+	<gtExample>
+	| parser json |
+	parser := BellairsParser new.
+	json := self linesTranslated
+			collect: [ :line | parser parse: line ]
+			thenSelect: #notNil.
+	self assert: json size equals: 135.
+	self assert: (json collect: [ :d | d at: 'workshop' ]) asSet size equals: 8.
+	self assert: (json collect: [ :d | d at: 'role' ]) asSet size equals: 2.
+	^ json
+]
+
+{ #category : #examples }
+BellairsParserExamples >> bellairsPrettyJsonString [
+	<gtExample>
+	<noTest>
+	^ STONJSON toStringPretty: self bellairsJson
+]
+
+{ #category : #examples }
+BellairsParserExamples >> bellairsRegistry [
+	<gtExample>
+	| registry |
+	registry := BellairsWorkshopsRegistry new initializeFromJson: self bellairsJson.
+	^ registry
+]
+
+{ #category : #examples }
+BellairsParserExamples >> dataFolder [
+	<gtExample>
+	^ FileLocator gtResource / 'onierstrasz' / 'on-gt-experiments' / 'data'
+]
+
+{ #category : #examples }
+BellairsParserExamples >> jsonFromTestFile [
+	<gtExample>
+	<noTest>
+	^ STONJSON fromString: self jsonTestFile contents
+]
+
+{ #category : #examples }
+BellairsParserExamples >> jsonTestFile [
+	<gtExample>
+	^ self dataFolder / 'bellairsParticipants.json'
+]
+
+{ #category : #examples }
+BellairsParserExamples >> linesTranslated [
+	"Combine all the translations."
+
+	<gtExample>
+	^ self allLines
+		collect: [ :line | BellairsRewriteMaps new translateLine: line ]
+]
+
+{ #category : #examples }
+BellairsParserExamples >> linesWithAccents [
+	<gtExample>
+	| allLines accentLines |
+	allLines := self allLines.
+	accentLines := allLines select: [ :l | l matchesRegex: '.*\&[^&]+;.*' ].
+	self assert: accentLines size > 50.
+	^ accentLines
+]
+
+{ #category : #examples }
+BellairsParserExamples >> linesWithAccentsTranslated [
+	"NB: we translate all accents except the `&copy;` symbols, which serve
+	as a marker for the workshop titles in the parser."
+
+	<gtExample>
+	| allLines translatedLines map accentLines |
+	allLines := self allLines.
+
+	accentLines := allLines select: [ :l | l matchesRegex: '.*\&[^&]+;.*' ].
+	self assert: accentLines size > 50.
+
+	map := BellairsRewriteMaps new.
+	translatedLines := allLines
+			collect: [ :line | map translateLine: line using: map htmlAccents ].
+
+	accentLines := translatedLines select: [ :l | l matchesRegex: '.*\&[^&]+;.*' ].
+	self
+		assert: (accentLines select: [ :l | l matchesRegex: '.*\&copy;.*' ]) size
+		equals: 8.
+
+	^ translatedLines
+]
+
+{ #category : #examples }
+BellairsParserExamples >> linesWithCountriesTranslated [
+	"NB: we translate all accents except the `&copy;` symbols, which serve
+	as a marker for the workshop titles in the parser."
+
+	<gtExample>
+	| allLines translatedLines map |
+	allLines := self allLines.
+
+	self
+		assert: (allLines select: [ :l | l includesSubstring: 'France ' ]) size
+		equals: 3.
+
+	map := BellairsRewriteMaps new.
+	translatedLines := allLines
+			collect: [ :line | map translateLine: line using: map patchCountries ].
+
+	self
+		assert: (translatedLines select: [ :l | l includesSubstring: 'France ' ]) size
+		equals: 0.
+
+	^ translatedLines
+]
+
+{ #category : #examples }
+BellairsParserExamples >> participantWebFiles [
+	"Only download the source data if we need to update the test file."
+
+	<gtExample>
+	<noTest>
+	| participants |
+	participants := (18 to: 26)
+			collect: [ :year | 
+				[ ZnClient new
+					get: 'https://bellairs20' , year asString , '.ece.mcgill.ca/participants.htm' ]
+					onErrorDo: [ nil ] ]
+			thenSelect: #notNil.
+	^ participants
+]
+
+{ #category : #examples }
+BellairsParserExamples >> participantsTestFile [
+	<gtExample>
+	^ self dataFolder / 'bellairsParticipants.txt'
+]
+
+{ #category : #examples }
+BellairsParserExamples >> writeParticipantsToTestFile [
+	"Write all of the participant webfiles to a single, cached test file."
+
+	<gtExample>
+	<noTest>
+	| testFile |
+	testFile := self participantsTestFile.
+	testFile ensureDelete.
+	testFile
+		writeStreamDo: [ :aStream | 
+			self participantWebFiles do: [ :each | aStream nextPutAll: each ].
+			aStream close ].
+	^ testFile
+]
+
+{ #category : #examples }
+BellairsParserExamples >> writePrettyJsonTestFile [
+	"Pretty print the JSON."
+
+	<gtExample>
+	<noTest>
+	| jsonFile |
+	jsonFile := self jsonTestFile.
+	jsonFile ensureDelete.
+	jsonFile
+		writeStreamDo: [ :aStream | 
+			aStream nextPutAll: self bellairsPrettyJsonString.
+			aStream close ].
+	^ jsonFile
+]
