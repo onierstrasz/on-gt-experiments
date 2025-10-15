@@ -12,15 +12,25 @@ Class {
 		'json',
 		'personDict',
 		'workshopDict',
-		'instDict',
+		'affiliationDict',
 		'countryDict'
 	],
 	#category : #'ONGtExperiments-Bellairs'
 }
 
 { #category : #accessing }
+BellairsWorkshopsRegistry >> affiliationDict [
+	^ affiliationDict
+]
+
+{ #category : #querying }
+BellairsWorkshopsRegistry >> affiliationNamed: aName [
+	^ self affiliationDict at: aName "detect: [ :inst | inst affiliation = aName ]"
+]
+
+{ #category : #accessing }
 BellairsWorkshopsRegistry >> affiliations [
-	^ instDict values
+	^ affiliationDict values
 ]
 
 { #category : #requirement }
@@ -36,14 +46,14 @@ BellairsWorkshopsRegistry >> countryDict [
 
 { #category : #querying }
 BellairsWorkshopsRegistry >> countryNamed: aName [
-	^ self countryDict detect: [ :c | c country = aName ]
+	^ self countryDict at: aName "detect: [ :c | c country = aName ]"
 ]
 
 { #category : #initialization }
 BellairsWorkshopsRegistry >> initialize [
 	workshopDict := Dictionary new.
 	personDict := Dictionary new.
-	instDict := Dictionary new.
+	affiliationDict := Dictionary new.
 	countryDict := Dictionary new
 ]
 
@@ -65,7 +75,7 @@ BellairsWorkshopsRegistry >> initializeFromJson: aJson [
 						registry: self;
 						initializeFrom: dict;
 						yourself ].
-			instDict
+			affiliationDict
 				at: (dict at: 'affiliation')
 				ifAbsentPut: [ BellairsAffiliation new
 						registry: self;
@@ -77,16 +87,6 @@ BellairsWorkshopsRegistry >> initializeFromJson: aJson [
 						registry: self;
 						initializeFrom: dict;
 						yourself ] ]
-]
-
-{ #category : #accessing }
-BellairsWorkshopsRegistry >> instDict [
-	^ instDict
-]
-
-{ #category : #querying }
-BellairsWorkshopsRegistry >> institutionNamed: aName [
-	^ self instDict detect: [ :inst | inst affiliation = aName ]
 ]
 
 { #category : #accessing }
@@ -110,7 +110,7 @@ BellairsWorkshopsRegistry >> personDict [
 
 { #category : #querying }
 BellairsWorkshopsRegistry >> personNamed: aName [
-	^ self personDict detect: [ :person | person name = aName ]
+	^ self personDict at: aName  "detect: [ :person | person name = aName ]"
 ]
 
 { #category : #accessing }
@@ -125,7 +125,7 @@ BellairsWorkshopsRegistry >> workshopDict [
 
 { #category : #querying }
 BellairsWorkshopsRegistry >> workshopNamed: aName [
-	^ self workshopDict detect: [ :workshop | workshop workshop = aName ]
+	^ self workshopDict at: aName  "detect: [ :workshop | workshop workshop = aName ]"
 ]
 
 { #category : #accessing }

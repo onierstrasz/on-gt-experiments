@@ -29,6 +29,18 @@ BellairsExamples >> bellairsRegistry [
 ]
 
 { #category : #examples }
+BellairsExamples >> firstAffiliation [
+	<gtExample>
+	| affiliation registry |
+	registry := BellairsExamples new bellairsRegistry.
+	affiliation := registry affiliations first.
+	self assert: affiliation workshops size equals: 1.
+	self assert: affiliation persons size equals: 1.
+	self assert: affiliation participations size equals: 1.
+	^ affiliation
+]
+
+{ #category : #examples }
 BellairsExamples >> firstCountry [
 	<gtExample>
 	| country registry |
@@ -39,18 +51,6 @@ BellairsExamples >> firstCountry [
 	self assert: country countries size equals: 10.
 	self assert: country participations size equals: 17."
 	^ country
-]
-
-{ #category : #examples }
-BellairsExamples >> firstInstitution [
-	<gtExample>
-	| institution registry |
-	registry := BellairsExamples new bellairsRegistry.
-	institution := registry affiliations first.
-	self assert: institution workshops size equals: 1.
-	self assert: institution persons size equals: 1.
-	self assert: institution participations size equals: 1.
-	^ institution
 ]
 
 { #category : #examples }

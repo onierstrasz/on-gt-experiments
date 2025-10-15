@@ -16,7 +16,7 @@ Class {
 
 { #category : #accessing }
 BellairsParticipationGroup >> affiliations [
-	^ (self collect: [ :p | self registry institutionNamed: p affiliation ])
+	^ (self collect: [ :p | self registry affiliationNamed: p affiliation name ])
 		copyWithoutDuplicates
 ]
 

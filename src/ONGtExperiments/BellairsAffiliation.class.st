@@ -14,7 +14,7 @@ Class {
 
 { #category : #accessing }
 BellairsAffiliation >> affiliation [
-	^ name
+	^ self
 ]
 
 { #category : #accessing }
@@ -24,7 +24,7 @@ BellairsAffiliation >> country [
 
 { #category : #querying }
 BellairsAffiliation >> entries [
-	^ self json select: [ :d | (d at: 'affiliation') = self affiliation ]
+	^ self json select: [ :d | (d at: 'affiliation') = self name ]
 ]
 
 { #category : #views }

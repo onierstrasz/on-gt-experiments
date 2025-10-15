@@ -9,7 +9,7 @@ Class {
 
 { #category : #accessing }
 BellairsCountry >> country [
-	^ name
+	^ self
 ]
 
 { #category : #accessing }

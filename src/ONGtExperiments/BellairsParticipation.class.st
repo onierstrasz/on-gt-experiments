@@ -14,7 +14,7 @@ Class {
 
 { #category : #accessing }
 BellairsParticipation >> affiliation [
-	^ data at: 'affiliation'
+	^ self registry affiliationNamed:  (data at: 'affiliation')
 ]
 
 { #category : #converting }
@@ -71,7 +71,7 @@ BellairsParticipation >> summary [
 			self role}.
 		{'affiliation'.
 			self affiliation.
-			self registry institutionNamed: self affiliation}.
+			self registry affiliationNamed: self affiliation}.
 		{'country'.
 			self country}.
 		{'url'.
