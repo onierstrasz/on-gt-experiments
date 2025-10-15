@@ -25,6 +25,18 @@ BellairsWorkshop >> entries [
 	^ self json select: [ :d | (d at: 'workshop') = self name ]
 ]
 
+{ #category : #'as yet unclassified' }
+BellairsWorkshop >> gtActionWebBrowseFor: anAction [
+	<gtAction>
+	^ anAction explicit
+		priority: 85;
+		stencil: [ BrButton new
+				aptitude: BrGlamorousButtonWithIconAptitude;
+				action: [ WebBrowser openOn: self webUrl ];
+				icon: BrGlamorousVectorIcons link;
+				label: 'Open in Web Browser' translated ]
+]
+
 { #category : #views }
 BellairsWorkshop >> gtInstitutionsFor: aView [
 	<gtView>
@@ -92,6 +104,12 @@ BellairsWorkshop >> summary [
 ]
 
 { #category : #accessing }
+BellairsWorkshop >> webUrl [
+	^ ZnUrl
+		fromString: 'https://bellairs20' , self year , '.ece.mcgill.ca/participants.htm'
+]
+
+{ #category : #accessing }
 BellairsWorkshop >> workshop [
 	^ {self}
 ]
@@ -99,4 +117,12 @@ BellairsWorkshop >> workshop [
 { #category : #accessing }
 BellairsWorkshop >> workshops [
 	^ {self}
+]
+
+{ #category : #accessing }
+BellairsWorkshop >> year [
+	| firstWord |
+	firstWord := self name substrings first.
+	self assert: (firstWord sliceTo: 2) equals: '20'.
+	^ firstWord sliceFrom: 3
 ]

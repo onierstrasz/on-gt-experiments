@@ -50,17 +50,6 @@ BellairsWorkshopsRegistry >> countryNamed: aName [
 ]
 
 { #category : #actions }
-BellairsWorkshopsRegistry >> gtActionCSVFor: anAction [
-	<gtAction>
-	^ anAction button
-		priority: 82;
-		label: 'CSV';
-		tooltip: 'Open CSV';
-		id: GtInspectorInspectButtonId;
-		action: [ :aButton | aButton phlow spawnObject: self participations csvFile ]
-]
-
-{ #category : #actions }
 BellairsWorkshopsRegistry >> gtActionInspectParticipationsFor: anAction [
 	<gtAction>
 	^ anAction button
