@@ -68,7 +68,7 @@ BellairsParser >> participation [
 				'url' -> nodes third.
 				'workshop' -> self workshop.
 				'role' -> self role.
-				'institution' -> nodes seventh.
+				'affiliation' -> nodes seventh.
 				'country' -> nodes ninth} asDictionary ]
 ]
 
@@ -82,7 +82,7 @@ BellairsParser >> participationSimple [
 			{'person' -> nodes third.
 				'workshop' -> self workshop.
 				'role' -> self role.
-				'institution' -> nodes fifth.
+				'affiliation' -> nodes fifth.
 				'country' -> nodes seventh} asDictionary ]
 ]
 

@@ -46,7 +46,7 @@ BellairsExamples >> firstInstitution [
 	<gtExample>
 	| institution registry |
 	registry := BellairsExamples new bellairsRegistry.
-	institution := registry institutions first.
+	institution := registry affiliations first.
 	self assert: institution workshops size equals: 1.
 	self assert: institution persons size equals: 1.
 	self assert: institution participations size equals: 1.
@@ -60,7 +60,7 @@ BellairsExamples >> firstPerson [
 	registry := BellairsExamples new bellairsRegistry.
 	person := registry persons first.
 	self assert: person workshops size equals: 1.
-	self assert: person institutions size equals: 1.
+	self assert: person affiliations size equals: 1.
 	self assert: person participations size equals: 1.
 	^ person
 ]

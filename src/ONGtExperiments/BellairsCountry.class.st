@@ -21,7 +21,7 @@ BellairsCountry >> entries [
 BellairsCountry >> gtInstitutionsFor: aView [
 	<gtView>
 	^ aView forward
-		title: 'Institutions';
+		title: 'Affiliations';
 		priority: 30;
 		object: [ self participations ];
 		view: #gtInstitutionsFor:
@@ -61,8 +61,8 @@ BellairsCountry >> summary [
 			self workshops size.
 			self arrayOrUniqueElement: self workshops}.
 		{'# institutions'.
-			self institutions size.
-			self arrayOrUniqueElement: self institutions}.
+			self affiliations size.
+			self arrayOrUniqueElement: self affiliations}.
 		{'# persons'.
 			self persons size.
 			self arrayOrUniqueElement: self persons}}

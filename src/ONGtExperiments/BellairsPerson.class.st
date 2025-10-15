@@ -10,6 +10,14 @@ Class {
 }
 
 { #category : #accessing }
+BellairsPerson >> affiliation [
+	^ self affiliations size = 1
+		ifTrue: [ self affiliations first displayString ]
+		ifFalse: [ self affiliations first displayString , ' + '
+				, (self affiliations size - 1) printString ]
+]
+
+{ #category : #accessing }
 BellairsPerson >> allRoles [
 	^ self rolesIn: self registry participations
 ]
@@ -23,7 +31,7 @@ BellairsPerson >> entries [
 BellairsPerson >> gtInstitutionsFor: aView [
 	<gtView>
 	^ aView forward
-		title: 'Institutions';
+		title: 'Affiliations';
 		priority: 30;
 		object: [ self participations ];
 		view: #gtInstitutionsFor:
@@ -53,14 +61,6 @@ BellairsPerson >> gtWorkshopsFor: aView [
 { #category : #initialization }
 BellairsPerson >> initializeFrom: aDictionary [
 	name := aDictionary at: 'person'
-]
-
-{ #category : #accessing }
-BellairsPerson >> institution [
-	^ self institutions size = 1
-		ifTrue: [ self institutions first displayString ]
-		ifFalse: [ self institutions first displayString , ' + '
-				, (self institutions size - 1) printString ]
 ]
 
 { #category : #querying }
@@ -116,8 +116,8 @@ BellairsPerson >> summary [
 			self allRoles.
 			self arrayOrUniqueElement: self participations}.
 		{'# institutions'.
-			self institutions size.
-			self arrayOrUniqueElement: self institutions}.
+			self affiliations size.
+			self arrayOrUniqueElement: self affiliations}.
 		{'# urls'.
 			self urls size.
 			self arrayOrUniqueElement: self urls}}

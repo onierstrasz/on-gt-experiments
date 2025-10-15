@@ -24,6 +24,11 @@ AbstractBellairsEntity class >> isAbstract [
 ]
 
 { #category : #accessing }
+AbstractBellairsEntity >> affiliations [
+	^ self participations affiliations
+]
+
+{ #category : #accessing }
 AbstractBellairsEntity >> arrayOrUniqueElement: anArray [
 	^ anArray size = 1 ifTrue: [ anArray first ] ifFalse: [ anArray ]
 ]
@@ -97,11 +102,6 @@ AbstractBellairsEntity >> gtSummaryFor: aView [
 { #category : #initialization }
 AbstractBellairsEntity >> initializeFrom: aDictionary [
 	self subclassResponsibility
-]
-
-{ #category : #accessing }
-AbstractBellairsEntity >> institutions [
-	^ self participations institutions
 ]
 
 { #category : #accessing }

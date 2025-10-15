@@ -12,6 +12,11 @@ Class {
 	#category : #'ONGtExperiments-Bellairs'
 }
 
+{ #category : #accessing }
+BellairsParticipation >> affiliation [
+	^ data at: 'affiliation'
+]
+
 { #category : #converting }
 BellairsParticipation >> asString [
 	"String for spotter searchers"
@@ -40,11 +45,6 @@ BellairsParticipation >> entries [
 ]
 
 { #category : #accessing }
-BellairsParticipation >> institution [
-	^ data at: 'institution'
-]
-
-{ #category : #accessing }
 BellairsParticipation >> name [
 	^ (data at: 'person') , ' -- ' , (data at: 'workshop')
 ]
@@ -69,9 +69,9 @@ BellairsParticipation >> summary [
 			self registry workshopNamed: self workshop}.
 		{'role'.
 			self role}.
-		{'institution'.
-			self institution.
-			self registry institutionNamed: self institution}.
+		{'affiliation'.
+			self affiliation.
+			self registry institutionNamed: self affiliation}.
 		{'country'.
 			self country}.
 		{'url'.

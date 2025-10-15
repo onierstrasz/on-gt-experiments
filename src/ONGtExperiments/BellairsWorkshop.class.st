@@ -10,6 +10,11 @@ Class {
 	#category : #'ONGtExperiments-Bellairs'
 }
 
+{ #category : #accessing }
+BellairsWorkshop >> affiliations [
+	^ super affiliations
+]
+
 { #category : #querying }
 BellairsWorkshop >> countries [
 	^ super countries
@@ -24,7 +29,7 @@ BellairsWorkshop >> entries [
 BellairsWorkshop >> gtInstitutionsFor: aView [
 	<gtView>
 	^ aView forward
-		title: 'Institutions';
+		title: 'Affiliations';
 		priority: 30;
 		object: [ self participations ];
 		view: #gtInstitutionsFor:
@@ -43,11 +48,6 @@ BellairsWorkshop >> gtPersonsFor: aView [
 { #category : #initialization }
 BellairsWorkshop >> initializeFrom: aDictionary [
 	name := aDictionary at: 'workshop'
-]
-
-{ #category : #accessing }
-BellairsWorkshop >> institutions [
-	^ super institutions
 ]
 
 { #category : #mondrian }
@@ -89,8 +89,8 @@ BellairsWorkshop >> summary [
 			self persons size printString.
 			self arrayOrUniqueElement: self persons}.
 		{'# institutions'.
-			self institutions size printString.
-			self arrayOrUniqueElement: self institutions}.
+			self affiliations size printString.
+			self arrayOrUniqueElement: self affiliations}.
 		{'# countries'.
 			self countries size printString.
 			self arrayOrUniqueElement: self countries}}

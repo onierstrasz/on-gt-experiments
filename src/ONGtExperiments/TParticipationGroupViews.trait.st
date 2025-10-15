@@ -4,6 +4,11 @@ Trait {
 }
 
 { #category : #requirement }
+TParticipationGroupViews >> affiliations [
+	^ self explicitRequirement
+]
+
+{ #category : #requirement }
 TParticipationGroupViews >> countries [
 	^ self explicitRequirement
 ]
@@ -25,7 +30,7 @@ TParticipationGroupViews >> gtCountriesFor: aView [
 			text: [ :each | each workshops size ]
 			width: 100;
 		column: '# Institutions'
-			text: [ :each | each institutions size ]
+			text: [ :each | each affiliations size ]
 			width: 100;
 		column: '# Persons'
 			text: [ :each | each persons size ]
@@ -48,9 +53,9 @@ TParticipationGroupViews >> gtGraphFor: aView [
 TParticipationGroupViews >> gtInstitutionsFor: aView [
 	<gtView>
 	^ aView columnedList
-		title: 'Institutions';
+		title: 'Affiliations';
 		priority: 30;
-		items: [ self institutions sortedAs: #name ];
+		items: [ self affiliations sortedAs: #name ];
 		column: 'Index'
 			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
 			width: 45;
@@ -103,7 +108,7 @@ TParticipationGroupViews >> gtPersonsFor: aView [
 			text: [ :each | each urls size ]
 			width: 80;
 		column: 'Institution'
-			text: [ :each | each institution ]
+			text: [ :each | each affiliation ]
 			width: 200;
 		send: [ :each | each value ];
 		actionUpdateButton
@@ -149,15 +154,10 @@ TParticipationGroupViews >> gtWorkshopsFor: aView [
 			text: [ :each | each countries size ]
 			width: 100;
 		column: '# Institutions'
-			text: [ :each | each institutions size ]
+			text: [ :each | each affiliations size ]
 			width: 100;
 		send: [ :each | each value ];
 		actionUpdateButton
-]
-
-{ #category : #requirement }
-TParticipationGroupViews >> institutions [
-	^ self explicitRequirement
 ]
 
 { #category : #requirement }

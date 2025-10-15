@@ -18,6 +18,11 @@ Class {
 	#category : #'ONGtExperiments-Bellairs'
 }
 
+{ #category : #accessing }
+BellairsWorkshopsRegistry >> affiliations [
+	^ instDict values
+]
+
 { #category : #requirement }
 BellairsWorkshopsRegistry >> countries [
 	"^ (self participations collect: #country) copyWithoutDuplicates sorted"
@@ -61,8 +66,8 @@ BellairsWorkshopsRegistry >> initializeFromJson: aJson [
 						initializeFrom: dict;
 						yourself ].
 			instDict
-				at: (dict at: 'institution')
-				ifAbsentPut: [ BellairsInstitution new
+				at: (dict at: 'affiliation')
+				ifAbsentPut: [ BellairsAffiliation new
 						registry: self;
 						initializeFrom: dict;
 						yourself ].
@@ -81,12 +86,7 @@ BellairsWorkshopsRegistry >> instDict [
 
 { #category : #querying }
 BellairsWorkshopsRegistry >> institutionNamed: aName [
-	^ self instDict detect: [ :inst | inst institution = aName ]
-]
-
-{ #category : #accessing }
-BellairsWorkshopsRegistry >> institutions [
-	^ instDict values
+	^ self instDict detect: [ :inst | inst affiliation = aName ]
 ]
 
 { #category : #accessing }

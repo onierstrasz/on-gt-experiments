@@ -14,6 +14,12 @@ Class {
 	#category : #'ONGtExperiments-Bellairs'
 }
 
+{ #category : #accessing }
+BellairsParticipationGroup >> affiliations [
+	^ (self collect: [ :p | self registry institutionNamed: p affiliation ])
+		copyWithoutDuplicates
+]
+
 { #category : #requirement }
 BellairsParticipationGroup >> countries [
 	^ (self collect: [ :p | self registry countryNamed: p country ])
@@ -65,7 +71,7 @@ BellairsParticipationGroup >> gtParticipationsFor: aView [
 			text: #role
 			width: 100;
 		column: 'Institution'
-			text: #institution
+			text: #affiliation
 			width: 180;
 		column: 'Country'
 			text: #country
@@ -74,12 +80,6 @@ BellairsParticipationGroup >> gtParticipationsFor: aView [
 			text: #url
 			width: 180;
 		actionUpdateButton
-]
-
-{ #category : #accessing }
-BellairsParticipationGroup >> institutions [
-	^ (self collect: [ :p | self registry institutionNamed: p institution ])
-		copyWithoutDuplicates
 ]
 
 { #category : #accessing }
@@ -149,8 +149,8 @@ BellairsParticipationGroup >> summary [
 			self persons size.
 			self arrayOrUniqueElement: self persons}.
 		{'# institutions'.
-			self institutions size.
-			self arrayOrUniqueElement: self institutions}.
+			self affiliations size.
+			self arrayOrUniqueElement: self affiliations}.
 		{'# countries'.
 			self countries size.
 			self arrayOrUniqueElement: self countries}.
