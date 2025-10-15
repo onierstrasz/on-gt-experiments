@@ -62,7 +62,8 @@ BellairsParticipation >> role [
 { #category : #accessing }
 BellairsParticipation >> summary [
 	^ {{'name'.
-			self name}.
+			self name.
+			self}.
 		{'workshop'.
 			self workshop}.
 		{'role'.
