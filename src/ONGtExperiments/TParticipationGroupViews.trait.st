@@ -185,8 +185,8 @@ TParticipationGroupViews >> workshopPersonsGraph: aMondrian [
 	aMondrian edges connectToAll: #mondrianChildren.
 	aMondrian layout
 		custom: (GtGraphForceBasedLayout new
-				charge: -1000;
-				length: 50).
+				charge: -2000;
+				length: 200).
 	^ aMondrian
 ]
 

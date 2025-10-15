@@ -118,7 +118,7 @@ BellairsParticipationGroup >> participations [
 { #category : #accessing }
 BellairsParticipationGroup >> participationsWithPersonNamed: aName [
 	^ (self participationGroupFrom: (data select: [ :d | (d at: 'person') = aName ]))
-		searchString: 'for person ', aName
+		searchString: 'participations for ', aName
 ]
 
 { #category : #accessing }

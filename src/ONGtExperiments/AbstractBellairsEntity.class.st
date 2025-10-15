@@ -93,6 +93,17 @@ AbstractBellairsEntity >> gtActionInspectParticipationsFor: anAction [
 			mouseCursor: BlCopyCursor new
 ]
 
+{ #category : #actions }
+AbstractBellairsEntity >> gtActionRegistryFor: anAction [
+	<gtAction>
+	^ anAction button
+		priority: 84;
+		label: 'R';
+		tooltip: 'Inspect registry';
+		id: GtInspectorInspectButtonId;
+		action: [ :aButton | aButton phlow spawnObject: self registry ]
+]
+
 { #category : #views }
 AbstractBellairsEntity >> gtEntriesFor: aView [
 	"<gtView>"

@@ -62,6 +62,16 @@ BellairsWorkshopsRegistry >> gtActionInspectParticipationsFor: anAction [
 			mouseCursor: BlCopyCursor new
 ]
 
+{ #category : #views }
+BellairsWorkshopsRegistry >> gtOragnizersFor: aView [
+	<gtView>
+	^ aView forward
+		title: 'Organizers';
+		priority: 25;
+		object: [ self participations ];
+		view: #gtOrganizersFor:
+]
+
 { #category : #initialization }
 BellairsWorkshopsRegistry >> initialize [
 	workshopDict := Dictionary new.

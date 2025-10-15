@@ -72,6 +72,16 @@ BellairsWorkshop >> mondrianNodeColor [
 	^ Color paleRed
 ]
 
+{ #category : #'as yet unclassified' }
+BellairsWorkshop >> mondrianNodeElement [
+	^ BlTextElement new
+		text: self year asRopedText;
+		padding: (BlInsets all: 5);
+		border: self mondrianBorder;
+		background: self mondrianNodeColor;
+		aptitude: (BrGlamorousWithExplicitTooltipAptitude text: self name)
+]
+
 { #category : #querying }
 BellairsWorkshop >> organizers [
 	^ self participations organizers
@@ -106,7 +116,8 @@ BellairsWorkshop >> summary [
 { #category : #accessing }
 BellairsWorkshop >> webUrl [
 	^ ZnUrl
-		fromString: 'https://bellairs20' , self year , '.ece.mcgill.ca/participants.htm'
+		fromString: 'https://bellairs20' , (self year sliceFrom: 3)
+				, '.ece.mcgill.ca/participants.htm'
 ]
 
 { #category : #accessing }
@@ -124,5 +135,5 @@ BellairsWorkshop >> year [
 	| firstWord |
 	firstWord := self name substrings first.
 	self assert: (firstWord sliceTo: 2) equals: '20'.
-	^ firstWord sliceFrom: 3
+	^ firstWord
 ]

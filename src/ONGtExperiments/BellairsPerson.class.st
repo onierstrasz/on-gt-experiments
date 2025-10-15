@@ -43,6 +43,7 @@ BellairsPerson >> gtOpenWebBrowserActionFor: anAction [
 	<gtAction>
 	self urls isEmpty ifTrue: [ ^ anAction noAction ].
 	^ anAction button
+		priority: 86;
 		tooltip: 'Open web page';
 		icon: BrGlamorousVectorIcons link;
 		action: [ :aButton :aTab | WebBrowser openOn: self urls first asZnUrl ]
@@ -63,6 +64,11 @@ BellairsPerson >> initializeFrom: aDictionary [
 	name := aDictionary at: 'person'
 ]
 
+{ #category : #accessing }
+BellairsPerson >> initials [
+	^ '' join: (self name substrings collect: #first)
+]
+
 { #category : #querying }
 BellairsPerson >> isOrganizer [
 	^ (self entries collect: [ :d | d at: 'role' ]) includes: 'Organizer'
@@ -76,18 +82,25 @@ BellairsPerson >> isParticipant [
 { #category : #mondrian }
 BellairsPerson >> mondrianBorder [
 	^ self isOrganizer
-		ifTrue: [ BlBorder paint: Color red width: 1 ]
+		ifTrue: [ BlBorder paint: Color red width: 2 ]
 		ifFalse: [ BlBorder paint: Color black width: 1 ]
 ]
 
 { #category : #mondrian }
 BellairsPerson >> mondrianNodeColor [
-	^ self workshops size = 1 ifTrue: [ Color paleGreen ] ifFalse: [ Color green ]
+	self workshops size = 1 ifTrue: [ ^ Color paleGreen ].
+	self workshops size < 4 ifTrue: [ ^ Color lightGreen ].
+	^ Color lightGreen darker
 ]
 
 { #category : #mondrian }
 BellairsPerson >> mondrianNodeElement [
-	^ super mondrianNodeElement
+	^ BlTextElement new
+		text: self initials asRopedText;
+		padding: (BlInsets all: 12);
+		border: self mondrianBorder;
+		background: self mondrianNodeColor;
+		aptitude: (BrGlamorousWithExplicitTooltipAptitude text: self name);
 		geometry: BlCircleGeometry new;
 		yourself
 ]
