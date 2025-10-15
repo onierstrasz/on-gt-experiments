@@ -12,8 +12,8 @@ Class {
 		'workshopTitle',
 		'organizerRole',
 		'participantRole',
-		'person',
-		'personSimple',
+		'participation',
+		'participationSimple',
 		'ignore',
 		'bellairsLine',
 		'role',
@@ -26,7 +26,7 @@ Class {
 BellairsParser >> bellairsLine [
 	"A line of input should match one of these rules."
 
-	^ (workshopTitle / organizerRole / participantRole / person / personSimple
+	^ (workshopTitle / organizerRole / participantRole / participation / participationSimple
 		/ ignore) end
 ]
 
@@ -53,7 +53,7 @@ BellairsParser >> participantRole [
 ]
 
 { #category : #grammar }
-BellairsParser >> person [
+BellairsParser >> participation [
 	^ ('<!--' asPParser trim optional
 		, '<li><a target="_committee" href="' asPParser trim
 		, ('https://' asPParser / 'http://' asPParser , $" asPParser negate plus) flatten
@@ -64,7 +64,7 @@ BellairsParser >> person [
 		, ('</li>' asPParser trim , '-->' asPParser trim optional))
 		==> [ :nodes | 
 			{
-				'name' -> nodes fifth.
+				'person' -> nodes fifth.
 				'url' -> nodes third.
 				'workshop' -> self workshop.
 				'role' -> self role.
@@ -73,13 +73,13 @@ BellairsParser >> person [
 ]
 
 { #category : #grammar }
-BellairsParser >> personSimple [
+BellairsParser >> participationSimple [
 	^ ('<li><a' asPParser not trim , '<li>' asPParser trim
 		, $, asPParser negate plus flatten , $, asPParser trim
 		, $, asPParser negate plus flatten , $, asPParser trim
 		, $< asPParser negate plus flatten , '</li>' asPParser)
 		==> [ :nodes | 
-			{'name' -> nodes third.
+			{'person' -> nodes third.
 				'workshop' -> self workshop.
 				'role' -> self role.
 				'institution' -> nodes fifth.

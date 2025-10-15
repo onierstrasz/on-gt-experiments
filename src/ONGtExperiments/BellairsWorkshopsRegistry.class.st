@@ -55,7 +55,7 @@ BellairsWorkshopsRegistry >> initializeFromJson: aJson [
 						initializeFrom: dict;
 						yourself ].
 			personDict
-				at: (dict at: 'name')
+				at: (dict at: 'person')
 				ifAbsentPut: [ BellairsPerson new
 						registry: self;
 						initializeFrom: dict;

@@ -1,1074 +1,1074 @@
 [
 	{
 		"institution" : "Université de Toulouse",
+		"person" : "Benoit Combemale",
 		"url" : "http://people.irisa.fr/Benoit.Combemale/",
+		"role" : "Organizer",
 		"country" : "France",
-		"role" : "Organizer",
-		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018",
-		"name" : "Benoit Combemale"
+		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018"
 	},
 	{
 		"institution" : "McGill University",
+		"person" : "Jörg Kienzle",
 		"url" : "http://cs.mcgill.ca/~joerg/",
-		"country" : "Canada",
 		"role" : "Organizer",
-		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018",
-		"name" : "Jörg Kienzle"
+		"country" : "Canada",
+		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018"
 	},
 	{
 		"institution" : "McGill University",
+		"person" : "Gunter Mussbacher",
 		"url" : "http://www.ece.mcgill.ca/~gmussb1/",
-		"country" : "Canada",
 		"role" : "Organizer",
-		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018",
-		"name" : "Gunter Mussbacher"
+		"country" : "Canada",
+		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018"
 	},
 	{
 		"institution" : "INRIA/IRISA / Université de Rennes 1",
+		"person" : "Olivier Barais",
 		"url" : "http://olivier.barais.fr/",
-		"country" : "France",
 		"role" : "Participant",
-		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018",
-		"name" : "Olivier Barais"
+		"country" : "France",
+		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018"
 	},
 	{
 		"institution" : "Université de Toulouse",
+		"person" : "Jean-Michel Bruel",
 		"url" : "http://jmb.c.la",
-		"country" : "France",
 		"role" : "Participant",
-		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018",
-		"name" : "Jean-Michel Bruel"
+		"country" : "France",
+		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018"
 	},
 	{
 		"institution" : "Université de Nice-Sophia Antipolis",
+		"person" : "Philippe Collet",
 		"url" : "http://www.i3s.unice.fr/~collet/",
-		"country" : "France",
 		"role" : "Participant",
-		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018",
-		"name" : "Philippe Collet"
+		"country" : "France",
+		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018"
 	},
 	{
 		"institution" : "Universidad Autónoma de Madrid",
+		"person" : "Esther Guerra",
 		"url" : "http://arantxa.ii.uam.es/~eguerra/",
-		"country" : "Spain",
 		"role" : "Participant",
-		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018",
-		"name" : "Esther Guerra"
+		"country" : "Spain",
+		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018"
 	},
 	{
 		"institution" : "McGill University",
+		"person" : "Yanis Hattab",
 		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018",
-		"name" : "Yanis Hattab"
+		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018"
 	},
 	{
 		"institution" : "SINTEF / Østfold University College",
+		"person" : "Øystein Haugen",
 		"url" : "http://www.it.hiof.no/~oysteiha/",
-		"country" : "Norway",
 		"role" : "Participant",
-		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018",
-		"name" : "Øystein Haugen"
+		"country" : "Norway",
+		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018"
 	},
 	{
 		"institution" : "IRISA / Université de Rennes 1",
+		"person" : "Jean-Marc Jézéquel",
 		"url" : "http://www.irisa.fr/prive/jezequel/",
-		"country" : "France",
 		"role" : "Participant",
-		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018",
-		"name" : "Jean-Marc Jézéquel"
+		"country" : "France",
+		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018"
 	},
 	{
 		"institution" : "Universidad Autónoma de Madrid",
+		"person" : "Juan de Lara",
 		"url" : "http://arantxa.ii.uam.es/~jlara/",
-		"country" : "Spain",
 		"role" : "Participant",
-		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018",
-		"name" : "Juan de Lara"
+		"country" : "Spain",
+		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018"
 	},
 	{
 		"institution" : "Technische Universität Wien",
+		"person" : "Dorian Leroy",
 		"url" : "https://www.big.tuwien.ac.at/people/dleroy/",
-		"country" : "Austria",
 		"role" : "Participant",
-		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018",
-		"name" : "Dorian Leroy"
+		"country" : "Austria",
+		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018"
 	},
 	{
 		"institution" : "Université Côte d'Azur",
+		"person" : "Sébastien Mosser",
 		"url" : "http://www.i3s.unice.fr/~mosser/",
-		"country" : "France",
 		"role" : "Participant",
-		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018",
-		"name" : "Sébastien Mosser"
+		"country" : "France",
+		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018"
 	},
 	{
 		"institution" : "McGill University",
+		"person" : "Matthias Schöttle",
 		"url" : "https://mattsch.com/",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018",
-		"name" : "Matthias Schöttle"
+		"country" : "Canada",
+		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018"
 	},
 	{
 		"institution" : "University of Montreal",
+		"person" : "Eugene Syriani",
 		"url" : "http://www.iro.umontreal.ca/~syriani",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018",
-		"name" : "Eugene Syriani"
+		"country" : "Canada",
+		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018"
 	},
 	{
 		"institution" : "Universiteit Antwerpen / McGill University",
+		"person" : "Hans Vangheluwe",
 		"url" : "http://msdl.cs.mcgill.ca/people/hv",
-		"country" : "Belgium / Canada",
 		"role" : "Participant",
-		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018",
-		"name" : "Hans Vangheluwe"
+		"country" : "Belgium / Canada",
+		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018"
 	},
 	{
 		"institution" : "RWTH Aachen",
+		"person" : "Andreas Wortmann",
 		"url" : "http://www.se-rwth.de/staff/wortmann/",
-		"country" : "Germany",
 		"role" : "Participant",
-		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018",
-		"name" : "Andreas Wortmann"
+		"country" : "Germany",
+		"workshop" : "2018 Unifying Software Reuse at Bellairs 2018"
 	},
 	{
 		"institution" : "IRISA / Université de Rennes 1",
+		"person" : "Jean-Marc Jézéquel",
 		"url" : "http://www.irisa.fr/prive/jezequel/",
-		"country" : "France",
 		"role" : "Organizer",
-		"workshop" : "2019 Data and Models at Bellairs 2019",
-		"name" : "Jean-Marc Jézéquel"
+		"country" : "France",
+		"workshop" : "2019 Data and Models at Bellairs 2019"
 	},
 	{
 		"institution" : "Université de Toulouse",
+		"person" : "Benoit Combemale",
 		"url" : "http://people.irisa.fr/Benoit.Combemale/",
+		"role" : "Organizer",
 		"country" : "France",
-		"role" : "Organizer",
-		"workshop" : "2019 Data and Models at Bellairs 2019",
-		"name" : "Benoit Combemale"
+		"workshop" : "2019 Data and Models at Bellairs 2019"
 	},
 	{
 		"institution" : "McGill University",
+		"person" : "Jörg Kienzle",
 		"url" : "http://cs.mcgill.ca/~joerg/",
-		"country" : "Canada",
 		"role" : "Organizer",
-		"workshop" : "2019 Data and Models at Bellairs 2019",
-		"name" : "Jörg Kienzle"
+		"country" : "Canada",
+		"workshop" : "2019 Data and Models at Bellairs 2019"
 	},
 	{
 		"institution" : "McGill University",
+		"person" : "Gunter Mussbacher",
 		"url" : "http://www.ece.mcgill.ca/~gmussb1/",
-		"country" : "Canada",
 		"role" : "Organizer",
-		"workshop" : "2019 Data and Models at Bellairs 2019",
-		"name" : "Gunter Mussbacher"
+		"country" : "Canada",
+		"workshop" : "2019 Data and Models at Bellairs 2019"
 	},
 	{
 		"institution" : "McGill University",
+		"person" : "Hyacinth Ali",
 		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2019 Data and Models at Bellairs 2019",
-		"name" : "Hyacinth Ali"
+		"workshop" : "2019 Data and Models at Bellairs 2019"
 	},
 	{
 		"institution" : "University of Ottawa",
+		"person" : "Daniel Amyot",
 		"url" : "http://www.site.uottawa.ca/~damyot/",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2019 Data and Models at Bellairs 2019",
-		"name" : "Daniel Amyot"
+		"country" : "Canada",
+		"workshop" : "2019 Data and Models at Bellairs 2019"
 	},
 	{
 		"institution" : "Queen's University",
+		"person" : "Mojtaba Bagherzadeh",
 		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2019 Data and Models at Bellairs 2019",
-		"name" : "Mojtaba Bagherzadeh"
+		"workshop" : "2019 Data and Models at Bellairs 2019"
 	},
 	{
 		"institution" : "Université de Montréal",
+		"person" : "Edouard Batot",
 		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2019 Data and Models at Bellairs 2019",
-		"name" : "Edouard Batot"
+		"workshop" : "2019 Data and Models at Bellairs 2019"
 	},
 	{
 		"institution" : "Aston University",
+		"person" : "Nelly Bencomo",
 		"url" : "http://www.nellybencomo.me/",
-		"country" : "UK",
 		"role" : "Participant",
-		"workshop" : "2019 Data and Models at Bellairs 2019",
-		"name" : "Nelly Bencomo"
+		"country" : "UK",
+		"workshop" : "2019 Data and Models at Bellairs 2019"
 	},
 	{
 		"institution" : "Université Côte d'Azur",
+		"person" : "Benjamin Benni",
 		"url" : "http://www.i3s.unice.fr/~benni/",
-		"country" : "France",
 		"role" : "Participant",
-		"workshop" : "2019 Data and Models at Bellairs 2019",
-		"name" : "Benjamin Benni"
+		"country" : "France",
+		"workshop" : "2019 Data and Models at Bellairs 2019"
 	},
 	{
 		"institution" : "Université de Toulouse",
+		"person" : "Jean-Michel Bruel",
 		"url" : "http://jmb.c.la",
-		"country" : "France",
 		"role" : "Participant",
-		"workshop" : "2019 Data and Models at Bellairs 2019",
-		"name" : "Jean-Michel Bruel"
+		"country" : "France",
+		"workshop" : "2019 Data and Models at Bellairs 2019"
 	},
 	{
 		"institution" : "Michigan State University",
+		"person" : "Betty H.C. Cheng",
 		"url" : "http://www.cse.msu.edu/~chengb/",
-		"country" : "USA",
 		"role" : "Participant",
-		"workshop" : "2019 Data and Models at Bellairs 2019",
-		"name" : "Betty H.C. Cheng"
+		"country" : "USA",
+		"workshop" : "2019 Data and Models at Bellairs 2019"
 	},
 	{
 		"institution" : "Université de Nice-Sophia Antipolis",
+		"person" : "Philippe Collet",
 		"url" : "http://www.i3s.unice.fr/~collet/",
-		"country" : "France",
 		"role" : "Participant",
-		"workshop" : "2019 Data and Models at Bellairs 2019",
-		"name" : "Philippe Collet"
+		"country" : "France",
+		"workshop" : "2019 Data and Models at Bellairs 2019"
 	},
 	{
 		"institution" : "Universität Paderborn",
+		"person" : "Gregor Engels",
 		"url" : "http://www.upb.de/cs/engels.html",
-		"country" : "Germany",
 		"role" : "Participant",
-		"workshop" : "2019 Data and Models at Bellairs 2019",
-		"name" : "Gregor Engels"
+		"country" : "Germany",
+		"workshop" : "2019 Data and Models at Bellairs 2019"
 	},
 	{
 		"institution" : "Karlsruher Institut für Technologie",
+		"person" : "Robert Heinrich",
 		"url" : "https://sdq.ipd.kit.edu/people/robert-heinrich/",
-		"country" : "Germany",
 		"role" : "Participant",
-		"workshop" : "2019 Data and Models at Bellairs 2019",
-		"name" : "Robert Heinrich"
+		"country" : "Germany",
+		"workshop" : "2019 Data and Models at Bellairs 2019"
 	},
 	{
 		"institution" : "Karlsruher Institut für Technologie",
+		"person" : "Anne Koziolek",
 		"url" : "https://are.ipd.kit.edu/people/anne-koziolek/",
-		"country" : "Germany",
 		"role" : "Participant",
-		"workshop" : "2019 Data and Models at Bellairs 2019",
-		"name" : "Anne Koziolek"
+		"country" : "Germany",
+		"workshop" : "2019 Data and Models at Bellairs 2019"
 	},
 	{
 		"institution" : "Université Côte d'Azur",
+		"person" : "Sébastien Mosser",
 		"url" : "http://www.i3s.unice.fr/~mosser/",
-		"country" : "France",
 		"role" : "Participant",
-		"workshop" : "2019 Data and Models at Bellairs 2019",
-		"name" : "Sébastien Mosser"
+		"country" : "France",
+		"workshop" : "2019 Data and Models at Bellairs 2019"
 	},
 	{
 		"institution" : "Karlsruher Institut für Technologie",
+		"person" : "Ralf Reussner",
 		"url" : "https://sdq.ipd.kit.edu/people/ralf-reussner/",
-		"country" : "Germany",
 		"role" : "Participant",
-		"workshop" : "2019 Data and Models at Bellairs 2019",
-		"name" : "Ralf Reussner"
+		"country" : "Germany",
+		"workshop" : "2019 Data and Models at Bellairs 2019"
 	},
 	{
 		"institution" : "Université de Montréal",
+		"person" : "Houari Sahraoui",
 		"url" : "http://www.iro.umontreal.ca/~sahraouh/",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2019 Data and Models at Bellairs 2019",
-		"name" : "Houari Sahraoui"
+		"country" : "Canada",
+		"workshop" : "2019 Data and Models at Bellairs 2019"
 	},
 	{
 		"institution" : "McGill University",
+		"person" : "Rijul Saini",
 		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2019 Data and Models at Bellairs 2019",
-		"name" : "Rijul Saini"
+		"workshop" : "2019 Data and Models at Bellairs 2019"
 	},
 	{
 		"institution" : "IRISA / Université de Rennes 1",
+		"person" : "June Sallou",
 		"country" : "France",
 		"role" : "Participant",
-		"workshop" : "2019 Data and Models at Bellairs 2019",
-		"name" : "June Sallou"
+		"workshop" : "2019 Data and Models at Bellairs 2019"
 	},
 	{
 		"institution" : "Sorbonne Université/Université de Yaoundé I",
+		"person" : "Serge Stinckwich",
 		"url" : "https://twitter.com/SergeStinckwich",
-		"country" : "France/Cameroun",
 		"role" : "Participant",
-		"workshop" : "2019 Data and Models at Bellairs 2019",
-		"name" : "Serge Stinckwich"
+		"country" : "France/Cameroun",
+		"workshop" : "2019 Data and Models at Bellairs 2019"
 	},
 	{
 		"institution" : "Université de Montréal",
+		"person" : "Eugene Syriani",
 		"url" : "http://www.iro.umontreal.ca/~syriani",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2019 Data and Models at Bellairs 2019",
-		"name" : "Eugene Syriani"
+		"country" : "Canada",
+		"workshop" : "2019 Data and Models at Bellairs 2019"
 	},
 	{
 		"institution" : "Université de Toulouse",
+		"person" : "Benoit Combemale",
 		"url" : "http://people.irisa.fr/Benoit.Combemale/",
+		"role" : "Organizer",
 		"country" : "France",
-		"role" : "Organizer",
-		"workshop" : "2020 Data and Models at Bellairs 2020",
-		"name" : "Benoit Combemale"
+		"workshop" : "2020 Data and Models at Bellairs 2020"
 	},
 	{
 		"institution" : "McGill University",
+		"person" : "Jörg Kienzle",
 		"url" : "http://cs.mcgill.ca/~joerg/",
-		"country" : "Canada",
 		"role" : "Organizer",
-		"workshop" : "2020 Data and Models at Bellairs 2020",
-		"name" : "Jörg Kienzle"
+		"country" : "Canada",
+		"workshop" : "2020 Data and Models at Bellairs 2020"
 	},
 	{
 		"institution" : "McGill University",
+		"person" : "Gunter Mussbacher",
 		"url" : "http://www.ece.mcgill.ca/~gmussb1/",
-		"country" : "Canada",
 		"role" : "Organizer",
-		"workshop" : "2020 Data and Models at Bellairs 2020",
-		"name" : "Gunter Mussbacher"
+		"country" : "Canada",
+		"workshop" : "2020 Data and Models at Bellairs 2020"
 	},
 	{
 		"institution" : "Universitat Politècnica de València",
+		"person" : "Silvia Abrahão",
 		"url" : "https://sabrahao.wixsite.com/dsic-upv",
-		"country" : "Spain",
 		"role" : "Participant",
-		"workshop" : "2020 Data and Models at Bellairs 2020",
-		"name" : "Silvia Abrahão"
+		"country" : "Spain",
+		"workshop" : "2020 Data and Models at Bellairs 2020"
 	},
 	{
 		"institution" : "McGill University",
+		"person" : "Hyacinth Ali",
 		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2020 Data and Models at Bellairs 2020",
-		"name" : "Hyacinth Ali"
+		"workshop" : "2020 Data and Models at Bellairs 2020"
 	},
 	{
 		"institution" : "Aston University",
+		"person" : "Nelly Bencomo",
 		"url" : "http://www.nellybencomo.me/",
-		"country" : "UK",
 		"role" : "Participant",
-		"workshop" : "2020 Data and Models at Bellairs 2020",
-		"name" : "Nelly Bencomo"
+		"country" : "UK",
+		"workshop" : "2020 Data and Models at Bellairs 2020"
 	},
 	{
 		"institution" : "McGill University",
+		"person" : "Marton Bur",
 		"url" : "https://imbur.github.io/",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2020 Data and Models at Bellairs 2020",
-		"name" : "Marton Bur"
+		"country" : "Canada",
+		"workshop" : "2020 Data and Models at Bellairs 2020"
 	},
 	{
 		"institution" : "Universitat Oberta de Catalunya/CEA List",
+		"person" : "Loli Burgueño",
 		"url" : "https://som-research.uoc.edu/loli-burgueno/",
-		"country" : "Spain/France",
 		"role" : "Participant",
-		"workshop" : "2020 Data and Models at Bellairs 2020",
-		"name" : "Loli Burgueño"
+		"country" : "Spain/France",
+		"workshop" : "2020 Data and Models at Bellairs 2020"
 	},
 	{
 		"institution" : "Universität Paderborn",
+		"person" : "Gregor Engels",
 		"url" : "http://www.upb.de/cs/engels.html",
-		"country" : "Germany",
 		"role" : "Participant",
-		"workshop" : "2020 Data and Models at Bellairs 2020",
-		"name" : "Gregor Engels"
+		"country" : "Germany",
+		"workshop" : "2020 Data and Models at Bellairs 2020"
 	},
 	{
 		"institution" : "INRIA",
+		"person" : "Pierre Jeanjean",
 		"country" : "France",
 		"role" : "Participant",
-		"workshop" : "2020 Data and Models at Bellairs 2020",
-		"name" : "Pierre Jeanjean"
+		"workshop" : "2020 Data and Models at Bellairs 2020"
 	},
 	{
 		"institution" : "IRISA / Université de Rennes 1",
+		"person" : "Jean-Marc Jézéquel",
 		"url" : "http://www.irisa.fr/prive/jezequel/",
-		"country" : "France",
 		"role" : "Participant",
-		"workshop" : "2020 Data and Models at Bellairs 2020",
-		"name" : "Jean-Marc Jézéquel"
+		"country" : "France",
+		"workshop" : "2020 Data and Models at Bellairs 2020"
 	},
 	{
 		"institution" : "Karlsruher Institut für Technologie",
+		"person" : "Thomas Kühn",
 		"url" : "https://sdq.ipd.kit.edu/people/thomas-kuehn/",
-		"country" : "Germany",
 		"role" : "Participant",
-		"workshop" : "2020 Data and Models at Bellairs 2020",
-		"name" : "Thomas Kühn"
+		"country" : "Germany",
+		"workshop" : "2020 Data and Models at Bellairs 2020"
 	},
 	{
 		"institution" : "Université du Québec à Montréal",
+		"person" : "Sébastien Mosser",
 		"url" : "https://mosser.github.io/",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2020 Data and Models at Bellairs 2020",
-		"name" : "Sébastien Mosser"
+		"country" : "Canada",
+		"workshop" : "2020 Data and Models at Bellairs 2020"
 	},
 	{
 		"institution" : "Université de Montréal",
+		"person" : "Houari Sahraoui",
 		"url" : "http://www.iro.umontreal.ca/~sahraouh/",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2020 Data and Models at Bellairs 2020",
-		"name" : "Houari Sahraoui"
+		"country" : "Canada",
+		"workshop" : "2020 Data and Models at Bellairs 2020"
 	},
 	{
 		"institution" : "Université de Montréal",
+		"person" : "Eugene Syriani",
 		"url" : "http://www.iro.umontreal.ca/~syriani",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2020 Data and Models at Bellairs 2020",
-		"name" : "Eugene Syriani"
+		"country" : "Canada",
+		"workshop" : "2020 Data and Models at Bellairs 2020"
 	},
 	{
 		"institution" : "McGill University",
+		"person" : "Dániel Varró",
 		"url" : "https://www.mcgill.ca/ece/daniel-varro",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2020 Data and Models at Bellairs 2020",
-		"name" : "Dániel Varró"
+		"country" : "Canada",
+		"workshop" : "2020 Data and Models at Bellairs 2020"
 	},
 	{
 		"institution" : "Université de Montréal",
+		"person" : "Martin Weyssow",
 		"url" : "https://mweyssow.github.io/",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2020 Data and Models at Bellairs 2020",
-		"name" : "Martin Weyssow"
+		"country" : "Canada",
+		"workshop" : "2020 Data and Models at Bellairs 2020"
 	},
 	{
 		"institution" : "IRISA / Université de Rennes 1",
+		"person" : "Benoit Combemale",
 		"url" : "http://people.irisa.fr/Benoit.Combemale/",
+		"role" : "Organizer",
 		"country" : "France",
-		"role" : "Organizer",
-		"workshop" : "2022 Polyglot Development at Bellairs 2022",
-		"name" : "Benoit Combemale"
+		"workshop" : "2022 Polyglot Development at Bellairs 2022"
 	},
 	{
 		"institution" : "McGill University",
+		"person" : "Jörg Kienzle",
 		"url" : "http://cs.mcgill.ca/~joerg/",
-		"country" : "Canada",
 		"role" : "Organizer",
-		"workshop" : "2022 Polyglot Development at Bellairs 2022",
-		"name" : "Jörg Kienzle"
+		"country" : "Canada",
+		"workshop" : "2022 Polyglot Development at Bellairs 2022"
 	},
 	{
 		"institution" : "McGill University",
+		"person" : "Gunter Mussbacher",
 		"url" : "http://www.ece.mcgill.ca/~gmussb1/",
-		"country" : "Canada",
 		"role" : "Organizer",
-		"workshop" : "2022 Polyglot Development at Bellairs 2022",
-		"name" : "Gunter Mussbacher"
+		"country" : "Canada",
+		"workshop" : "2022 Polyglot Development at Bellairs 2022"
 	},
 	{
 		"institution" : "Trent University",
+		"person" : "Omar Alam",
 		"url" : "https://www.trentu.ca/cois/faculty-research/omar-alam",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2022 Polyglot Development at Bellairs 2022",
-		"name" : "Omar Alam"
+		"country" : "Canada",
+		"workshop" : "2022 Polyglot Development at Bellairs 2022"
 	},
 	{
 		"institution" : "École de technologie supérieure - Université du Québec",
+		"person" : "Francis Bordeleau",
 		"url" : "https://www.etsmtl.ca/en/research/professors/fbordeleau/",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2022 Polyglot Development at Bellairs 2022",
-		"name" : "Francis Bordeleau"
+		"country" : "Canada",
+		"workshop" : "2022 Polyglot Development at Bellairs 2022"
 	},
 	{
 		"institution" : "Universitat Oberta de Catalunya/CEA List",
+		"person" : "Loli Burgueño",
 		"url" : "https://som-research.uoc.edu/loli-burgueno/",
-		"country" : "Spain/France",
 		"role" : "Participant",
-		"workshop" : "2022 Polyglot Development at Bellairs 2022",
-		"name" : "Loli Burgueño"
+		"country" : "Spain/France",
+		"workshop" : "2022 Polyglot Development at Bellairs 2022"
 	},
 	{
 		"institution" : "Universität Paderborn",
+		"person" : "Gregor Engels",
 		"url" : "http://www.upb.de/cs/engels.html",
-		"country" : "Germany",
 		"role" : "Participant",
-		"workshop" : "2022 Polyglot Development at Bellairs 2022",
-		"name" : "Gregor Engels"
+		"country" : "Germany",
+		"workshop" : "2022 Polyglot Development at Bellairs 2022"
 	},
 	{
 		"institution" : "Université de Montréal",
+		"person" : "Jessie Galasso-Carbonnel",
 		"url" : "https://jgalasso.github.io/",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2022 Polyglot Development at Bellairs 2022",
-		"name" : "Jessie Galasso-Carbonnel"
+		"country" : "Canada",
+		"workshop" : "2022 Polyglot Development at Bellairs 2022"
 	},
 	{
 		"institution" : "IRISA / Université de Rennes 1",
+		"person" : "Jean-Marc Jézéquel",
 		"url" : "http://www.irisa.fr/prive/jezequel/",
-		"country" : "France",
 		"role" : "Participant",
-		"workshop" : "2022 Polyglot Development at Bellairs 2022",
-		"name" : "Jean-Marc Jézéquel"
+		"country" : "France",
+		"workshop" : "2022 Polyglot Development at Bellairs 2022"
 	},
 	{
 		"institution" : "McGill University",
+		"person" : "Bettina Kemme",
 		"url" : "https://www.cs.mcgill.ca/~kemme/",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2022 Polyglot Development at Bellairs 2022",
-		"name" : "Bettina Kemme"
+		"country" : "Canada",
+		"workshop" : "2022 Polyglot Development at Bellairs 2022"
 	},
 	{
 		"institution" : "McMaster University",
+		"person" : "Sébastien Mosser",
 		"url" : "https://mosser.github.io/",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2022 Polyglot Development at Bellairs 2022",
-		"name" : "Sébastien Mosser"
+		"country" : "Canada",
+		"workshop" : "2022 Polyglot Development at Bellairs 2022"
 	},
 	{
 		"institution" : "Université de Montréal",
+		"person" : "Houari Sahraoui",
 		"url" : "http://www.iro.umontreal.ca/~sahraouh/",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2022 Polyglot Development at Bellairs 2022",
-		"name" : "Houari Sahraoui"
+		"country" : "Canada",
+		"workshop" : "2022 Polyglot Development at Bellairs 2022"
 	},
 	{
 		"institution" : "McGill University",
+		"person" : "Maximilian Schiedermeier",
 		"url" : "https://www.cs.mcgill.ca/~mschie3/",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2022 Polyglot Development at Bellairs 2022",
-		"name" : "Maximilian Schiedermeier"
+		"country" : "Canada",
+		"workshop" : "2022 Polyglot Development at Bellairs 2022"
 	},
 	{
 		"institution" : "Université de Montréal",
+		"person" : "Eugene Syriani",
 		"url" : "http://www.iro.umontreal.ca/~syriani",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2022 Polyglot Development at Bellairs 2022",
-		"name" : "Eugene Syriani"
+		"country" : "Canada",
+		"workshop" : "2022 Polyglot Development at Bellairs 2022"
 	},
 	{
 		"institution" : "IRISA / Université de Rennes 1",
+		"person" : "Benoit Combemale",
 		"url" : "http://people.irisa.fr/Benoit.Combemale/",
+		"role" : "Organizer",
 		"country" : "France",
-		"role" : "Organizer",
-		"workshop" : "2023 Polyglot Development at Bellairs 2023",
-		"name" : "Benoit Combemale"
+		"workshop" : "2023 Polyglot Development at Bellairs 2023"
 	},
 	{
 		"institution" : "McGill University",
+		"person" : "Jörg Kienzle",
 		"url" : "http://cs.mcgill.ca/~joerg/",
-		"country" : "Canada",
 		"role" : "Organizer",
-		"workshop" : "2023 Polyglot Development at Bellairs 2023",
-		"name" : "Jörg Kienzle"
+		"country" : "Canada",
+		"workshop" : "2023 Polyglot Development at Bellairs 2023"
 	},
 	{
 		"institution" : "McGill University",
+		"person" : "Gunter Mussbacher",
 		"url" : "http://www.ece.mcgill.ca/~gmussb1/",
-		"country" : "Canada",
 		"role" : "Organizer",
-		"workshop" : "2023 Polyglot Development at Bellairs 2023",
-		"name" : "Gunter Mussbacher"
+		"country" : "Canada",
+		"workshop" : "2023 Polyglot Development at Bellairs 2023"
 	},
 	{
 		"institution" : "Universidad de Málaga",
+		"person" : "Lola Burgueño",
 		"url" : "https://som-research.uoc.edu/lburgueno/",
-		"country" : "Spain",
 		"role" : "Participant",
-		"workshop" : "2023 Polyglot Development at Bellairs 2023",
-		"name" : "Lola Burgueño"
+		"country" : "Spain",
+		"workshop" : "2023 Polyglot Development at Bellairs 2023"
 	},
 	{
 		"institution" : "University of York",
+		"person" : "Antonio Garcia-Dominguez",
 		"url" : "https://www-users.york.ac.uk/~agd516/",
-		"country" : "UK",
 		"role" : "Participant",
-		"workshop" : "2023 Polyglot Development at Bellairs 2023",
-		"name" : "Antonio Garcia-Dominguez"
+		"country" : "UK",
+		"workshop" : "2023 Polyglot Development at Bellairs 2023"
 	},
 	{
 		"institution" : "IRISA / Université de Rennes 1",
+		"person" : "Jean-Marc Jézéquel",
 		"url" : "http://www.irisa.fr/prive/jezequel/",
-		"country" : "France",
 		"role" : "Participant",
-		"workshop" : "2023 Polyglot Development at Bellairs 2023",
-		"name" : "Jean-Marc Jézéquel"
+		"country" : "France",
+		"workshop" : "2023 Polyglot Development at Bellairs 2023"
 	},
 	{
 		"institution" : "Université de Rennes 1",
+		"person" : "Gwendal Jouneaux",
 		"url" : "https://www.gwendal-jouneaux.fr/",
-		"country" : "France",
 		"role" : "Participant",
-		"workshop" : "2023 Polyglot Development at Bellairs 2023",
-		"name" : "Gwendal Jouneaux"
+		"country" : "France",
+		"workshop" : "2023 Polyglot Development at Bellairs 2023"
 	},
 	{
 		"institution" : "IRISA / Université de Rennes 1",
+		"person" : "Djamel-Eddine Khelladi",
 		"url" : "https://people.irisa.fr/Djamel-Eddine.Khelladi/",
-		"country" : "France",
 		"role" : "Participant",
-		"workshop" : "2023 Polyglot Development at Bellairs 2023",
-		"name" : "Djamel-Eddine Khelladi"
+		"country" : "France",
+		"workshop" : "2023 Polyglot Development at Bellairs 2023"
 	},
 	{
 		"institution" : "McMaster University",
+		"person" : "Sébastien Mosser",
 		"url" : "https://mosser.github.io/",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2023 Polyglot Development at Bellairs 2023",
-		"name" : "Sébastien Mosser"
+		"country" : "Canada",
+		"workshop" : "2023 Polyglot Development at Bellairs 2023"
 	},
 	{
 		"institution" : "École de technologie supérieure - Université du Québec",
+		"person" : "Corinne Pulgar",
 		"url" : "https://www.linkedin.com/in/corinne-pulgar-12a58190/",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2023 Polyglot Development at Bellairs 2023",
-		"name" : "Corinne Pulgar"
+		"country" : "Canada",
+		"workshop" : "2023 Polyglot Development at Bellairs 2023"
 	},
 	{
 		"institution" : "Université de Montréal",
+		"person" : "Houari Sahraoui",
 		"url" : "http://www.iro.umontreal.ca/~sahraouh/",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2023 Polyglot Development at Bellairs 2023",
-		"name" : "Houari Sahraoui"
+		"country" : "Canada",
+		"workshop" : "2023 Polyglot Development at Bellairs 2023"
 	},
 	{
 		"institution" : "McGill University",
+		"person" : "Maximilian Schiedermeier",
 		"url" : "https://www.cs.mcgill.ca/~mschie3/",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2023 Polyglot Development at Bellairs 2023",
-		"name" : "Maximilian Schiedermeier"
+		"country" : "Canada",
+		"workshop" : "2023 Polyglot Development at Bellairs 2023"
 	},
 	{
 		"institution" : "Centrum Wiskunde & Informatica / Rijksuniversiteit Groningen",
+		"person" : "Tijs van der Storm",
 		"url" : "https://homepages.cwi.nl/~storm/",
-		"country" : "The Netherlands",
 		"role" : "Participant",
-		"workshop" : "2023 Polyglot Development at Bellairs 2023",
-		"name" : "Tijs van der Storm"
+		"country" : "The Netherlands",
+		"workshop" : "2023 Polyglot Development at Bellairs 2023"
 	},
 	{
 		"institution" : "IRISA / Université de Rennes 1",
+		"person" : "Benoit Combemale",
 		"url" : "http://people.irisa.fr/Benoit.Combemale/",
+		"role" : "Organizer",
 		"country" : "France",
-		"role" : "Organizer",
-		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024",
-		"name" : "Benoit Combemale"
+		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024"
 	},
 	{
 		"institution" : "McGill University",
+		"person" : "Jörg Kienzle",
 		"url" : "http://cs.mcgill.ca/~joerg/",
-		"country" : "Canada",
 		"role" : "Organizer",
-		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024",
-		"name" : "Jörg Kienzle"
+		"country" : "Canada",
+		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024"
 	},
 	{
 		"institution" : "McGill University",
+		"person" : "Gunter Mussbacher",
 		"url" : "http://www.ece.mcgill.ca/~gmussb1/",
-		"country" : "Canada",
 		"role" : "Organizer",
-		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024",
-		"name" : "Gunter Mussbacher"
+		"country" : "Canada",
+		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024"
 	},
 	{
 		"institution" : "Université de Montréal",
+		"person" : "Pascal Archambault",
 		"url" : "https://pascalarchambault.ca",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024",
-		"name" : "Pascal Archambault"
+		"country" : "Canada",
+		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024"
 	},
 	{
 		"institution" : "Université de Toulouse",
+		"person" : "Jean-Michel Bruel",
 		"url" : "https://jmbruel.netlify.app/",
-		"country" : "France",
 		"role" : "Participant",
-		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024",
-		"name" : "Jean-Michel Bruel"
+		"country" : "France",
+		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024"
 	},
 	{
 		"institution" : "Universidad de Málaga",
+		"person" : "Lola Burgueño",
 		"url" : "https://lolaburgueno.github.io/",
-		"country" : "Spain",
 		"role" : "Participant",
-		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024",
-		"name" : "Lola Burgueño"
+		"country" : "Spain",
+		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024"
 	},
 	{
 		"institution" : "Michigan State University",
+		"person" : "Betty H.C. Cheng",
 		"url" : "http://www.cse.msu.edu/~chengb/",
-		"country" : "USA",
 		"role" : "Participant",
-		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024",
-		"name" : "Betty H.C. Cheng"
+		"country" : "USA",
+		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024"
 	},
 	{
 		"institution" : "Technische Universiteit Eindhoven",
+		"person" : "Loek Cleophas",
 		"url" : "https://www.tue.nl/en/research/researchers/loek-cleophas",
-		"country" : "The Netherlands",
 		"role" : "Participant",
-		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024",
-		"name" : "Loek Cleophas"
+		"country" : "The Netherlands",
+		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024"
 	},
 	{
 		"institution" : "Universität Paderborn",
+		"person" : "Gregor Engels",
 		"url" : "http://www.upb.de/cs/engels.html",
-		"country" : "Germany",
 		"role" : "Participant",
-		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024",
-		"name" : "Gregor Engels"
+		"country" : "Germany",
+		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024"
 	},
 	{
 		"institution" : "Airbus",
+		"person" : "Damien Foures",
 		"url" : "https://www.linkedin.com/in/damien-f-b101a322b/",
-		"country" : "France",
 		"role" : "Participant",
-		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024",
-		"name" : "Damien Foures"
+		"country" : "France",
+		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024"
 	},
 	{
 		"institution" : "Johannes Kepler Universität Linz",
+		"person" : "Stefan Klikovits",
 		"url" : "https://klikovits.net",
-		"country" : "Austria",
 		"role" : "Participant",
-		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024",
-		"name" : "Stefan Klikovits"
+		"country" : "Austria",
+		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024"
 	},
 	{
 		"institution" : "Tata Consultancy Services",
+		"person" : "Vinay Kulkarni",
 		"url" : "https://in.linkedin.com/in/vinayvkulkarni",
-		"country" : "India",
 		"role" : "Participant",
-		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024",
-		"name" : "Vinay Kulkarni"
+		"country" : "India",
+		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024"
 	},
 	{
 		"institution" : "RWTH Aachen",
+		"person" : "Judith Michael",
 		"url" : "https://judithmichael.github.io/",
-		"country" : "Germany",
 		"role" : "Participant",
-		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024",
-		"name" : "Judith Michael"
+		"country" : "Germany",
+		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024"
 	},
 	{
 		"institution" : "McMaster University",
+		"person" : "Sébastien Mosser",
 		"url" : "https://mosser.github.io/",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024",
-		"name" : "Sébastien Mosser"
+		"country" : "Canada",
+		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024"
 	},
 	{
 		"institution" : "Université de Montréal",
+		"person" : "Houari Sahraoui",
 		"url" : "http://www.iro.umontreal.ca/~sahraouh/",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024",
-		"name" : "Houari Sahraoui"
+		"country" : "Canada",
+		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024"
 	},
 	{
 		"institution" : "Université de Montréal",
+		"person" : "Eugene Syriani",
 		"url" : "http://www.iro.umontreal.ca/~syriani",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024",
-		"name" : "Eugene Syriani"
+		"country" : "Canada",
+		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024"
 	},
 	{
 		"institution" : "Universität Stuttgart",
+		"person" : "Andreas Wortmann",
 		"url" : "https://awortmann.github.io/",
-		"country" : "Germany",
 		"role" : "Participant",
-		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024",
-		"name" : "Andreas Wortmann"
+		"country" : "Germany",
+		"workshop" : "2024 Compositionality for Digital Twins at Bellairs 2024"
 	},
 	{
 		"institution" : "IRISA / Université de Rennes 1",
+		"person" : "Benoit Combemale",
 		"url" : "http://people.irisa.fr/Benoit.Combemale/",
+		"role" : "Organizer",
 		"country" : "France",
-		"role" : "Organizer",
-		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025",
-		"name" : "Benoit Combemale"
+		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025"
 	},
 	{
 		"institution" : "McGill University",
+		"person" : "Jessie Galasso-Carbonnel",
 		"url" : "https://jgalasso.github.io/",
-		"country" : "Canada",
 		"role" : "Organizer",
-		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025",
-		"name" : "Jessie Galasso-Carbonnel"
+		"country" : "Canada",
+		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025"
 	},
 	{
 		"institution" : "McGill University",
+		"person" : "Jörg Kienzle",
 		"url" : "https://djeminy.github.io/",
-		"country" : "Canada",
 		"role" : "Organizer",
-		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025",
-		"name" : "Jörg Kienzle"
+		"country" : "Canada",
+		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025"
 	},
 	{
 		"institution" : "McGill University",
+		"person" : "Gunter Mussbacher",
 		"url" : "http://www.ece.mcgill.ca/~gmussb1/",
-		"country" : "Canada",
 		"role" : "Organizer",
-		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025",
-		"name" : "Gunter Mussbacher"
+		"country" : "Canada",
+		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025"
 	},
 	{
 		"institution" : "Université de Montréal",
+		"person" : "Pascal Archambault",
 		"url" : "https://pascalarchambault.ca",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025",
-		"name" : "Pascal Archambault"
+		"country" : "Canada",
+		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025"
 	},
 	{
 		"institution" : "Durham University",
+		"person" : "Nelly Bencomo",
 		"url" : "https://www.durham.ac.uk/staff/nelly-bencomo/",
-		"country" : "UK",
 		"role" : "Participant",
-		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025",
-		"name" : "Nelly Bencomo"
+		"country" : "UK",
+		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025"
 	},
 	{
 		"institution" : "Technische Universität Wien",
+		"person" : "Dominik Bork",
 		"url" : "https://model-engineering.info/",
-		"country" : "Austria",
 		"role" : "Participant",
-		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025",
-		"name" : "Dominik Bork"
+		"country" : "Austria",
+		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025"
 	},
 	{
 		"institution" : "INRIA / Université Côte d'Azur",
+		"person" : "Julien Deantoni",
 		"url" : "https://webusers.i3s.unice.fr/~deantoni/",
-		"country" : "France",
 		"role" : "Participant",
-		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025",
-		"name" : "Julien Deantoni"
+		"country" : "France",
+		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025"
 	},
 	{
 		"institution" : "Université de Montréal",
+		"person" : "Kevin Delcourt",
 		"url" : "https://kevindelcourt.github.io/",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025",
-		"name" : "Kevin Delcourt"
+		"country" : "Canada",
+		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025"
 	},
 	{
 		"institution" : "IRISA / Université de Rennes 1",
+		"person" : "Jean-Marc Jézéquel",
 		"url" : "http://www.irisa.fr/prive/jezequel/",
-		"country" : "France",
 		"role" : "Participant",
-		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025",
-		"name" : "Jean-Marc Jézéquel"
+		"country" : "France",
+		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025"
 	},
 	{
 		"institution" : "Tata Consultancy Services",
+		"person" : "Vinay Kulkarni",
 		"url" : "https://in.linkedin.com/in/vinayvkulkarni",
-		"country" : "India",
 		"role" : "Participant",
-		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025",
-		"name" : "Vinay Kulkarni"
+		"country" : "India",
+		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025"
 	},
 	{
 		"institution" : "University of Waterloo",
+		"person" : "Shane McIntosh",
 		"url" : "https://shanemcintosh.org/",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025",
-		"name" : "Shane McIntosh"
+		"country" : "Canada",
+		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025"
 	},
 	{
 		"institution" : "RWTH Aachen",
+		"person" : "Judith Michael",
 		"url" : "https://judithmichael.github.io/",
-		"country" : "Germany",
 		"role" : "Participant",
-		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025",
-		"name" : "Judith Michael"
+		"country" : "Germany",
+		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025"
 	},
 	{
 		"institution" : "IRISA / INSA Rennes",
+		"person" : "Quentin Perez",
 		"url" : "https://qperez.github.io/",
-		"country" : "France",
 		"role" : "Participant",
-		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025",
-		"name" : "Quentin Perez"
+		"country" : "France",
+		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025"
 	},
 	{
 		"institution" : "Université de Montréal",
+		"person" : "Houari Sahraoui",
 		"url" : "http://www.iro.umontreal.ca/~sahraouh/",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025",
-		"name" : "Houari Sahraoui"
+		"country" : "Canada",
+		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025"
 	},
 	{
 		"institution" : "Οικονομικό Πανεπιστήμιο Αθηνών (Athens University of Economics and Business)",
+		"person" : "Diomidis Spinellis",
 		"url" : "https://www2.dmst.aueb.gr/dds/",
-		"country" : "Greece",
 		"role" : "Participant",
-		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025",
-		"name" : "Diomidis Spinellis"
+		"country" : "Greece",
+		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025"
 	},
 	{
 		"institution" : "Université de Montréal",
+		"person" : "Eugene Syriani",
 		"url" : "http://www.iro.umontreal.ca/~syriani",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025",
-		"name" : "Eugene Syriani"
+		"country" : "Canada",
+		"workshop" : "2025 Model Hybridization for Digital Twins at Bellairs 2025"
 	},
 	{
 		"institution" : "IRISA / Université de Rennes 1",
+		"person" : "Benoit Combemale",
 		"url" : "http://people.irisa.fr/Benoit.Combemale/",
+		"role" : "Organizer",
 		"country" : "France",
-		"role" : "Organizer",
-		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026",
-		"name" : "Benoit Combemale"
+		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026"
 	},
 	{
 		"institution" : "McGill University",
+		"person" : "Jessie Galasso-Carbonnel",
 		"url" : "https://jgalasso.github.io/",
-		"country" : "Canada",
 		"role" : "Organizer",
-		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026",
-		"name" : "Jessie Galasso-Carbonnel"
+		"country" : "Canada",
+		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026"
 	},
 	{
 		"institution" : "McGill University",
+		"person" : "Gunter Mussbacher",
 		"url" : "http://www.ece.mcgill.ca/~gmussb1/",
-		"country" : "Canada",
 		"role" : "Organizer",
-		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026",
-		"name" : "Gunter Mussbacher"
+		"country" : "Canada",
+		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026"
 	},
 	{
 		"institution" : "Université de Montréal",
+		"person" : "Pascal Archambault",
 		"url" : "https://pascalarchambault.ca",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026",
-		"name" : "Pascal Archambault"
+		"country" : "Canada",
+		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026"
 	},
 	{
 		"institution" : "Durham University",
+		"person" : "Nelly Bencomo",
 		"url" : "https://www.durham.ac.uk/staff/nelly-bencomo/",
-		"country" : "UK",
 		"role" : "Participant",
-		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026",
-		"name" : "Nelly Bencomo"
+		"country" : "UK",
+		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026"
 	},
 	{
 		"institution" : "Technische Universität Wien",
+		"person" : "Dominik Bork",
 		"url" : "https://model-engineering.info/",
-		"country" : "Austria",
 		"role" : "Participant",
-		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026",
-		"name" : "Dominik Bork"
+		"country" : "Austria",
+		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026"
 	},
 	{
 		"institution" : "INRIA / Université Côte d'Azur",
+		"person" : "Julien Deantoni",
 		"url" : "https://webusers.i3s.unice.fr/~deantoni/",
-		"country" : "France",
 		"role" : "Participant",
-		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026",
-		"name" : "Julien Deantoni"
+		"country" : "France",
+		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026"
 	},
 	{
 		"institution" : "Université de Montréal",
+		"person" : "Kevin Delcourt",
 		"url" : "https://kevindelcourt.github.io/",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026",
-		"name" : "Kevin Delcourt"
+		"country" : "Canada",
+		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026"
 	},
 	{
 		"institution" : "IRISA / Université de Rennes 1",
+		"person" : "Jean-Marc Jézéquel",
 		"url" : "http://www.irisa.fr/prive/jezequel/",
-		"country" : "France",
 		"role" : "Participant",
-		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026",
-		"name" : "Jean-Marc Jézéquel"
+		"country" : "France",
+		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026"
 	},
 	{
 		"institution" : "McGill University",
+		"person" : "Jörg Kienzle",
 		"url" : "https://djeminy.github.io/",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026",
-		"name" : "Jörg Kienzle"
+		"country" : "Canada",
+		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026"
 	},
 	{
 		"institution" : "Tata Consultancy Services",
+		"person" : "Vinay Kulkarni",
 		"url" : "https://in.linkedin.com/in/vinayvkulkarni",
-		"country" : "India",
 		"role" : "Participant",
-		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026",
-		"name" : "Vinay Kulkarni"
+		"country" : "India",
+		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026"
 	},
 	{
 		"institution" : "University of Waterloo",
+		"person" : "Shane McIntosh",
 		"url" : "https://shanemcintosh.org/",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026",
-		"name" : "Shane McIntosh"
+		"country" : "Canada",
+		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026"
 	},
 	{
 		"institution" : "RWTH Aachen",
+		"person" : "Judith Michael",
 		"url" : "https://judithmichael.github.io/",
-		"country" : "Germany",
 		"role" : "Participant",
-		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026",
-		"name" : "Judith Michael"
+		"country" : "Germany",
+		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026"
 	},
 	{
 		"institution" : "IRISA / INSA Rennes",
+		"person" : "Quentin Perez",
 		"url" : "https://qperez.github.io/",
-		"country" : "France",
 		"role" : "Participant",
-		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026",
-		"name" : "Quentin Perez"
+		"country" : "France",
+		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026"
 	},
 	{
 		"institution" : "Université de Montréal",
+		"person" : "Houari Sahraoui",
 		"url" : "http://www.iro.umontreal.ca/~sahraouh/",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026",
-		"name" : "Houari Sahraoui"
+		"country" : "Canada",
+		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026"
 	},
 	{
 		"institution" : "Οικονομικό Πανεπιστήμιο Αθηνών (Athens University of Economics and Business)",
+		"person" : "Diomidis Spinellis",
 		"url" : "https://www2.dmst.aueb.gr/dds/",
-		"country" : "Greece",
 		"role" : "Participant",
-		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026",
-		"name" : "Diomidis Spinellis"
+		"country" : "Greece",
+		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026"
 	},
 	{
 		"institution" : "Université de Montréal",
+		"person" : "Eugene Syriani",
 		"url" : "http://www.iro.umontreal.ca/~syriani",
-		"country" : "Canada",
 		"role" : "Participant",
-		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026",
-		"name" : "Eugene Syriani"
+		"country" : "Canada",
+		"workshop" : "2026 Continuous Software Engineering at Bellairs 2026"
 	}
 ]

@@ -7,7 +7,6 @@ Class {
 	#name : #BellairsInstitution,
 	#superclass : #AbstractBellairsEntity,
 	#instVars : [
-		'institution',
 		'countryName'
 	],
 	#category : #'ONGtExperiments-Bellairs'
@@ -16,11 +15,6 @@ Class {
 { #category : #accessing }
 BellairsInstitution >> country [
 	^ self registry countryNamed: countryName
-]
-
-{ #category : #printing }
-BellairsInstitution >> displayName [
-	^ self institution
 ]
 
 { #category : #querying }
@@ -50,19 +44,19 @@ BellairsInstitution >> gtWorkshopsFor: aView [
 
 { #category : #initialization }
 BellairsInstitution >> initializeFrom: aDictionary [
-	institution := aDictionary at: 'institution'.
+	name := aDictionary at: 'institution'.
 	countryName := aDictionary at: 'country'.
 ]
 
 { #category : #accessing }
 BellairsInstitution >> institution [
-	^ institution
+	^ name
 ]
 
 { #category : #views }
 BellairsInstitution >> summary [
-	^ {{'institution'.
-			self institution}.
+	^ {{'name'.
+			self name}.
 		{'country'.
 			self country}}
 ]

@@ -73,7 +73,7 @@ BellairsExamples >> firstWorkshop [
 	workshop := registry workshops first.
 	self assert: workshop registry equals: registry.
 	self assert: workshop json equals: registry json.
-	self assert: workshop countries size equals: 10.
+	self assert: workshop countries size equals: 7.
 	self assert: workshop participations size equals: 17.
 	^ workshop
 ]

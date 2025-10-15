@@ -34,11 +34,6 @@ BellairsParticipation >> data: aDictionary [
 	data := aDictionary
 ]
 
-{ #category : #printing }
-BellairsParticipation >> displayName [
-	^ self workshop , ' -- ' , self person
-]
-
 { #category : #accessing }
 BellairsParticipation >> entries [
 	^ {data}
@@ -51,12 +46,12 @@ BellairsParticipation >> institution [
 
 { #category : #accessing }
 BellairsParticipation >> name [
-	^ data at: 'name'
+	^ (data at: 'person') , ' in ' , (data at: 'workshop')
 ]
 
 { #category : #accessing }
 BellairsParticipation >> person [
-	^ data at: 'name'
+	^ data at: 'person'
 ]
 
 { #category : #accessing }

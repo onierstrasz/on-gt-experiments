@@ -12,7 +12,8 @@ Class {
 	#name : #AbstractBellairsEntity,
 	#superclass : #Object,
 	#instVars : [
-		'registry'
+		'registry',
+		'name'
 	],
 	#category : #'ONGtExperiments-Bellairs'
 }
@@ -34,7 +35,7 @@ AbstractBellairsEntity >> countries [
 
 { #category : #printing }
 AbstractBellairsEntity >> displayName [
-	self subclassResponsibility
+	^ self name
 ]
 
 { #category : #accessing }
@@ -135,6 +136,11 @@ AbstractBellairsEntity >> mondrianNodeElement [
 		border: self mondrianBorder;
 		background: self mondrianNodeColor;
 		aptitude: (BrGlamorousWithExplicitTooltipAptitude text: self displayName)
+]
+
+{ #category : #accessing }
+AbstractBellairsEntity >> name [
+	^ name
 ]
 
 { #category : #factory }

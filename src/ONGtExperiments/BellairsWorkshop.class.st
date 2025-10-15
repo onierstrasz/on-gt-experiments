@@ -7,20 +7,12 @@ Class {
 	#superclass : #AbstractBellairsEntity,
 	#traits : 'TParticipationGroupViews',
 	#classTraits : 'TParticipationGroupViews classTrait',
-	#instVars : [
-		'workshop'
-	],
 	#category : #'ONGtExperiments-Bellairs'
 }
 
 { #category : #querying }
 BellairsWorkshop >> countries [
 	^ super countries
-]
-
-{ #category : #printing }
-BellairsWorkshop >> displayName [
-	^ self workshop
 ]
 
 { #category : #querying }
@@ -50,7 +42,7 @@ BellairsWorkshop >> gtPersonsFor: aView [
 
 { #category : #initialization }
 BellairsWorkshop >> initializeFrom: aDictionary [
-	workshop := aDictionary at: 'workshop'
+	name := aDictionary at: 'workshop'
 ]
 
 { #category : #accessing }
@@ -106,7 +98,7 @@ BellairsWorkshop >> summary [
 
 { #category : #accessing }
 BellairsWorkshop >> workshop [
-	^ workshop
+	^ self name
 ]
 
 { #category : #accessing }

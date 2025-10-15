@@ -4,25 +4,12 @@ I represent a country of one of the participants of a Bellairs workshop.
 Class {
 	#name : #BellairsCountry,
 	#superclass : #AbstractBellairsEntity,
-	#instVars : [
-		'country'
-	],
 	#category : #'ONGtExperiments-Bellairs'
 }
 
 { #category : #accessing }
 BellairsCountry >> country [
-	^ country
-]
-
-{ #category : #accessing }
-BellairsCountry >> country: anObject [
-	country := anObject
-]
-
-{ #category : #printing }
-BellairsCountry >> displayName [
-	^ self country
+	^ name
 ]
 
 { #category : #accessing }
@@ -62,7 +49,7 @@ BellairsCountry >> gtWorkshopsFor: aView [
 
 { #category : #initialization }
 BellairsCountry >> initializeFrom: aDictionary [
-	country := aDictionary at: 'country'
+	name := aDictionary at: 'country'
 ]
 
 { #category : #views }

@@ -30,13 +30,6 @@ BellairsParticipationGroup >> data: aDictionary [
 	data := aDictionary
 ]
 
-{ #category : #printing }
-BellairsParticipationGroup >> displayName [
-	"Display the query?"
-
-	^ self searchString ifNil: [ 'a participation group' ]
-]
-
 { #category : #'as yet unclassified' }
 BellairsParticipationGroup >> entries [
 	^ data
@@ -99,6 +92,13 @@ BellairsParticipationGroup >> items [
 				yourself ]
 ]
 
+{ #category : #printing }
+BellairsParticipationGroup >> name [
+	"Display the query?"
+
+	^ self searchString ifNil: [ 'a participation group' ]
+]
+
 { #category : #querying }
 BellairsParticipationGroup >> organizers [
 	^ self
@@ -117,13 +117,13 @@ BellairsParticipationGroup >> participations [
 
 { #category : #accessing }
 BellairsParticipationGroup >> participationsWithPersonNamed: aName [
-	^ (self participationGroupFrom: (data select: [ :d | (d at: 'name') = aName ]))
+	^ (self participationGroupFrom: (data select: [ :d | (d at: 'person') = aName ]))
 		searchString: 'for person ', aName
 ]
 
 { #category : #accessing }
 BellairsParticipationGroup >> persons [
-	^ (self collect: [ :p | self registry personNamed: p name ])
+	^ (self collect: [ :p | self registry personNamed: p person ])
 		copyWithoutDuplicates
 ]
 

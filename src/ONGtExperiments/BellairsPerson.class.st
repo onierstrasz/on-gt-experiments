@@ -6,9 +6,6 @@ I represent a person who has participated in one or more Bellairs workshops as e
 Class {
 	#name : #BellairsPerson,
 	#superclass : #AbstractBellairsEntity,
-	#instVars : [
-		'name'
-	],
 	#category : #'ONGtExperiments-Bellairs'
 }
 
@@ -17,14 +14,9 @@ BellairsPerson >> allRoles [
 	^ self rolesIn: self registry participations
 ]
 
-{ #category : #printing }
-BellairsPerson >> displayName [
-	^ self name
-]
-
 { #category : #querying }
 BellairsPerson >> entries [
-	^ self json select: [ :d | (d at: 'name') = self name ]
+	^ self json select: [ :d | (d at: 'person') = self name ]
 ]
 
 { #category : #views }
@@ -60,7 +52,7 @@ BellairsPerson >> gtWorkshopsFor: aView [
 
 { #category : #initialization }
 BellairsPerson >> initializeFrom: aDictionary [
-	name := aDictionary at: 'name'
+	name := aDictionary at: 'person'
 ]
 
 { #category : #accessing }
@@ -98,11 +90,6 @@ BellairsPerson >> mondrianNodeElement [
 	^ super mondrianNodeElement
 		geometry: BlCircleGeometry new;
 		yourself
-]
-
-{ #category : #accessing }
-BellairsPerson >> name [
-	^ name
 ]
 
 { #category : #accessing }
