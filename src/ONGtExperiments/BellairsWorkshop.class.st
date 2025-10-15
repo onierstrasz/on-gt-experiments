@@ -82,8 +82,8 @@ BellairsWorkshop >> printOn: aStream [
 
 { #category : #views }
 BellairsWorkshop >> summary [
-	^ {{'workshop'.
-			self workshop.
+	^ {{'name'.
+			self name.
 			self}.
 		{'# persons'.
 			self persons size printString.

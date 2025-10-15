@@ -33,11 +33,6 @@ AbstractBellairsEntity >> countries [
 	^ self participations countries
 ]
 
-{ #category : #printing }
-AbstractBellairsEntity >> displayName [
-	^ self name
-]
-
 { #category : #accessing }
 AbstractBellairsEntity >> entries [
 	"Return an array of raw dictionaries"
@@ -135,7 +130,7 @@ AbstractBellairsEntity >> mondrianNodeElement [
 		size: 10 @ 10;
 		border: self mondrianBorder;
 		background: self mondrianNodeColor;
-		aptitude: (BrGlamorousWithExplicitTooltipAptitude text: self displayName)
+		aptitude: (BrGlamorousWithExplicitTooltipAptitude text: self name)
 ]
 
 { #category : #accessing }
@@ -154,7 +149,7 @@ AbstractBellairsEntity >> participationGroupFrom: aDictionaryCollection [
 { #category : #accessing }
 AbstractBellairsEntity >> participations [
 	^ (self participationGroupFrom: self entries)
-		searchString: 'participations for ' , self displayName;
+		searchString: 'participations for ' , self name;
 		yourself
 ]
 
@@ -165,7 +160,7 @@ AbstractBellairsEntity >> persons [
 
 { #category : #printing }
 AbstractBellairsEntity >> printOn: aStream [
-	aStream nextPutAll: self displayName
+	aStream nextPutAll: self name
 ]
 
 { #category : #accessing }
@@ -180,8 +175,8 @@ AbstractBellairsEntity >> registry: anObject [
 
 { #category : #views }
 AbstractBellairsEntity >> summary [
-	^ {{'displayName'.
-			self displayName.
+	^ {{'name'.
+			self name.
 			self}}
 ]
 

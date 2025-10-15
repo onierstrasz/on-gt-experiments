@@ -139,8 +139,8 @@ BellairsParticipationGroup >> searchString: aString [
 
 { #category : #views }
 BellairsParticipationGroup >> summary [
-	^ {{'displayName'.
-			self displayName.
+	^ {{'name'.
+			self name.
 			self}.
 		{'# workshops'.
 			self workshops size.

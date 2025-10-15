@@ -14,7 +14,7 @@ TParticipationGroupViews >> gtCountriesFor: aView [
 	^ aView columnedList
 		title: 'Countries';
 		priority: 30;
-		items: [ self countries sortedAs: #displayName ];
+		items: [ self countries sortedAs: #name ];
 		column: 'Index'
 			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
 			width: 45;
@@ -50,7 +50,7 @@ TParticipationGroupViews >> gtInstitutionsFor: aView [
 	^ aView columnedList
 		title: 'Institutions';
 		priority: 30;
-		items: [ self institutions sortedAs: #displayName ];
+		items: [ self institutions sortedAs: #name ];
 		column: 'Index'
 			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
 			width: 45;
@@ -132,7 +132,7 @@ TParticipationGroupViews >> gtWorkshopsFor: aView [
 	^ aView columnedList
 		title: 'Workshops';
 		priority: 10;
-		items: [ self workshops sortedAs: #displayName ];
+		items: [ self workshops sortedAs: #name ];
 		column: 'Index'
 			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
 			width: 45;

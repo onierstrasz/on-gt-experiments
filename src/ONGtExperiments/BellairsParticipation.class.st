@@ -46,7 +46,7 @@ BellairsParticipation >> institution [
 
 { #category : #accessing }
 BellairsParticipation >> name [
-	^ (data at: 'person') , ' in ' , (data at: 'workshop')
+	^ (data at: 'person') , ' -- ' , (data at: 'workshop')
 ]
 
 { #category : #accessing }
@@ -61,8 +61,8 @@ BellairsParticipation >> role [
 
 { #category : #accessing }
 BellairsParticipation >> summary [
-	^ {{'person'.
-			self displayName.
+	^ {{'name'.
+			self name.
 			self registry personNamed: self person}.
 		{'workshop'.
 			self workshop.

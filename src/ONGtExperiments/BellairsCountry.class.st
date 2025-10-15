@@ -54,8 +54,8 @@ BellairsCountry >> initializeFrom: aDictionary [
 
 { #category : #views }
 BellairsCountry >> summary [
-	^ {{'displayName'.
-			self displayName.
+	^ {{'name'.
+			self name.
 			self}.
 		{'# workshops'.
 			self workshops size.

@@ -106,8 +106,8 @@ BellairsPerson >> rolesIn: aParticiationGroup [
 
 { #category : #accessing }
 BellairsPerson >> summary [
-	^ {{'displayName'.
-			self displayName.
+	^ {{'name'.
+			self name.
 			self}.
 		{'# workshops'.
 			self workshops size.
