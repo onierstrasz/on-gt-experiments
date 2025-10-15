@@ -33,9 +33,33 @@ AbstractBellairsEntity >> arrayOrUniqueElement: anArray [
 	^ anArray size = 1 ifTrue: [ anArray first ] ifFalse: [ anArray ]
 ]
 
+{ #category : #converting }
+AbstractBellairsEntity >> asCSV [
+	^ self participations first csvHeader , String cr
+		, (String cr join: (self participations collect: #csvLine))
+]
+
 { #category : #querying }
 AbstractBellairsEntity >> countries [
 	^ self participations countries
+]
+
+{ #category : #converting }
+AbstractBellairsEntity >> csvFile [
+	| tempFile |
+	tempFile := FileLocator downloads / 'temp.csv'.
+	tempFile ensureDelete.
+	tempFile
+		writeStreamDo: [ :stream | 
+			stream
+				nextPutAll: self participations first csvHeader;
+				cr.
+			self participations
+				do: [ :each | 
+					stream
+						nextPutAll: each csvLine;
+						cr ] ].
+	^ tempFile
 ]
 
 { #category : #accessing }
@@ -43,6 +67,17 @@ AbstractBellairsEntity >> entries [
 	"Return an array of raw dictionaries"
 
 	self subclassResponsibility
+]
+
+{ #category : #actions }
+AbstractBellairsEntity >> gtActionCSVFor: anAction [
+	<gtAction>
+	^ anAction button
+		priority: 82;
+		label: 'CSV';
+		tooltip: 'Open CSV';
+		id: GtInspectorInspectButtonId;
+		action: [ :aButton | aButton phlow spawnObject: self participations csvFile ]
 ]
 
 { #category : #actions }

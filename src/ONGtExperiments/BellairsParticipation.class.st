@@ -18,6 +18,16 @@ BellairsParticipation >> affiliation [
 ]
 
 { #category : #converting }
+BellairsParticipation >> asCSV [
+	^ self csvHeader , String cr , self csvLine
+]
+
+{ #category : #converting }
+BellairsParticipation >> asCsvLine: aStringArray [
+	^ ',' join: (aStringArray collect: [ :field | field surroundedBy: '"' ])
+]
+
+{ #category : #converting }
 BellairsParticipation >> asString [
 	"String for spotter searchers"
 
@@ -27,6 +37,27 @@ BellairsParticipation >> asString [
 { #category : #accessing }
 BellairsParticipation >> country [
 	^ self registry countryNamed: (data at: 'country')
+]
+
+{ #category : #converting }
+BellairsParticipation >> csvFields [
+	^ {'workshop'.
+		'role'.
+		'person'.
+		'affiliation'.
+		'country'.
+		'url'}
+]
+
+{ #category : #converting }
+BellairsParticipation >> csvHeader [
+	^ self asCsvLine: self csvFields
+]
+
+{ #category : #converting }
+BellairsParticipation >> csvLine [
+	^ self
+		asCsvLine: (self csvFields collect: [ :field | self data at: field ifAbsent: [ '' ] ])
 ]
 
 { #category : #accessing }
