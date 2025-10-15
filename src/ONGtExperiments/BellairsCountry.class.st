@@ -9,12 +9,12 @@ Class {
 
 { #category : #accessing }
 BellairsCountry >> country [
-	^ self
+	^ {self}
 ]
 
 { #category : #accessing }
 BellairsCountry >> entries [
-	^ self json select: [ :d | (d at: 'country') = self country ]
+	^ self json select: [ :d | (d at: 'country') = self name ]
 ]
 
 { #category : #views }
@@ -54,16 +54,16 @@ BellairsCountry >> initializeFrom: aDictionary [
 
 { #category : #views }
 BellairsCountry >> summary [
-	^ {{'name'.
+	^ {{'Name'.
 			self name.
 			self}.
-		{'# workshops'.
+		{'# Workshops'.
 			self workshops size.
 			self arrayOrUniqueElement: self workshops}.
-		{'# institutions'.
+		{'# Affiliations'.
 			self affiliations size.
 			self arrayOrUniqueElement: self affiliations}.
-		{'# persons'.
+		{'# Persons'.
 			self persons size.
 			self arrayOrUniqueElement: self persons}}
 ]

@@ -26,7 +26,7 @@ BellairsParticipation >> asString [
 
 { #category : #accessing }
 BellairsParticipation >> country [
-	^ data at: 'country'
+	^ self registry countryNamed: (data at: 'country')
 ]
 
 { #category : #accessing }
@@ -51,7 +51,7 @@ BellairsParticipation >> name [
 
 { #category : #accessing }
 BellairsParticipation >> person [
-	^ data at: 'person'
+	^ self registry personNamed: (data at: 'person')
 ]
 
 { #category : #accessing }
@@ -62,29 +62,28 @@ BellairsParticipation >> role [
 { #category : #accessing }
 BellairsParticipation >> summary [
 	^ {{'name'.
-			self name.
-			self registry personNamed: self person}.
+			self name}.
 		{'workshop'.
-			self workshop.
-			self registry workshopNamed: self workshop}.
+			self workshop}.
 		{'role'.
 			self role}.
 		{'affiliation'.
-			self affiliation.
-			self registry affiliationNamed: self affiliation}.
+			self affiliation}.
 		{'country'.
 			self country}.
 		{'url'.
-			self url.
-			ZnUrl fromString: self url}}
+			self url}}
 ]
 
 { #category : #accessing }
 BellairsParticipation >> url [
-	^ data at: 'url' ifAbsent: [ '' ]
+	^ data
+		at: 'url'
+		ifPresent: [ :url | ZnUrl fromString: url ]
+		ifAbsent: [ '' ]
 ]
 
 { #category : #accessing }
 BellairsParticipation >> workshop [
-	^ data at: 'workshop'
+	^ self registry workshopNamed: (data at: 'workshop')
 ]

@@ -55,8 +55,8 @@ BellairsAffiliation >> initializeFrom: aDictionary [
 
 { #category : #views }
 BellairsAffiliation >> summary [
-	^ {{'name'.
+	^ {{'Name'.
 			self name}.
-		{'country'.
+		{'Country'.
 			self country}}
 ]

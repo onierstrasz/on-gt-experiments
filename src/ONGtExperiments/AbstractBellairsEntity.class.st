@@ -175,14 +175,14 @@ AbstractBellairsEntity >> registry: anObject [
 
 { #category : #views }
 AbstractBellairsEntity >> summary [
-	^ {{'name'.
+	^ {{'Name'.
 			self name.
 			self}}
 ]
 
 { #category : #querying }
 AbstractBellairsEntity >> urls [
-	^ self participations urls
+	^ self participations urls reject: [ :url | url = '' ]
 ]
 
 { #category : #querying }

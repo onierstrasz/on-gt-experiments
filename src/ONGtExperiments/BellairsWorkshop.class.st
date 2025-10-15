@@ -22,7 +22,7 @@ BellairsWorkshop >> countries [
 
 { #category : #querying }
 BellairsWorkshop >> entries [
-	^ self json select: [ :d | (d at: 'workshop') = self workshop ]
+	^ self json select: [ :d | (d at: 'workshop') = self name ]
 ]
 
 { #category : #views }
@@ -75,30 +75,25 @@ BellairsWorkshop >> persons [
 	^ super persons
 ]
 
-{ #category : #printing }
-BellairsWorkshop >> printOn: aStream [
-	aStream nextPutAll: self workshop
-]
-
 { #category : #views }
 BellairsWorkshop >> summary [
-	^ {{'name'.
+	^ {{'Name'.
 			self name.
 			self}.
-		{'# persons'.
+		{'# Persons'.
 			self persons size printString.
 			self arrayOrUniqueElement: self persons}.
-		{'# institutions'.
+		{'# Affiliations'.
 			self affiliations size printString.
 			self arrayOrUniqueElement: self affiliations}.
-		{'# countries'.
+		{'# Countries'.
 			self countries size printString.
 			self arrayOrUniqueElement: self countries}}
 ]
 
 { #category : #accessing }
 BellairsWorkshop >> workshop [
-	^ self name
+	^ {self}
 ]
 
 { #category : #accessing }

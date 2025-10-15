@@ -12,8 +12,8 @@ Class {
 { #category : #accessing }
 BellairsPerson >> affiliation [
 	^ self affiliations size = 1
-		ifTrue: [ self affiliations first displayString ]
-		ifFalse: [ self affiliations first displayString , ' + '
+		ifTrue: [ self affiliations first name ]
+		ifFalse: [ self affiliations first name , ' + '
 				, (self affiliations size - 1) printString ]
 ]
 
@@ -106,19 +106,19 @@ BellairsPerson >> rolesIn: aParticiationGroup [
 
 { #category : #accessing }
 BellairsPerson >> summary [
-	^ {{'name'.
+	^ {{'Name'.
 			self name.
 			self}.
-		{'# workshops'.
+		{'# Workshops'.
 			self workshops size.
 			self arrayOrUniqueElement: self workshops}.
 		{'Roles'.
 			self allRoles.
 			self arrayOrUniqueElement: self participations}.
-		{'# institutions'.
+		{'# Affiliations'.
 			self affiliations size.
 			self arrayOrUniqueElement: self affiliations}.
-		{'# urls'.
+		{'# URLs'.
 			self urls size.
 			self arrayOrUniqueElement: self urls}}
 ]

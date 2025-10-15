@@ -49,6 +49,19 @@ BellairsWorkshopsRegistry >> countryNamed: aName [
 	^ self countryDict at: aName "detect: [ :c | c country = aName ]"
 ]
 
+{ #category : #actions }
+BellairsWorkshopsRegistry >> gtActionInspectParticipationsFor: anAction [
+	<gtAction>
+	^ anAction button
+		priority: 80;
+		label: 'P';
+		tooltip: 'Inspect participations';
+		id: GtInspectorInspectButtonId;
+		action: [ :aButton | aButton phlow spawnObject: self participations ];
+		primaryModifierAction: [ :aButton | aButton phlow showObject: self participations ]
+			mouseCursor: BlCopyCursor new
+]
+
 { #category : #initialization }
 BellairsWorkshopsRegistry >> initialize [
 	workshopDict := Dictionary new.

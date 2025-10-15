@@ -46,10 +46,12 @@ BellairsExamples >> firstCountry [
 	| country registry |
 	registry := BellairsExamples new bellairsRegistry.
 	country := registry countries first.
-	"self assert: country registry equals: registry.
+	self assert: country registry equals: registry.
 	self assert: country json equals: registry json.
-	self assert: country countries size equals: 10.
-	self assert: country participations size equals: 17."
+	self assert: country workshops size equals: 4.
+	self assert: country persons size equals: 3.
+	self assert: country affiliations size equals: 2.
+	self assert: country participations size equals: 4.
 	^ country
 ]
 
@@ -73,6 +75,8 @@ BellairsExamples >> firstWorkshop [
 	workshop := registry workshops first.
 	self assert: workshop registry equals: registry.
 	self assert: workshop json equals: registry json.
+	self assert: workshop persons size equals: 17.
+	self assert: workshop affiliations size equals: 11.
 	self assert: workshop countries size equals: 7.
 	self assert: workshop participations size equals: 17.
 	^ workshop

@@ -22,7 +22,7 @@ BellairsParticipationGroup >> affiliations [
 
 { #category : #requirement }
 BellairsParticipationGroup >> countries [
-	^ (self collect: [ :p | self registry countryNamed: p country ])
+	^ (self collect: [ :p | self registry countryNamed: p country name ])
 		copyWithoutDuplicates
 ]
 
@@ -70,7 +70,7 @@ BellairsParticipationGroup >> gtParticipationsFor: aView [
 		column: 'Role'
 			text: #role
 			width: 100;
-		column: 'Institution'
+		column: 'Affiliation'
 			text: #affiliation
 			width: 180;
 		column: 'Country'
@@ -123,7 +123,7 @@ BellairsParticipationGroup >> participationsWithPersonNamed: aName [
 
 { #category : #accessing }
 BellairsParticipationGroup >> persons [
-	^ (self collect: [ :p | self registry personNamed: p person ])
+	^ (self collect: [ :p | self registry personNamed: p person name ])
 		copyWithoutDuplicates
 ]
 
@@ -139,22 +139,22 @@ BellairsParticipationGroup >> searchString: aString [
 
 { #category : #views }
 BellairsParticipationGroup >> summary [
-	^ {{'name'.
+	^ {{'Name'.
 			self name.
 			self}.
-		{'# workshops'.
+		{'# Workshops'.
 			self workshops size.
 			self arrayOrUniqueElement: self workshops}.
-		{'# persons'.
+		{'# Persons'.
 			self persons size.
 			self arrayOrUniqueElement: self persons}.
-		{'# institutions'.
+		{'# Affiliations'.
 			self affiliations size.
 			self arrayOrUniqueElement: self affiliations}.
-		{'# countries'.
+		{'# Countries'.
 			self countries size.
 			self arrayOrUniqueElement: self countries}.
-		{'# participations'.
+		{'# Participations'.
 			self participations size.
 			self arrayOrUniqueElement: self participations}}
 ]
@@ -166,6 +166,6 @@ BellairsParticipationGroup >> urls [
 
 { #category : #accessing }
 BellairsParticipationGroup >> workshops [
-	^ (self collect: [ :p | self registry workshopNamed: p workshop ])
+	^ (self collect: [ :p | self registry workshopNamed: p workshop name ])
 		copyWithoutDuplicates
 ]
