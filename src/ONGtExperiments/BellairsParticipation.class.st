@@ -80,7 +80,8 @@ BellairsParticipation >> summary [
 		{'country'.
 			self country}.
 		{'url'.
-			self url}}	"WebBrowser openOn: self url"
+			self url.
+			ZnUrl fromString: self url}}
 ]
 
 { #category : #accessing }

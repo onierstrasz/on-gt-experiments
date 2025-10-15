@@ -14,10 +14,16 @@ Class {
 }
 
 { #category : #examples }
+BellairsExamples >> bellairsJsonFromStoredJsonFile [
+	<gtExample>
+	^ BellairsParserExamples new bellairsJsonFromStoredJsonFile
+]
+
+{ #category : #examples }
 BellairsExamples >> bellairsRegistry [
 	<gtExample>
 	| registry |
-	registry := BellairsParserExamples new bellairsRegistry.
+	registry := BellairsWorkshopsRegistry new initializeFromJson: self bellairsJsonFromStoredJsonFile.
 	self assert: registry json size equals: registry participations size.
 	^ registry
 ]

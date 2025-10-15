@@ -23,7 +23,7 @@ BellairsParserExamples >> allLines [
 
 	<gtExample>
 	| allLines |
-	allLines := self participantsTestFile contents lines.
+	allLines := self participantsCachedFile contents lines.
 	self assert: allLines size > 500.
 	^ allLines
 ]
@@ -51,6 +51,12 @@ BellairsParserExamples >> bellairsJson [
 ]
 
 { #category : #examples }
+BellairsParserExamples >> bellairsJsonFromStoredJsonFile [
+	<gtExample>
+	^ STONJSON fromString: self bellairsStoredJsonFile contents
+]
+
+{ #category : #examples }
 BellairsParserExamples >> bellairsPrettyJsonString [
 	<gtExample>
 	<noTest>
@@ -66,24 +72,15 @@ BellairsParserExamples >> bellairsRegistry [
 ]
 
 { #category : #examples }
+BellairsParserExamples >> bellairsStoredJsonFile [
+	<gtExample>
+	^ self dataFolder / 'bellairsParticipants.json'
+]
+
+{ #category : #examples }
 BellairsParserExamples >> dataFolder [
 	<gtExample>
 	^ FileLocator gtResource / 'onierstrasz' / 'on-gt-experiments' / 'data'
-]
-
-{ #category : #examples }
-BellairsParserExamples >> jsonFromTestFile [
-	"Not actually used."
-
-	<gtExample>
-	<noTest>
-	^ STONJSON fromString: self jsonTestFile contents
-]
-
-{ #category : #examples }
-BellairsParserExamples >> jsonTestFile [
-	<gtExample>
-	^ self dataFolder / 'bellairsParticipants.json'
 ]
 
 { #category : #examples }
@@ -182,36 +179,43 @@ BellairsParserExamples >> participantWebFiles [
 ]
 
 { #category : #examples }
-BellairsParserExamples >> participantsTestFile [
+BellairsParserExamples >> participantsCachedFile [
 	<gtExample>
 	^ self dataFolder / 'bellairsParticipants.txt'
 ]
 
 { #category : #examples }
-BellairsParserExamples >> writeParticipantsToTestFile [
-	"Write all of the participant webfiles to a single, cached test file.
-	Redo this only if the source files change."
+BellairsParserExamples >> writeParticipantsToCachedFile [
+	"Write all of the participant webfiles to a single, cached file.
+	Redo this only if the source files change.
+	Also update the stored JSON file and check that the two are consistent."
 
 	<gtExample>
 	<noTest>
-	| testFile |
-	testFile := self participantsTestFile.
+	| testFile storedJson newJson |
+	testFile := self participantsCachedFile.
 	testFile ensureDelete.
 	testFile
 		writeStreamDo: [ :aStream | 
 			self participantWebFiles do: [ :each | aStream nextPutAll: each ].
 			aStream close ].
+	newJson := self bellairsJson.
+
+	self writePrettyBellairsStoredJsonFile.
+	storedJson := self bellairsJsonFromStoredJsonFile.
+	self assert: storedJson equals: newJson.
+
 	^ testFile
 ]
 
 { #category : #examples }
-BellairsParserExamples >> writePrettyJsonTestFile [
+BellairsParserExamples >> writePrettyBellairsStoredJsonFile [
 	"Pretty print the JSON."
 
 	<gtExample>
 	<noTest>
 	| jsonFile |
-	jsonFile := self jsonTestFile.
+	jsonFile := self bellairsStoredJsonFile.
 	jsonFile ensureDelete.
 	jsonFile
 		writeStreamDo: [ :aStream | 

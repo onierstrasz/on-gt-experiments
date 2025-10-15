@@ -124,10 +124,10 @@ BellairsPerson >> summary [
 			self}.
 		{'# workshops'.
 			self workshops size.
-			self arrayOrUniqueElement:self workshops}.
+			self arrayOrUniqueElement: self workshops}.
 		{'Roles'.
 			self allRoles.
-			self arrayOrUniqueElement:self participations}.
+			self arrayOrUniqueElement: self participations}.
 		{'# institutions'.
 			self institutions size.
 			self arrayOrUniqueElement: self institutions}.
